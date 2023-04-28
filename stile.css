@@ -1,6 +1,8 @@
 .bott{
   border: none;
-  color: black;
+  color: red;
+  font-family: Calibri;
+  font-size: 20px;
   width: 200px;
   height: 100px;
   padding: 15px 32px;
