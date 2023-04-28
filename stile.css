@@ -1,9 +1,13 @@
 .bott{
-  border: solid;
-  width:200px;
-  height:50;
-  font-family:Sigmar;
-  font-size:50px;
+  width:300px;
+  height:80px;
+  border-color:transparent;
+  border-radius:40px;
+  box-shadow:0px 0px 15px #388e3c;
+  font-size:25px;
+  font-family:'Pacifico',cursive;
+  color:#2e7d32;
+  
 }
 .tito{
   font-weight:bold;
