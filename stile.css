@@ -12,6 +12,7 @@
   cursor: pointer;
   background-image:url(https://see.fontimg.com/api/renderfont4/vmVwZ/eyJyIjoiZnMiLCJoIjo1NCwidyI6MTAwMCwiZnMiOjU0LCJmZ2MiOiIjMDAwMDAwIiwiYmdjIjoiI0ZGRkZGRiIsInQiOjF9/Q2FjY2lhIGFsbCB1LWJvYXQ/ro-spritendo-semibold-beta.png);
   background-size: 100%;
+  background-blend-mode: lighten;
 }
 .comand{
   margin-top: 250px;
