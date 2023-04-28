@@ -22,3 +22,7 @@
   margin-right: 10px;
   text-align: right;
 }
+
+body {
+  background-image: url(image/fondale.jpg);
+}
