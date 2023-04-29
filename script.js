@@ -24,4 +24,5 @@ function nave4(){
 }
 function gameplay(n){
   window.location.href = "gameplay.htm";
+  console.log("ciao");
 }
