@@ -31,5 +31,5 @@ function inizia(n){
     }
     t+="<br>";
   }
-  document.getElementById("campo").innerHTML=t;
+  document.getElementById("campo").innerHTML="ciao";
 }
