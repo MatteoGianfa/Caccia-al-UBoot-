@@ -38,5 +38,5 @@ function inizia(){
 var path = window.location.pathname;
 var page = path.split("/").pop();
 if (page=="gameplay.htm"){
-  inizia();
+  document.addEventListener("DOMContentLoaded",inizia);
 }
