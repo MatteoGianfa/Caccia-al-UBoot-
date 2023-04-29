@@ -24,16 +24,12 @@ function nave4(){
 }
 function inizia(n){
   window.location.href = "gameplay.htm";
+  let t;
   for(let i = 0; i < 40; i++) {
     for(let j = 0; j< 40; j++) {
-        document.createElement("div");
-        div.style.width = "25px";
-        div.style.height = "25px";
-        div.style.backgroundColor = "red";
-        div.style.display = "inline-block"
-        let jump = document.createElement("br");
-        document.getElementById("campo").appendChild(div);
+        t+=`<div>${i+1}</div>`;
     }
-    document.getElementById("campo").appendChild(jump);
+    t+="<br>";
   }
+  document.getElementById("campo").innerHTML=t;
 }
