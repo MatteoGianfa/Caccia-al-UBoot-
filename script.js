@@ -23,6 +23,7 @@ function nave4(){
   inizia(4);
 }
 function inizia(n){
+  document.getElementById("campo").innerHTML="ciao";
   window.location.href = "gameplay.htm";
   let t;
   for(let i = 0; i < 40; i++) {
@@ -31,5 +32,4 @@ function inizia(n){
     }
     t+="<br>";
   }
-  document.getElementById("campo").innerHTML="ciao";
 }
