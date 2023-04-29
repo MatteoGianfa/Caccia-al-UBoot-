@@ -23,6 +23,7 @@ function nave4(){
   inizia(4);
 }
 function inizia(n){
+  window.location.href = "gameplay.htm";
   for(var i = 0; i < 40; i++) {
     for(var j = 0; j< 40; j++) {
         var div = document.createElement("div");
