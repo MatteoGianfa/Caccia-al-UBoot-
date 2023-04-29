@@ -24,6 +24,7 @@
 
 
 .table,th,td{
+  align="center";
   border:1px solid black;
   border-collapse: collaspe;
   padding: 10px;
