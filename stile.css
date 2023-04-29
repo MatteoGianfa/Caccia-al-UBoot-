@@ -28,7 +28,7 @@
   border:1px solid black;
   border-collapse: collaspe;
   padding: 10px;
-  width:80%;
+  width:auto;
   table-layout: fixed;
   
 }
