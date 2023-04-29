@@ -35,6 +35,8 @@ function inizia(){
   }
   document.getElementById("campo").innerHTML=t;
 }
-if (document.URL == "file:///C:/Users/admin/Downloads/Caccia-al-UBoot--main/Caccia-al-UBoot--main/gameplay.htm"){
-  document.addEventListener("DOMContentLoaded", inizia, false);
+var path = window.location.pathname;
+var page = path.split("/").pop();
+if (page=="gameplay.htm"){
+  inizia();
 }
