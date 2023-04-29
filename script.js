@@ -1,3 +1,6 @@
+class nave{
+  #
+}
 function gioco(){
   window.location.href = "Gioco.htm";
 }
@@ -13,6 +16,6 @@ function nave3(){
 function nave4(){
   inizia(4);
 }
-function inizia(let n){
+function inizia(n){
   
 }
