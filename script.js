@@ -12,23 +12,15 @@ function gioco(){
 }
 function nave1(){
   gameplay();
-  setInterval(inizia,2000);
-  inizia(1);
 }
 function nave2(){
   gameplay();
-  setTimeout(2000);
-  inizia(2);
 }
 function nave3(){
   gameplay();
-  setTimeout(2000);
-  inizia(3);
 }
 function nave4(){
   gameplay();
-  setTimeout(2000);
-  inizia(4);
 }
 function gameplay(n){
   window.location.href = "gameplay.htm";
