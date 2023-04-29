@@ -21,7 +21,10 @@
   margin-right: 10px;
   text-align: left;
 }
-
+.casella{
+  display:inline-block;
+  width: 25px;
+}
 
 .table,th,td{
   align="center";
