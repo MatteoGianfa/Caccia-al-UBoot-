@@ -32,5 +32,4 @@ function gameplay(n){
     t+="<br>";
   }
   document.getElementById("campo").innerHTML="ciao";
-  console.log("ciaou");
 }
