@@ -30,6 +30,7 @@ function inizia(n){
         div.style.width = "25px";
         div.style.height = "25px";
         div.style.backgroundColor = "red";
+        div.style.display = "inline-block"
         let jump = document.createElement("br");
         document.getElementById("campo").appendChild(div);
     }
