@@ -22,7 +22,7 @@ function nave3(){
 function nave4(){
   inizia(4);
 }
-function inizia(n){
+function gameplay(n){
   window.location.href = "gameplay.htm";
   let t;
   for(let i = 0; i < 40; i++) {
