@@ -31,8 +31,8 @@ function inizia(n){
         div.style.height = "25px";
         div.style.background = "red";
         var jump = document.createElement("br");
-        document.getElementById("container").appendChild(jump);
-        document.getElementById("container").appendChild(div);
+        document.getElementById("campo").appendChild(jump);
+        document.getElementById("campo").appendChild(div);
     }
   }
 }
