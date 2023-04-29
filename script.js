@@ -12,7 +12,7 @@ function gioco(){
 }
 function nave1(){
   gameplay();
-  setTimeout(2000);
+  setInterval(inizia,2000);
   inizia(1);
 }
 function nave2(){
@@ -34,6 +34,7 @@ function gameplay(n){
   window.location.href = "gameplay.htm";
 }
 function inizia(){
+  console.log("ciao");
   let t;
   for(let i = 0; i < 40; i++) {
     for(let j = 0; j< 40; j++) {
