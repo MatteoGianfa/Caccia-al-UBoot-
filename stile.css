@@ -25,14 +25,16 @@
   display:inline-block;
   width: 25px;
 }
-.table,th,td{
+.th,td{
   align="center";
   border:1px solid black;
   border-collapse: collapse;
   padding: 10px;
-  width:100%;
   table-layout: fixed;
-  
+}
+.table{
+  width:100%; 
+  heigth:100%;
 }
 .navi{
   width:25%;
