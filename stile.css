@@ -11,13 +11,12 @@
   color:#FFFFFF;
   
 }
-.tr,td{
-  border-color:transparent;
-  border: 1px solid black;
-  border-radius:40px;
+.th,tr,td{
+  align="center";
+  border:1px solid black;
+  border-collapse: collapse;
   padding: 10px;
   table-layout: fixed;
-  border-collapse: collapse;
 }
 .tito{
   font-family:Impact;
