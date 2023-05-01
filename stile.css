@@ -16,8 +16,11 @@
   border-collapse: collapse;
   table-layout: fixed;
 }
+.th{
+  height:4%;
+}
 .tr{
-  width:24%;
+  width:25%;
   height:24%;
 }
 .tito{
