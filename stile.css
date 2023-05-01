@@ -25,14 +25,6 @@
   display:inline-block;
   width: 25px;
 }
-.th,tr,td{
-  align="center";
-  border:1px solid black;
-  border-collapse: collapse;
-  padding: 10px;
-  table-layout: fixed;
-}
-
 .schermata {
   width: 100%;
   height: 100%;
