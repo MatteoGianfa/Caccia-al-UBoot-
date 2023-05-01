@@ -26,7 +26,7 @@
   width: 25px;
 }
 
-.table,tr,td{
+.table,th,td{
   align="center";
   border:1px solid black;
   border-collapse: collaspe;
