@@ -9,7 +9,10 @@
   font-family:'Pacifico',cursive;
   background-color:blue;
   color:#FFFFFF;
-  
+}
+#titobarca{
+  font-family:'Pacifico';
+  font-size:12px;
 }
 .desc{
   font-size:18px;
