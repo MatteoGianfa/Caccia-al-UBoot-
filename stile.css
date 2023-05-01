@@ -11,6 +11,9 @@
   color:#FFFFFF;
   
 }
+#titbarca{
+  height:3%;
+}
 .th,tr,td{
   border:1px solid black;
   border-collapse: collapse;
@@ -21,7 +24,7 @@
 }
 .tr{
   width:25%;
-  height:24%;
+  height:23%;
 }
 .tito{
   font-family:Impact;
