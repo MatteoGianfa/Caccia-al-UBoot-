@@ -54,3 +54,14 @@
   background-size: cover;
 
 }
+
+#countdown {
+  background-color: #FFFFFF;
+  display: inline-flex;
+  align-items: right;
+  justify-content: center;
+  font-size: 50px;
+  margin: 0;
+  height: 70px;
+  width: 200px;
+}
