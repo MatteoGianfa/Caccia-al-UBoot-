@@ -25,7 +25,7 @@
   display:inline-block;
   width: 25px;
 }
-.table,th,td{
+.table,tr,td{
   align="center";
   border:1px solid black;
   border-collapse: collapse;
