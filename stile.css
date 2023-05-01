@@ -12,8 +12,11 @@
 }
 #titobarca{
   font-family:'Courier New';
-  font-size:18px;
+  font-size:20px;
   text-align:center;
+  text-transform: capitalize;
+  font-weight: bold;
+  color: white;
 }
 .desc{
   font-size:18px;
