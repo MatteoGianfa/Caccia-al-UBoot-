@@ -17,6 +17,7 @@
   border-radius:40px;
   padding: 10px;
   table-layout: fixed;
+  border-collapse: collapse;
 }
 .tito{
   font-family:Impact;
