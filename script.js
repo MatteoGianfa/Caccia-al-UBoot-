@@ -40,3 +40,21 @@ var page = path.split("/").pop();
 if (page=="gameplay.htm"){
   document.addEventListener("DOMContentLoaded",inizia);
 }
+
+let time = 7 * 60; //minuti * 60 secondi
+let refreshIntervalId = setInterval(updateCountdown, 1000); 
+
+function updateCountdown() {
+    const minuti = Math.floor(time / 60); 
+    let secondi = time % 60;
+
+    secondi = secondi < 10 ? '0' + secondi : secondi; 
+    const contdownEl = document.getElementById("countdown"); 
+    contdownEl.innerHTML = `${minuti}:${secondi}`;
+
+    time--;
+
+    if (time < 0) { 
+        clearInterval(refreshIntervalId);
+    }
+}
