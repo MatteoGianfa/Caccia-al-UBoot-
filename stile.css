@@ -11,17 +11,16 @@
   color:#FFFFFF;
   
 }
-.tr{
+.tr,td{
   border:1px solid black;
   border-collapse: collapse;
   table-layout: fixed;
   width:25%;
   height:25%;
 }
-.td{
-  border:1px solid black;
-  border-collapse: collapse;
-  table-layout: fixed;
+.tr{
+  width:25%;
+  height:25%;
 }
 .tito{
   font-family:Impact;
