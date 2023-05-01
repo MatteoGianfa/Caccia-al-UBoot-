@@ -29,7 +29,7 @@
 .table,th,td{
   align="center";
   border:1px solid black;
-  border-collapse: collaspe;
+  border-collapse: collapse;
   padding: 10px;
   width:auto;
   table-layout: fixed;
