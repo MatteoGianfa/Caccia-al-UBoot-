@@ -25,7 +25,6 @@
   display:inline-block;
   width: 25px;
 }
-
 .table,th,td{
   align="center";
   border:1px solid black;
@@ -35,13 +34,6 @@
   table-layout: fixed;
   
 }
-
-
-
-
-
-
-
 .schermata {
   width: 100%;
   height: 100%;
