@@ -11,20 +11,14 @@
   color:#FFFFFF;
   
 }
-#titbarca{
-  height:3%;
-}
-.th,tr,td{
+.tr,td{
   border:1px solid black;
   border-collapse: collapse;
   table-layout: fixed;
 }
-.th{
-  height:4%;
-}
 .tr{
   width:25%;
-  height:23%;
+  height:25%;
 }
 .tito{
   font-family:Impact;
