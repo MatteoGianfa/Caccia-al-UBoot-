@@ -11,6 +11,10 @@
   color:#FFFFFF;
   
 }
+.tr,td{
+  border-color:transparent;
+  border-radius:40px;
+}
 .tito{
   font-family:Impact;
   font-size:100px;
