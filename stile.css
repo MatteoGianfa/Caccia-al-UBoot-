@@ -14,7 +14,9 @@
 .desc{
   font-size:14px;
   color: white;
-  background-color: #000000;
+}
+.table{
+  background-color: #0000FF;
 }
 .tr,td{
   border:1px solid black;
