@@ -26,13 +26,16 @@ function gameplay(n){
   window.location.href = "gameplay.htm";
 }
 function inizia(){
-  let t="";
+  let t="<table id='table2'>";
   for(let i = 0; i < 40; i++) {
+    t+="<tr>"
     for(let j = 0; j< 40; j++) {
-        t+=`<div class="casella" id="pos${i}${j}">${i+1}</div>`;
+        t+=`<td><img class="casella" src="image/casella.png" id="pos${i}${j}"></td>`;
     }
-    t+="<br>";
+    t+="</tr>";
   }
+  t+="</table>";
+  console.log(t);
   document.getElementById("campo").innerHTML=t;
 }
 var path = window.location.pathname;
