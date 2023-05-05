@@ -184,7 +184,14 @@ var path = window.location.pathname;
 var page = path.split("/").pop();
 if (page=="gameplay.htm"){
   document.addEventListener("DOMContentLoaded",inizia);
+  document.addEventListener("DOMContentLoaded",function(){updateProgressBar(document.querySelector(".progress"), 100);})
 }
+
+function updateProgressBar(progressBar, value) {
+  value = Math.round(value);
+  progressBar.querySelector(".progress__fill").style.width = `${value}%`;
+  progressBar.querySelector(".progress__text").textContent = `${value} HP`;
+}  
 
 let time = 7 * 60; //minuti * 60 secondi
 let refreshIntervalId = setInterval(updateCountdown, 1000); 
