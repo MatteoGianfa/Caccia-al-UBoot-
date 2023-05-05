@@ -22,6 +22,9 @@ function nave3(){
 function nave4(){
   gameplay();
 }
+function nave5(){
+  gameplay();
+}
 function gameplay(n){
   window.location.href = "gameplay.htm";
 }
