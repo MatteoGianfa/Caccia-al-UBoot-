@@ -40,11 +40,6 @@
   font-family:"Courier New";
   color: white;
 }
-.desc1{
-  font-size:38px;
-  font-family:"Courier New";
-  color: white;
-}
 .selez{
   border:1px solid white;
   table-layout: fixed;
@@ -99,6 +94,7 @@
 #countdown {
   background-color: #FFFFFF;
   float: right;
+  font-family:'Courier New';
   display: inline-flex;
   align-items: right;
   justify-content: left;
