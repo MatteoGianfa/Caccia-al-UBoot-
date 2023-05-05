@@ -97,23 +97,24 @@
   background-size: cover;
 
 }
+
+.parametri {
+  float: right;
+}
+
 #countdown {
   background-color: #FFFFFF;
-  float: right;
   font-family:'Courier New';
-  display: inline-flex;
   align-items: right;
   justify-content: left;
-  font-size: 60px;
+  font-size: 80px;
   margin: 0;
   height: 5%;
   width: 15%;
 }
 
 .progress {
-  float: right;
-  margin-top: 100px;
-  margin-left: 50%;
+  margin-top: 80px;
   position: relative;
   width: 210px;
   height: 30px;
