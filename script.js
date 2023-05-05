@@ -10,6 +10,12 @@ class nave{
 function gioco(){
   window.location.href = "Gioco.htm";
 }
+function regol(){
+  window.location.href = "Regole.htm";
+}
+function comands(){
+  window.location.href = "Comandi.htm";
+}
 function nave1(){
   gameplay();
 }
