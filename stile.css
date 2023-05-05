@@ -109,3 +109,32 @@
   height: 5%;
   width: 15%;
 }
+
+.progress {
+  float: right;
+  margin-top: 100px;
+  margin-left: 50%;
+  position: relative;
+  width: 210px;
+  height: 30px;
+  background: #b7c0b9;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress__fill {
+  width: 0%;
+  height: 100%;
+  background: #1eea68;
+  transition: all 0.2s;
+}
+
+.progress__text {
+  position: absolute;
+  top: 50%;
+  right: 5px;
+  transform: translateY(-50%);
+  font: bold 14px "Quicksand", sans-serif;
+  color: #ffffff;
+}
+
