@@ -62,9 +62,13 @@ function nave3(){
 function nave4(){
   gameplay();
 }
+function nave5(){
+  gameplay();
+}
 function gameplay(){
   window.location.href = "gameplay.htm";
 }
+
 function inizia(){
   let t="<table id='table2'>";
   for(let i = 0; i < 40; i++) {
