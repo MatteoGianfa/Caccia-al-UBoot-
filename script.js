@@ -2,12 +2,14 @@ class Nave{
   #mov
   #vis
   #son
+  #can
   #posx
   #posy
-  constructor(mov,vis,son){
+  constructor(mov,vis,son,can){
     this.#mov=mov;
     this.#vis=vis;
     this.#son=son;
+    this.#can=can;
     this.#posx=0;
     this.#posy=0;
   }
@@ -19,6 +21,9 @@ class Nave{
   }
   get son(){
     return this.#son;
+  }
+  get can(){
+    return this.#can;
   }
   get posx(){
     return this.#posx;
@@ -45,6 +50,20 @@ class Nave{
     if (this.#posx<39){
       this.#posx=this.#posx+this.#mov;
     }
+  }
+}
+class Cannone{
+  #git
+  #dan
+  constuctor(git,dan){
+    this.#git=git;
+    this.#dan=dan;
+  }
+  get git(){
+    return this.#git;
+  }
+  get dan(){
+    return this.#dan;
   }
 }
 function gioco(){
@@ -88,7 +107,7 @@ function inizia(){
   document.getElementById("campo").innerHTML=t;
   controlloGiocatore();
 }
-let n=new Nave(3,3,3);
+let n=new Nave(3,40,5,new Cannone(3,30));
 let posxs;
 let posys;
 let fine=false;
@@ -97,8 +116,7 @@ function controlloGiocatore(){
   document.getElementById("px0py0").src="image/casellav.png";
   posxs=cas(10,39);
   posys=cas(10,39);
-  document.getElementById(`px${posxs}py${posys}`).src="image/casellar.png";
-  interv=setInterval(movimentos,300);
+  interv=setInterval(movimentos,150);
   window.addEventListener("keydown",movimenton);
 }
 function cas(da,a){
@@ -108,50 +126,70 @@ function movimentos(){
   let movscelta=cas(1,4);
   let mov=cas(1,3);
   if (movscelta==1){
-    if (posxs-mov<0){
-      posxs=posxs+mov;
+    if (posxs!=0){
+      posxs-=mov;
+      if (posxs<0){
+        mov=posxs+mov;
+        posxs=0;
+      }
+    }
+    if (n.posx+n.vis>=posxs&&n.posy+n.vis>=posys&&n.posx-n.vis<=posys&&n.posy-n.vis<=posys){
       document.getElementById(`px${posxs}py${posys}`).src="image/casellar.png";
-      document.getElementById(`px${posxs-mov}py${posys}`).src="image/casella.png";
+      document.getElementById(`px${posxs+mov}py${posys}`).src="image/casella.png";
     }
     else{
-      posxs-=mov;
-      document.getElementById(`px${posxs}py${posys}`).src="image/casellar.png";
+      document.getElementById(`px${posxs}py${posys}`).src="image/casella.png";
       document.getElementById(`px${posxs+mov}py${posys}`).src="image/casella.png";
     }
   }
   if (movscelta==2){
-    if (posxs+mov>39){
-      posxs=posxs-mov;
+    if (posxs!=39){
+      posxs+=mov;
+      if (posxs>39){
+        mov=39-(posxs-mov);
+        posxs=39;
+      }
+    }
+    if (n.posx+n.vis>=posxs&&n.posy+n.vis>=posys&&n.posx-n.vis<=posys&&n.posy-n.vis<=posys){
       document.getElementById(`px${posxs}py${posys}`).src="image/casellar.png";
-      document.getElementById(`px${posxs+mov}py${posys}`).src="image/casella.png";
+      document.getElementById(`px${posxs-mov}py${posys}`).src="image/casella.png";
     }
     else{
-      posxs+=mov;
-      document.getElementById(`px${posxs}py${posys}`).src="image/casellar.png";
+      document.getElementById(`px${posxs}py${posys}`).src="image/casella.png";
       document.getElementById(`px${posxs-mov}py${posys}`).src="image/casella.png";
     }
   }
   if (movscelta==3){
-    if (posys-mov<0){
-      posys=posys+mov;
+    if (posys!=0){
+      posys-=mov;
+      if (posys<0){
+        mov=posys+mov;
+        posys=0;
+      }
+    }
+    if (n.posx+n.vis>=posxs&&n.posy+n.vis>=posys&&n.posx-n.vis<=posys&&n.posy-n.vis<=posys){
       document.getElementById(`px${posxs}py${posys}`).src="image/casellar.png";
-      document.getElementById(`px${posxs}py${posys-mov}`).src="image/casella.png";
+      document.getElementById(`px${posxs}py${posys+mov}`).src="image/casella.png";
     }
     else{
-      posys-=mov;
-      document.getElementById(`px${posxs}py${posys}`).src="image/casellar.png";
+      document.getElementById(`px${posxs}py${posys}`).src="image/casella.png";
       document.getElementById(`px${posxs}py${posys+mov}`).src="image/casella.png";
     }
   }
   if (movscelta==4){
-    if (posys+mov>39){
-      posys=posys-mov;
+    if (posys!=39){
+      posys+=mov;
+      if (posys>39){
+        mov=39-(posys-mov);
+        posys=39;
+      }
+    }
+    if (n.posx+n.vis>=posxs&&n.posy+n.vis>=posys&&n.posx-n.vis<=posys&&n.posy-n.vis<=posys){
       document.getElementById(`px${posxs}py${posys}`).src="image/casellar.png";
-      document.getElementById(`px${posxs}py${posys+mov}`).src="image/casella.png";
+      document.getElementById(`px${posxs}py${posys-mov}`).src="image/casella.png";
     }
     else{
-      posys+=mov;
-      document.getElementById(`px${posxs}py${posys}`).src="image/casellar.png";
+      document.getElementById(`px${posxs}py${posys}`).src="image/casella.png";
       document.getElementById(`px${posxs}py${posys-mov}`).src="image/casella.png";
     }
   }
@@ -184,6 +222,7 @@ var path = window.location.pathname;
 var page = path.split("/").pop();
 if (page=="gameplay.htm"){
   document.addEventListener("DOMContentLoaded",inizia);
+  document.addEventListener("DOMContentLoaded",avviaCountdown);
   document.addEventListener("DOMContentLoaded",function(){updateProgressBar(document.querySelector(".progress"), 100);})
 }
 
@@ -193,9 +232,12 @@ function updateProgressBar(progressBar, value) {
   progressBar.querySelector(".progress__text").textContent = `${value} HP`;
 }  
 
-let time = 7 * 60; //minuti * 60 secondi
-let refreshIntervalId = setInterval(updateCountdown, 1000); 
+let time=7*60;
+let refreshIntervalId
 
+function avviaCountdown(){
+  setInterval(updateCountdown, 1000);
+}
 function updateCountdown() {
     const minuti = Math.floor(time / 60); 
     let secondi = time % 60;
