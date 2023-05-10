@@ -52,6 +52,50 @@ class Nave{
     }
   }
 }
+class Siluro{
+  #mov
+  #vit
+  #posx
+  #posy
+  constructor (mov,vit){
+    this.#mov=mov;
+    this.#vit=vit;
+    this.#posx=cas(10,39);
+    this.#posy=cas(10,39);
+  }
+  get mov(){
+    return this.#mov;
+  }
+  get vit(){
+    return this.#vit;
+  }
+  get posx(){
+    return this.#posx;
+  }
+  get posy(){
+    return this.#posy;
+  }  
+  muovisu(){
+    if (this.#posy-this.#mov>=0){
+      this.#posy=this.#posy-this.#mov;
+    }
+  }
+  muovigiu(){
+    if (this.#posy+this.#mov<39){
+      this.#posy=this.#posy+this.#mov;
+    }
+  }
+  muovisin(){
+    if (this.#posx-this.#mov>=0){
+      this.#posx=this.#posx-this.#mov;
+    }
+  }
+  muovides(){
+    if (this.#posx+this.#mov<39){
+      this.#posx=this.#posx+this.#mov;
+    }
+  }
+}
 class Cannone{
   #git
   #dan
@@ -107,91 +151,48 @@ function inizia(){
   document.getElementById("campo").innerHTML=t;
   controlloGiocatore();
 }
-let n=new Nave(3,40,5,new Cannone(3,30));
-let posxs;
-let posys;
+let n=new Nave(3,39,1,new Cannone(3,30));
+let s=new Siluro(3,100);
 let fine=false;
 let interv;
+let intervstato;
+let statos=false;
 function controlloGiocatore(){
   document.getElementById("px0py0").src="image/casellav.png";
-  posxs=cas(10,39);
-  posys=cas(10,39);
-  interv=setInterval(movimentos,150);
+  document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellar.png";
+  interv=setInterval(movimentos,200);
+  cambiastato();
   window.addEventListener("keydown",movimenton);
 }
 function cas(da,a){
   return Math.floor(Math.random()*(a-da+1))+da;
 }
+function cambiastato(){
+  setTimeout(function(){statos=true; setTimeout(function(){statos=false; cambiastato();},5000)},5000);
+}
 function movimentos(){
   let movscelta=cas(1,4);
-  let mov=cas(1,3);
-  if (movscelta==1){
-    if (posxs!=0){
-      posxs-=mov;
-      if (posxs<0){
-        mov=posxs+mov;
-        posxs=0;
-      }
-    }
-    if (n.posx+n.vis>=posxs&&n.posy+n.vis>=posys&&n.posx-n.vis<=posys&&n.posy-n.vis<=posys){
-      document.getElementById(`px${posxs}py${posys}`).src="image/casellar.png";
-      document.getElementById(`px${posxs+mov}py${posys}`).src="image/casella.png";
-    }
-    else{
-      document.getElementById(`px${posxs}py${posys}`).src="image/casella.png";
-      document.getElementById(`px${posxs+mov}py${posys}`).src="image/casella.png";
-    }
-  }
-  if (movscelta==2){
-    if (posxs!=39){
-      posxs+=mov;
-      if (posxs>39){
-        mov=39-(posxs-mov);
-        posxs=39;
-      }
-    }
-    if (n.posx+n.vis>=posxs&&n.posy+n.vis>=posys&&n.posx-n.vis<=posys&&n.posy-n.vis<=posys){
-      document.getElementById(`px${posxs}py${posys}`).src="image/casellar.png";
-      document.getElementById(`px${posxs-mov}py${posys}`).src="image/casella.png";
-    }
-    else{
-      document.getElementById(`px${posxs}py${posys}`).src="image/casella.png";
-      document.getElementById(`px${posxs-mov}py${posys}`).src="image/casella.png";
-    }
-  }
-  if (movscelta==3){
-    if (posys!=0){
-      posys-=mov;
-      if (posys<0){
-        mov=posys+mov;
-        posys=0;
-      }
-    }
-    if (n.posx+n.vis>=posxs&&n.posy+n.vis>=posys&&n.posx-n.vis<=posys&&n.posy-n.vis<=posys){
-      document.getElementById(`px${posxs}py${posys}`).src="image/casellar.png";
-      document.getElementById(`px${posxs}py${posys+mov}`).src="image/casella.png";
-    }
-    else{
-      document.getElementById(`px${posxs}py${posys}`).src="image/casella.png";
-      document.getElementById(`px${posxs}py${posys+mov}`).src="image/casella.png";
-    }
-  }
-  if (movscelta==4){
-    if (posys!=39){
-      posys+=mov;
-      if (posys>39){
-        mov=39-(posys-mov);
-        posys=39;
-      }
-    }
-    if (n.posx+n.vis>=posxs&&n.posy+n.vis>=posys&&n.posx-n.vis<=posys&&n.posy-n.vis<=posys){
-      document.getElementById(`px${posxs}py${posys}`).src="image/casellar.png";
-      document.getElementById(`px${posxs}py${posys-mov}`).src="image/casella.png";
-    }
-    else{
-      document.getElementById(`px${posxs}py${posys}`).src="image/casella.png";
-      document.getElementById(`px${posxs}py${posys-mov}`).src="image/casella.png";
-    }
+  switch (movscelta){
+    case 1:
+      s.muovides();
+      document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellar.png";
+      document.getElementById(`px${s.posx-s.mov}py${s.posy}`).src="image/casella.png";
+    break;
+    case 2:
+      s.muovisin();
+      document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellar.png";
+      document.getElementById(`px${s.posx+s.mov}py${s.posy}`).src="image/casella.png";
+    break;
+    case 3:
+      s.muovisu();
+      document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellar.png";
+      document.getElementById(`px${s.posx}py${s.posy+s.mov}`).src="image/casella.png";
+    break;
+    case 4:
+      s.muovigiu();
+      document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellar.png";
+      document.getElementById(`px${s.posx}py${s.posy-s.mov}`).src="image/casella.png";
+    break;
   }
 }
 function movimenton(event){
@@ -236,6 +237,7 @@ let time=7*60;
 let refreshIntervalId
 
 function avviaCountdown(){
+  updateCountdown();
   setInterval(updateCountdown, 1000);
 }
 function updateCountdown() {
