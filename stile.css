@@ -187,3 +187,23 @@ h1,h2,h3,h4,h5,h6{cursor:pointer;}
   margin:5% auto 0 auto;
   text-align:center;
 }
+.author:hover{
+  background:rgba(0, 0, 0, .8);
+}
+
+.title{
+  font-family:'Courier New';
+  color:#fff;
+  font-size:38px;
+  font-weight:normal;
+  text-align:center;
+  text-transform:uppercase;
+  text-shadow: 1px 2px 5px rgba(65, 65, 240, 0.897);
+  margin-top: 0px;
+}
+h1{
+  font-size:18px;
+  color:#fff;
+  text-align:center;
+  line-height:3;
+}
