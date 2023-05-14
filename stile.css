@@ -24,7 +24,7 @@
 }
 
 .conts{
-  border: solid 1px black;
+  border: solid 1px white;
 }
 
 #table1{
@@ -123,6 +123,7 @@
 
 #countdown {
   font-family:'Courier New';
+  color: #ffffff;
   justify-content: left;
   font-size: 80px;
   margin: 0;
