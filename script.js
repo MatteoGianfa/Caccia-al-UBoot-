@@ -308,11 +308,11 @@ function movimenton(event){
           s.vit = s.vit-n.can.dan;
           if(s.vit <= 0)
           {
-            updateProgressBar(document.querySelector(".progress"), 0 );
+            updateHealthBar(document.querySelector(".progress"), 0 );
           }
           else
           {
-            updateProgressBar(document.querySelector(".progress"), s.vit);
+            updateHealthBar(document.querySelector(".progress"), s.vit);
           }
         }
       break;
@@ -323,13 +323,13 @@ var page = path.split("/").pop();
 if (page=="gameplay.htm"){
   document.addEventListener("DOMContentLoaded",inizia);
   document.addEventListener("DOMContentLoaded",avviaCountdown);
-  document.addEventListener("DOMContentLoaded",function(){updateProgressBar(document.querySelector(".progress"), 100);})
+  document.addEventListener("DOMContentLoaded",function(){updateHealthBar(document.querySelector(".progress"), 100);})
 }
 
-function updateProgressBar(progressBar, value) {
+function updateHealthBar(healthBar, value) {
   value = Math.round(value);
-  progressBar.querySelector(".progress__fill").style.width = `${value}%`;
-  progressBar.querySelector(".progress__text").textContent = `${value} HP`;
+  healthBar.querySelector(".progress__fill").style.width = `${value}%`;
+  healthBar.querySelector(".progress__text").textContent = `${value} HP`;
 }  
 
 let time=7*60;
