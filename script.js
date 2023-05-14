@@ -308,11 +308,11 @@ function movimenton(event){
           s.vit = s.vit-n.can.dan;
           if(s.vit <= 0)
           {
-            updateHealthBar(document.querySelector(".progress"), 0 );
+            updateHealthBar(document.querySelector(".health"), 0 );
           }
           else
           {
-            updateHealthBar(document.querySelector(".progress"), s.vit);
+            updateHealthBar(document.querySelector(".health"), s.vit);
           }
         }
       break;
