@@ -154,6 +154,7 @@ function inizia(){
   document.getElementById("campo").innerHTML=t;
   controlloGiocatore();
 }
+
 let n=new Nave(1,1,1,new Cannone(3,30));
 let s=new Siluro(3,100);
 let fine=false;
@@ -165,10 +166,32 @@ let ncoincs=false;
 function controlloGiocatore(){
   document.getElementById("px0py0").src="image/casellav.png";
   document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellar.png";
-  interv=setInterval(movimentos,200);
+  avviaSonar(); 
+  interv=setInterval(function(){movimentos(); avviaSonar()},1000); 
   cambiastato();
-  window.addEventListener("keydown",movimenton);
+  window.addEventListener("keydown",function(event){movimenton(event); avviaSonar()}); 
 }
+
+function avviaSonar(){ 
+  if (n.son+n.posx>=s.posx&&n.posx-n.son<=s.posx&&n.son+n.posy>=s.posy&&n.posy-n.son<=s.posy){
+    if (n.posx>s.posx){
+      document.getElementById("sonar").innerHTML=`<div class="conts">${n.posx-s.posx}</div>`;
+    }
+    else{
+      document.getElementById("sonar").innerHTML=`<div class="conts">${s.posx-n.posx}</div>`;
+    }
+    if (n.posy>s.posy){
+      document.getElementById("sonar").innerHTML+=`<div class="conts">${n.posy-s.posy}</div>`;
+    }
+    else{
+      document.getElementById("sonar").innerHTML+=`<div class="conts">${s.posy-n.posy}</div>`;
+    }
+  }
+  else{
+    document.getElementById("sonar").innerHTML="";
+  }
+}
+
 function cas(da,a){
   return Math.floor(Math.random()*(a-da+1))+da;
 }
