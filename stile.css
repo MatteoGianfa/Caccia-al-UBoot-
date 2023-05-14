@@ -128,7 +128,7 @@
   width: 15%;
 }
 
-.progress {
+.health {
   margin-top: 15px;
   position: relative;
   width: 210px;
@@ -138,14 +138,14 @@
   overflow: hidden;
 }
 
-.progress__fill {
+.health__fill {
   width: 0%;
   height: 100%;
   background: #1eea68;
   transition: all 0.2s;
 }
 
-.progress__text {
+.health__text {
   position: absolute;
   top: 50%;
   right: 5px;
