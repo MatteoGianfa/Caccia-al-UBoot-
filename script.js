@@ -59,7 +59,7 @@ class Siluro{
   #posy
   constructor (mov,vit){
     this.#mov=mov;
-    this.#vit=vit;
+    this.vit=vit;  
     this.#posx=cas(10,39);
     this.#posy=cas(10,39);
   }
@@ -68,6 +68,9 @@ class Siluro{
   }
   get vit(){
     return this.#vit;
+  }
+  set vit(vit){                   
+    this.#vit = vit;
   }
   get posx(){
     return this.#posx;
