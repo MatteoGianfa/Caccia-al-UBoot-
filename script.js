@@ -102,7 +102,7 @@ class Siluro{
 class Cannone{
   #git
   #dan
-  constuctor(git,dan){
+  constructor(git,dan){
     this.#git=git;
     this.#dan=dan;
   }
@@ -323,13 +323,13 @@ var page = path.split("/").pop();
 if (page=="gameplay.htm"){
   document.addEventListener("DOMContentLoaded",inizia);
   document.addEventListener("DOMContentLoaded",avviaCountdown);
-  document.addEventListener("DOMContentLoaded",function(){updateHealthBar(document.querySelector(".progress"), 100);})
+  document.addEventListener("DOMContentLoaded",function(){updateHealthBar(document.querySelector(".health"), 100);})
 }
 
 function updateHealthBar(healthBar, value) {
   value = Math.round(value);
-  healthBar.querySelector(".progress__fill").style.width = `${value}%`;
-  healthBar.querySelector(".progress__text").textContent = `${value} HP`;
+  healthBar.querySelector(".health__fill").style.width = `${value}%`;
+  healthBar.querySelector(".health__text").textContent = `${value} HP`;
 }  
 
 let time=7*60;
