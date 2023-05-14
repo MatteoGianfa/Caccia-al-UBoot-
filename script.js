@@ -142,7 +142,7 @@ function gameplay(){
 }
 
 function inizia(){
-  let t="<table id='table2'>";
+  let t="<table id='table1'>";
   for(let i = 0; i < 40; i++) {
     t+="<tr class='campogioco'>"
     for(let j = 0; j< 40; j++) {
