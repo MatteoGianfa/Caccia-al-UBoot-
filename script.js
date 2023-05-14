@@ -189,7 +189,7 @@ function avviaSonar(){
     else{
       num2 = Math.pow(s.posy - n.posy,2);
     }
-    document.getElementById("sonar").innerHTML=Math.floor(Math.sqrt(num1+num2));
+    document.getElementById("sonar").innerHTML="Caselle distanza: "+Math.floor(Math.sqrt(num1+num2));
   }
   else{
     document.getElementById("sonar").innerHTML="Non in range";
