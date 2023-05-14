@@ -302,6 +302,20 @@ function movimenton(event){
           ncoincs=false;
         }
       break;
+      case 'l':             
+        if((n.can.git+n.posx >= s.posx && n.posx-n.can.git <= s.posx) && (n.posy+n.can.git >= s.posy && n.posy-n.can.git <= s.posy ))
+        {
+          s.vit = s.vit-n.can.dan;
+          if(s.vit <= 0)
+          {
+            updateProgressBar(document.querySelector(".progress"), 0 );
+          }
+          else
+          {
+            updateProgressBar(document.querySelector(".progress"), s.vit);
+          }
+        }
+      break;
     }
 }
 var path = window.location.pathname;
