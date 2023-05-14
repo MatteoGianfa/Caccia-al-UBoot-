@@ -172,23 +172,27 @@ function controlloGiocatore(){
   window.addEventListener("keydown",function(event){movimenton(event); avviaSonar()}); 
 }
 
-function avviaSonar(){ 
+function avviaSonar(){   
+  let num1;
+  let num2;
+
   if (n.son+n.posx>=s.posx&&n.posx-n.son<=s.posx&&n.son+n.posy>=s.posy&&n.posy-n.son<=s.posy){
     if (n.posx>s.posx){
-      document.getElementById("sonar").innerHTML=`<div class="conts">${n.posx-s.posx}</div>`;
+      num1 = Math.pow(n.posx - s.posx,2);
     }
     else{
-      document.getElementById("sonar").innerHTML=`<div class="conts">${s.posx-n.posx}</div>`;
+      num1 = Math.pow(s.posx - n.posx,2);
     }
     if (n.posy>s.posy){
-      document.getElementById("sonar").innerHTML+=`<div class="conts">${n.posy-s.posy}</div>`;
+      num2 = Math.pow(n.posy - s.posy,2);
     }
     else{
-      document.getElementById("sonar").innerHTML+=`<div class="conts">${s.posy-n.posy}</div>`;
+      num2 = Math.pow(s.posy - n.posy,2);
     }
+    document.getElementById("sonar").innerHTML=Math.floor(Math.sqrt(num1+num2));
   }
   else{
-    document.getElementById("sonar").innerHTML="";
+    document.getElementById("sonar").innerHTML="Non in range";
   }
 }
 
