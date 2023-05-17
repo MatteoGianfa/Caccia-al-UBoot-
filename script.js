@@ -36,6 +36,17 @@ class Nave{
   get posy(){
     return this.#posy;
   }
+  
+   aSpec(s){ 
+    if (this.#util!=0){
+      this.#util--;
+      if (this.posx+1>=s.posx&&this.posx-1<=s.posx&&this.posy+1>=s.posy&&this.posy-1<=s.posy){
+        return 70;
+      }
+    }
+    return 0;
+  }
+  
   muovisu(){
     if (this.#posy-this.#mov>=0){
       this.#posy=this.#posy-this.#mov;
