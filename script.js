@@ -169,6 +169,25 @@ function gameplay(n){
   window.location.href = `gameplay.htm?Nave=${n}`; 
 }
 
+let urlParams=new URLSearchParams(window.location.search); 
+let nave=urlParams.get("Nave");
+let n;
+if (nave==1){
+  n=new Nave(1,5,6,new Cannone(2,40),3);
+}
+if (nave==2){
+  n=new Nave(7,1,1,new Cannone(1,1),3);
+}
+if (nave==3){
+  n=new Nave(4,1,1,new Cannone(1,1),3);
+}
+if (nave==4){
+  n=new Nave(5,1,1,new Cannone(1,1),3);
+}
+if (nave==5){
+  n=new Nave(20,1,1,new Cannone(1,1),3);
+}
+
 function inizia(){
   let t="<table id='table1'>";
   for(let i = 0; i < 40; i++) {
