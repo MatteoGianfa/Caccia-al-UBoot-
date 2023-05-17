@@ -329,14 +329,14 @@ function movimenton(event){
         n.muovides();
         if (n.posx==s.posx&&n.posy==s.posy){
           document.getElementById(`px${n.posx}py${n.posy}`).src="image/casellav.png";
-          if (posatt!=n.posx){ //Qui ho aggiunto un if
+          if (posatt!=n.posx){ 
             document.getElementById(`px${n.posx-(n.posx-posatt)}py${n.posy}`).src="image/casella.png";
           }
           ncoincs=true;
         }
         else{
           document.getElementById(`px${n.posx}py${n.posy}`).src="image/casellav.png";
-          if (posatt!=n.posx){ //Qui ho aggiunto un if
+          if (posatt!=n.posx){ 
             document.getElementById(`px${n.posx-(n.posx-posatt)}py${n.posy}`).src="image/casella.png";
           }
           ncoincs=false;
@@ -347,14 +347,14 @@ function movimenton(event){
         n.muovisin();
         if (n.posx==s.posx&&n.posy==s.posy){
           document.getElementById(`px${n.posx}py${n.posy}`).src="image/casellav.png";
-          if (posatt!=n.posx){ //Qui ho aggiunto un if
+          if (posatt!=n.posx){ 
             document.getElementById(`px${n.posx+(posatt-n.posx)}py${n.posy}`).src="image/casella.png";
           }
           ncoincs=true;
         }
         else{
           document.getElementById(`px${n.posx}py${n.posy}`).src="image/casellav.png";
-          if (posatt!=n.posx){ //Qui ho aggiunto un if
+          if (posatt!=n.posx){ 
             document.getElementById(`px${n.posx+(posatt-n.posx)}py${n.posy}`).src="image/casella.png";
           }
           ncoincs=false;
@@ -365,14 +365,14 @@ function movimenton(event){
         n.muovisu();
         if (n.posx==s.posx&&n.posy==s.posy){
           document.getElementById(`px${n.posx}py${n.posy}`).src="image/casellav.png";
-          if (posatt!=n.posy){ //Qui ho aggiunto un if
+          if (posatt!=n.posy){ 
             document.getElementById(`px${n.posx}py${n.posy+(posatt-n.posy)}`).src="image/casella.png";
           }
           ncoincs=true;
         }
         else{
           document.getElementById(`px${n.posx}py${n.posy}`).src="image/casellav.png";
-          if (posatt!=n.posy){ //Qui ho aggiunto un if
+          if (posatt!=n.posy){ 
             document.getElementById(`px${n.posx}py${n.posy+(posatt-n.posy)}`).src="image/casella.png";
           }
           ncoincs=false;
@@ -383,14 +383,14 @@ function movimenton(event){
         n.muovigiu();
         if (n.posx==s.posx&&n.posy==s.posy){
           document.getElementById(`px${n.posx}py${n.posy}`).src="image/casellav.png";
-          if (posatt!=n.posy){ //Qui ho aggiunto un if
+          if (posatt!=n.posy){ 
             document.getElementById(`px${n.posx}py${n.posy-(n.posy-posatt)}`).src="image/casella.png";
           }
           ncoincs=true;
         }
         else{
           document.getElementById(`px${n.posx}py${n.posy}`).src="image/casellav.png";
-          if (posatt!=n.posy){ //Qui ho aggiunto un if
+          if (posatt!=n.posy){ 
             document.getElementById(`px${n.posx}py${n.posy-(n.posy-posatt)}`).src="image/casella.png";
           }
           ncoincs=false;
@@ -408,6 +408,15 @@ function movimenton(event){
           {
             updateHealthBar(document.querySelector(".health"), s.vit);
           }
+        }
+      break;
+      case 'k': 
+        s.vit=s.vit-n.aSpec(s);
+        if (s.vit<=0){
+          updateHealthBar(document.querySelector(".health"),0);
+        }
+        else{
+          updateHealthBar(document.querySelector(".health"),s.vit);
         }
       break;
     }
