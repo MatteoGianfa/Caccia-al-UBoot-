@@ -5,13 +5,18 @@ class Nave{
   #can
   #posx
   #posy
-  constructor(mov,vis,son,can){
+  #util 
+  constructor(mov,vis,son,can,util){
     this.#mov=mov;
     this.#vis=vis;
     this.#son=son;
     this.#can=can;
     this.#posx=0;
     this.#posy=0;
+    this.#util=util; 
+  }
+  get util(){ 
+    return this.#util;
   }
   get mov(){
     return this.#mov;
