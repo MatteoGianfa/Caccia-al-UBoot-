@@ -324,6 +324,7 @@ function movimentos(){
 function movimenton(event){
     let posatt;
     switch (event.key){
+      case 'D':
       case 'd':
         posatt=n.posx;
         n.muovides();
@@ -342,6 +343,7 @@ function movimenton(event){
           ncoincs=false;
         }
       break;
+      case 'A':
       case 'a': 
         posatt=n.posx;
         n.muovisin();
@@ -360,6 +362,7 @@ function movimenton(event){
           ncoincs=false;
         }
       break;
+      case 'W':
       case 'w': 
         posatt=n.posy;
         n.muovisu();
@@ -378,6 +381,7 @@ function movimenton(event){
           ncoincs=false;
         }
       break;
+      case 'S':
       case 's': 
         posatt=n.posy;
         n.muovigiu();
@@ -396,7 +400,8 @@ function movimenton(event){
           ncoincs=false;
         }
       break;
-      case 'l':             
+      case 'L':
+      case 'l':
         if((n.can.git+n.posx >= s.posx && n.posx-n.can.git <= s.posx) && (n.posy+n.can.git >= s.posy && n.posy-n.can.git <= s.posy ))
         {
           s.vit = s.vit-n.can.dan;
@@ -410,6 +415,7 @@ function movimenton(event){
           }
         }
       break;
+      case 'K':
       case 'k': 
         s.vit=s.vit-n.aSpec(s);
         if (s.vit<=0){
