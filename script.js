@@ -47,24 +47,36 @@ class Nave{
     return 0;
   }
   
-  muovisu(){
-    if (this.#posy-this.#mov>=0){
+   muovisu(){
+    if (this.#posy-this.#mov>=0){ //questa riga, insieme all'interno dell'if di muovisin è stato cambiato, in più è stato aggiunto un else a tutti
       this.#posy=this.#posy-this.#mov;
+    }
+    else{
+      this.#posy=0;
     }
   }
   muovigiu(){
-    if (this.#posy<39){
+    if (this.#posy+this.#mov<39){
       this.#posy=this.#posy+this.#mov;
+    }
+    else{
+      this.#posy=39;
     }
   }
   muovisin(){
     if (this.#posx-this.#mov>=0){
       this.#posx=this.#posx-this.#mov;
     }
+    else{
+      this.#posx=0;
+    }
   }
   muovides(){
-    if (this.#posx<39){
+    if (this.#posx+this.#mov<39){
       this.#posx=this.#posx+this.#mov;
+    }
+    else{
+      this.#posx=39;
     }
   }
 }
