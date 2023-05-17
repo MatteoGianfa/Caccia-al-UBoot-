@@ -151,22 +151,22 @@ function comands(){
   window.location.href = "Comandi.htm";
 }
 function nave1(){
-  gameplay();
+  gameplay(1); 
 }
 function nave2(){
-  gameplay();
+  gameplay(2);
 }
 function nave3(){
-  gameplay();
+  gameplay(3);
 }
 function nave4(){
-  gameplay();
+  gameplay(4);
 }
 function nave5(){
-  gameplay();
+  gameplay(5);
 }
-function gameplay(){
-  window.location.href = "gameplay.htm";
+function gameplay(n){ 
+  window.location.href = `gameplay.htm?Nave=${n}`; 
 }
 
 function inizia(){
