@@ -1,85 +1,260 @@
-.bott{
-  width:15%;
-  height:25%;
-  margin-top:2%;
-  border-color:transparent;
-  border-radius:40px;
-  box-shadow:0px 0px 15px #0000FF;
-  font-size: 150%;
-  font-family:'Courier New';
-  background-color:blue;
-  cursor:pointer;
-  color:#FFFFFF;
-}
-.bott1{
-  width:100%;
-  height:100%;
-  margin-top:50%;
-  border-color:transparent;
-  border-radius:40px;
-  font-size:128%;
-  cursor:pointer;
-  text-align: center;
-  font-family:'Courier New';
-  background-color:rgb(0, 0, 0);
-  color:#FFFFFF;
-}
+/* TAB index */
 
-.conts{
-  border: solid 1px white;
-  text-align: center;
-  font-family:'Courier New';
-  font-size:130%;
-  width:100%;
-  height:100%;
-  color:#FFFFFF;
-}
+  .bott{
+    width:15%;
+    height:25%;
+    margin-top:2%;
+    border-color:transparent;
+    border-radius:40px;
+    box-shadow:0px 0px 15px #0000FF;
+    font-size: 150%;
+    font-family:'Courier New';
+    background-color:blue;
+    cursor:pointer;
+    color:#FFFFFF;
+  }
 
-#table1{
-  width:50%;
-  height:50%;
-  margin-left: 20%;
-  border:1px solid black;
-  border-collapse: collapse;
-}
+  .schermata {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url(image/fondale.png) no-repeat center top;
+    position: fixed; 
+    z-index: -1;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+
+  .titolo{
+    font-family:'Courier New';
+    color:#ffffff;
+    font-size:500%;
+    font-weight:bold;
+    text-align:center;
+    text-transform:uppercase;
+    text-shadow: 1px 2px 5px rgba(2, 2, 223, 0.897);
+    margin-top: 3%;
+  }
+
+/* TAB Gioco */
+
+  .schermata_2 {
+    width: 100%;
+    height: 100%;
+    background: url(image/fondale_2.png);
+    position: fixed; 
+  }
+
+  .titoloselezione{
+    font-family:'Courier New';
+    color:#fff;
+    font-size:300%;
+    font-weight:normal;
+    text-align:center;
+    text-transform:uppercase;
+    text-shadow: 1px 2px 5px rgba(65, 65, 240, 0.897);
+    margin-top: 1.5%;
+  }
+
+  #container{
+    width:100%;
+    height: 180%;
+  }
+
+  .nnavselezione{
+    font-family:'Courier New';
+    font-size:112%;
+    color:#fff;
+    text-align:center;
+    font-weight: bold;
+    height:6%
+  }
+
+  .naveselezione{
+    width:19.7%;
+    height: 43%;
+    background: linear-gradient(#0b4476, #074365);
+    float:left;
+    border-top: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    border-left:1px solid #000000;
+    border-right: 1px solid #000000;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
+  }
+
+  .imgselezione{
+    width:100%;
+    height:30%;
+    margin:5% auto 0 auto;
+    text-align:center;
+  }
+
+  .spazim{
+    width:100%;
+    height:100%;
+  }
+
+  .infos{
+    width: 100%;
+    height: 30%;
+  }
+
+  .desc{
+    font-size:100%;
+    overflow:auto;
+    width:100%;
+    height:130%;
+    font-family:"Courier New";
+    color: white;
+    text-align:center;
+    margin-bottom: 10%;
+  }
+
+  .button{
+    width:50%;
+    height:10%;
+    margin-left: 25%;
+    text-align:center; 
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+  }
+
+  .button:hover{
+    width:55%;
+  }
+
+  .bott1{
+    width:100%;
+    height:100%;
+    margin-top:50%;
+    border-color:transparent;
+    border-radius:40px;
+    font-size:128%;
+    cursor:pointer;
+    text-align: center;
+    font-family:'Courier New';
+    background-color:rgb(0, 0, 0);
+    color:#FFFFFF;
+  }
+
+/*  TAB Gameplay */
+
+  /*schermata 2 (gioco)*/
+
+  .parametri {
+    float: right;
+  }
+
+  #countdown {
+    font-family:'Courier New';
+    color: #ffffff;
+    font-size: 350%;
+    margin: 0;
+    height: 5%;
+    width: 15%;
+  }
+
+  /*desc (gioco)*/
+
+  .health {
+    margin-top: 1%;
+    position: relative;
+    width: 210px;
+    height: 30px;
+    background: #b7c0b9;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .health__fill {
+    width: 0%;
+    height: 100%;
+    background: #1eea68;
+    transition: all 0.2s;
+  }
+
+  .health__text {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    font: bold 14px "Quicksand", sans-serif;
+    color: #ffffff;
+  }
+
+  .conts{
+    border: solid 1px white;
+    text-align: center;
+    font-family:'Courier New';
+    font-size:130%;
+    width:100%;
+    height:100%;
+    color:#FFFFFF;
+  }
+
+  /* campo */
+
+/* TAB Comandi */
+
+  /*schermata_ 2 (gioco)*/
+
+  #titobarca{
+    font-family:'Courier New';
+    font-size:125%;
+    text-align:center;
+    font-weight: bold;
+    color: white;
+  }
+
+  #table1{
+    width:50%;
+    height:50%;
+    margin-left: 20%;
+    border:1px solid black;
+    border-collapse: collapse;
+  }
+
+  .selez{
+    border:1px solid white;
+    table-layout: fixed;
+    width:100%;
+    height:20%;
+  }
+
+  /* desc */
+
+  .desc1{
+    text-align: center;
+    font-size:220%;
+    font-family:"Courier New";
+    color: white;
+  }
+
+
+/* TAB Regole */
+
+  /* schermata_2 */
+
+  /* titobarca */
+
+  /* table1 */
+
+  /* selez */
+
+  /* desc */
+
+/* Generate */
+
 .campogioco{
   border:1px solid black;
   table-layout: fixed;
 }
-#titobarca{
-  font-family:'Courier New';
-  font-size:125%;
-  text-align:center;
-  font-weight: bold;
-  color: white;
-}
 
-.desc{
-  font-size:100%;
-  overflow:auto;
-  width:100%;
-  height:130%;
-  font-family:"Courier New";
-  color: white;
-  text-align:center;
-  margin-bottom: 10%;
-}
-.desc1{
-  text-align: center;
-  font-size:220%;
-  font-family:"Courier New";
-  color: white;
-}
-.selez{
-  border:1px solid white;
-  table-layout: fixed;
-  width:100%;
-  height:20%;
-}
-.spazim{
-  width:100%;
-  height:100%;
-}
 .comand{
   margin-top: 15%;
   margin-right: 1%;
@@ -89,138 +264,4 @@
   display: block;
   width:100%;
   height:100%;
-}
-.schermata {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: url(image/fondale.png) no-repeat center top;
-  position: fixed; 
-  z-index: -1;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.schermata_2 {
-  width: 100%;
-  height: 100%;
-  background: url(image/fondale_2.png);
-  position: fixed; 
-}
-
-.parametri {
-  float: right;
-}
-
-#countdown {
-  font-family:'Courier New';
-  color: #ffffff;
-  font-size: 350%;
-  margin: 0;
-  height: 5%;
-  width: 15%;
-}
-
-.health {
-  margin-top: 1%;
-  position: relative;
-  width: 210px;
-  height: 30px;
-  background: #b7c0b9;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.health__fill {
-  width: 0%;
-  height: 100%;
-  background: #1eea68;
-  transition: all 0.2s;
-}
-
-.health__text {
-  position: absolute;
-  top: 50%;
-  right: 5px;
-  transform: translateY(-50%);
-  font: bold 14px "Quicksand", sans-serif;
-  color: #ffffff;
-}
-
-#container{
-  width:100%;
-  height: 180%;
-}
-
-.nnavselezione{
-  font-family:'Courier New';
-  font-size:112%;
-  color:#fff;
-  text-align:center;
-  font-weight: bold;
-  height:6%
-}
-
-.naveselezione{
-  width:19.7%;
-  height: 43%;
-  background: linear-gradient(#0b4476, #074365);
-  float:left;
-  border-top: 1px solid #000000;
-  border-bottom: 1px solid #000000;
-  border-left:1px solid #000000;
-  border-right: 1px solid #000000;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 1);
-}
-
-.infos{
-  width: 100%;
-  height: 30%;
-}
-
-.imgselezione{
-  width:100%;
-  height:30%;
-  margin:5% auto 0 auto;
-  text-align:center;
-}
-
-.titoloselezione{
-  font-family:'Courier New';
-  color:#fff;
-  font-size:300%;
-  font-weight:normal;
-  text-align:center;
-  text-transform:uppercase;
-  text-shadow: 1px 2px 5px rgba(65, 65, 240, 0.897);
-  margin-top: 1.5%;
-}
-
-.titolo{
-  font-family:'Courier New';
-  color:#ffffff;
-  font-size:500%;
-  font-weight:bold;
-  text-align:center;
-  text-transform:uppercase;
-  text-shadow: 1px 2px 5px rgba(2, 2, 223, 0.897);
-  margin-top: 3%;
-}
-
-.button{
-  width:50%;
-  height:10%;
-  margin-left: 25%;
-  text-align:center; 
-  -moz-transition: all 0.4s ease-in-out;
-  -o-transition: all 0.4s ease-in-out;
-  -ms-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-}
-
-.button:hover{
-  width:55%;
 }
