@@ -213,32 +213,17 @@
 
 /* TAB Comandi */
 
-  /*schermata_ 2 (gioco)*/
+  /* TAB Comandi */
 
-  #titobarca{
-    font-family:'Courier New';
-    font-size:125%;
-    text-align:center;
-    font-weight: bold;
-    color: white;
+  /* schermata_2 */
+
+  .comandi {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed; 
   }
-
-  .selez{
-    border:1px solid white;
-    table-layout: fixed;
-    width:100%;
-    height:20%;
-  }
-
-  /* desc */
-
-  .desc1{
-    text-align: center;
-    font-size:220%;
-    font-family:"Courier New";
-    color: white;
-  }
-
 
 /* TAB Regole */
 
