@@ -174,6 +174,134 @@ class CorHMS extends Nave{
   }
 }
 
+class PHMS extends Nave{ 
+  #cooldownaspec1 
+  #cooldownaspec2
+  #cooldownaspec3
+  #util1
+  #util2
+  #util3
+
+  constructor(mov,vis,son,can,util1,util2,util3){ 
+    super(mov,vis,son,can);
+    this.cooldownaspec1=false;
+    this.cooldownaspec2=false;
+    this.cooldownaspec3=false;
+    this.util1=util1;
+    this.util2=util2;
+    this.util3=util3;
+  }
+
+  get util1(){
+    return this.#util1; 
+  }
+
+  get util2(){
+    return this.#util2;
+  }
+
+  get util3(){
+    return this.#util3;
+  }
+
+  set util1(util1){
+    this.#util1=util1;
+  }
+
+  set util2(util2){
+    this.#util2=util2;
+  }
+
+  set util3(util3){
+    this.#util3=util3;
+  }
+
+  get cooldownaspec1(){
+    return this.#cooldownaspec1;
+  }
+
+  get cooldownaspec2(){
+    return this.#cooldownaspec2;
+  }
+
+  get cooldownaspec3(){
+    return this.#cooldownaspec3;
+  }
+
+  set cooldownaspec1(cooldownaspec1){
+    this.#cooldownaspec1=cooldownaspec1;
+  }
+
+  set cooldownaspec2(cooldownaspec2){
+    this.#cooldownaspec2=cooldownaspec2;
+  }
+
+  set cooldownaspec3(cooldownaspec3){
+    this.#cooldownaspec3=cooldownaspec3;
+  }
+  
+  aSpec1(s){ 
+    if (!this.cooldownaspec1){
+      this.cooldownaspec1=true;
+      if (this.util1!=0){
+        this.util--;
+        if (this.posx+6>=s.posx&&this.posx-6<=s.posx&&this.posy+6>=s.posy&&this.posy-6<=s.posy){
+          s.vit=s.vit-40;
+          if (s.vit<=0){
+            updateHealthBar(document.querySelector(".health"),0);
+          }
+          else{
+            updateHealthBar(document.querySelector(".health"),s.vit);
+          }
+        }
+      }
+      setTimeout(()=>{this.cooldownaspec1=false;},5000);
+    }
+    else{
+      document.getElementById("aspec").innerHTML="Armamento in cooldown";
+      setTimeout(()=>{document.getElementById("aspec").innerHTML="30"},1000);
+    }
+  }
+  aSpec2(s){
+    if (this.cooldownaspec2){
+      this.cooldownaspec2=true;
+      if (this.util2!=0){
+        this.util2--;
+        if ((s.posx<=this.posx+10&&s.posx>=this.posx-10&&s.posy<=this.posy+3&&s.posy>=this.posy-3)||(s.posy<=this.posy+10&&s.posy>=this.posy-10&&s.posx<=this.posx+3&&s.posx>=this.posx-3)){
+          pxtemp=s.posx;
+          pytemp=s.posy;
+          document.getElementById(`px${pxtemp}py${pytemp}`).src="image/casellar.png";
+          setTimeout(()=>{document.getElementById(`px${pxtemp}py${pytemp}`).src="image/casella.png"},2000);
+        }
+      }
+      setTimeout(()=>{this.cooldownaspec2=false;},5000);
+    }
+    else{
+      document.getElementById("aspec").innerHTML="Armamento in cooldown";
+      setTimeout(()=>{document.getElementById("aspec").innerHTML="30"},1000);
+    }
+  }
+  aSpec3(s){
+    if (this.cooldownaspec3){
+      if (this.util3!=0){
+        this.util3--;
+        if ((s.posx<=this.posx+10&&s.posx>=this.posx-10&&s.posy<=this.posy+3&&s.posy>=this.posy-3)||(s.posy<=this.posy+10&&s.posy>=this.posy-10&&s.posx<=this.posx+3&&s.posx>=this.posx-3)){
+          pxtemp=s.posx;
+          pytemp=s.posy;
+          document.getElementById(`px${pxtemp}py${pytemp}`).src="image/casellar.png";
+          setTimeout(()=>{document.getElementById(`px${pxtemp}py${pytemp}`).src="image/casella.png"},2000);
+        }
+      }
+      setTimeout(()=>{this.cooldownaspec3=false;},5000);
+    }
+    else{
+      document.getElementById("aspec").innerHTML="Armamento in cooldown";
+      setTimeout(()=>{document.getElementById("aspec").innerHTML="30"},1000);
+    }
+  }
+}
+
+
 
 class Siluro{
   #mov
