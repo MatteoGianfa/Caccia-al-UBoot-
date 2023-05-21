@@ -37,6 +37,9 @@ class Nave{
   get util(){ 
     return this.#util;
   }
+  set mov(mov){
+    this.#mov = mov;
+  }
   get mov(){
     return this.#mov;
   }
@@ -708,7 +711,7 @@ function movimenton(event){
       break;
       case 'L':
       case 'l':
-     if (!n.cooldowncan){ //Aggiunto il cooldown del cannone qui (Tutto l'if)
+     if (!n.cooldowncan){ 
           n.cooldowncan=true;
           if((n.can.git+n.posx >= s.posx && n.posx-n.can.git <= s.posx) && (n.posy+n.can.git >= s.posy && n.posy-n.can.git <= s.posy ))
           {
@@ -728,7 +731,6 @@ function movimenton(event){
           document.getElementById("cann").innerHTML="Cannone in cooldown";
           setTimeout(()=>{document.getElementById("cann").innerHTML="30";},1000);
         }
-      }
       break;
       case 'K':
       case 'k': 
