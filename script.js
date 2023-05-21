@@ -56,15 +56,7 @@ class Nave{
     return this.#posy;
   }
   
-   aSpec(s){ 
-    if (this.#util!=0){
-      this.#util--;
-      if (this.posx+1>=s.posx&&this.posx-1<=s.posx&&this.posy+1>=s.posy&&this.posy-1<=s.posy){
-        return 70;
-      }
-    }
-    return 0;
-  }
+   
   
    muovisu(){
     if (this.#posy-this.#mov>=0){ //questa riga, insieme all'interno dell'if di muovisin è stato cambiato, in più è stato aggiunto un else a tutti
