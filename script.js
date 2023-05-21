@@ -518,72 +518,110 @@ function cambiastato(){
 }
 function movimentos(){
   let movscelta=cas(1,4);
+  let pyatt; 
+  let pxatt;
   switch (movscelta){
     case 1:
+      pxatt=s.posx; 
+      pyatt=s.posy;
       s.muovides();
-      if (s.posx==n.posx&&s.posy==n.posy){
-        document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellav.png";
-        document.getElementById(`px${s.posx-s.mov}py${s.posy}`).src="image/casella.png";
-        scoincn=true;
-      }
-      else{
-        document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellar.png";
-        if (!scoincn&&!ncoincs){
-          document.getElementById(`px${s.posx-s.mov}py${s.posy}`).src="image/casella.png";
+      if (statos){
+        if (s.posx<=n.posx+n.vis&&s.posx>=n.posx-n.vis&&s.posy<n.posy+n.vis&&s.posy>n.posy-n.vis){ 
+          if (s.posx==n.posx&&s.posy==n.posy){
+            document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellav.png";
+            document.getElementById(`px${s.posx-s.mov}py${s.posy}`).src="image/casella.png";
+            scoincn=true;
+          }
+          else{
+            document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellar.png";
+            if (!scoincn&&!ncoincs){
+              document.getElementById(`px${s.posx-s.mov}py${s.posy}`).src="image/casella.png";
+            }
+            else{
+              scoincn=false;
+            }
+          }
         }
         else{
-          scoincn=false;
+          document.getElementById(`px${pxatt}py${pyatt}`).src="image/casella.png"; 
         }
       }
     break;
     case 2:
+      pxatt=s.posx; 
+      pyatt=s.posy;
       s.muovisin();
-      if (s.posx==n.posx&&s.posy==n.posy){
-        document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellav.png";
-        document.getElementById(`px${s.posx+s.mov}py${s.posy}`).src="image/casella.png";
-        scoincn=true;
-      }
-      else{
-        document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellar.png";
-        if (!scoincn&&!ncoincs){
-          document.getElementById(`px${s.posx+s.mov}py${s.posy}`).src="image/casella.png";
+      if (statos){
+        if (s.posx<=n.posx+n.vis&&s.posx>=n.posx-n.vis&&s.posy<n.posy+n.vis&&s.posy>n.posy-n.vis){ 
+          if (s.posx==n.posx&&s.posy==n.posy){
+            document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellav.png";
+            document.getElementById(`px${s.posx+s.mov}py${s.posy}`).src="image/casella.png";
+            scoincn=true;
+          }
+          else{
+            document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellar.png";
+            if (!scoincn&&!ncoincs){
+              document.getElementById(`px${s.posx+s.mov}py${s.posy}`).src="image/casella.png";
+            }
+            else{
+              scoincn=false;
+            }
+          }
         }
-        else{
-          scoincn=false;
+        else{ 
+          document.getElementById(`px${pxatt}py${pyatt}`).src="image/casella.png";
         }
       }
     break;
     case 3:
+      pxatt=s.posx; 
+      pyatt=s.posy;
       s.muovisu();
-      if (s.posx==n.posx&&s.posy==n.posy){
-        document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellav.png";
-        document.getElementById(`px${s.posx}py${s.posy+s.mov}`).src="image/casella.png";
-        scoincn=true;
-      }
-      else{
-        document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellar.png";
-        if (!scoincn&&!ncoincs){
-          document.getElementById(`px${s.posx}py${s.posy+s.mov}`).src="image/casella.png";
+      if (statos){
+        if (s.posx<n.posx+n.vis&&s.posx>n.posx-n.vis&&s.posy<n.posy+n.vis&&s.posy>n.posy-n.vis){ 
+          if (s.posx==n.posx&&s.posy==n.posy){
+            document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellav.png";
+            document.getElementById(`px${s.posx}py${s.posy+s.mov}`).src="image/casella.png";
+            scoincn=true;
+          }
+          else{
+            document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellar.png";
+            if (!scoincn&&!ncoincs){
+              document.getElementById(`px${s.posx}py${s.posy+s.mov}`).src="image/casella.png";
+            }
+            else{
+              scoincn=false;
+            }
+          }
         }
-        else{
-          scoincn=false;
+        else{ 
+          document.getElementById(`px${pxatt}py${pyatt}`).src="image/casella.png";
         }
       }
     break;
     case 4:
+      pxatt=s.posx;
+      pyatt=s.posy;
       s.muovigiu();
-      if (s.posx==n.posx&&s.posy==n.posy){
-        document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellav.png";
-        document.getElementById(`px${s.posx}py${s.posy-s.mov}`).src="image/casella.png";
-        scoincn=true;
-      }
-      else{
-        document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellar.png";
-        if (!scoincn&&!ncoincs){
-          document.getElementById(`px${s.posx}py${s.posy-s.mov}`).src="image/casella.png";
+      if (statos){
+        if (s.posx<n.posx+n.vis&&s.posx>n.posx-n.vis&&s.posy<n.posy+n.vis&&s.posy>n.posy-n.vis){
+          if (s.posx==n.posx&&s.posy==n.posy){
+            document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellav.png";
+            document.getElementById(`px${s.posx}py${s.posy-s.mov}`).src="image/casella.png";
+            scoincn=true;
+          }
+          else{
+            document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellar.png";
+            if (!scoincn&&!ncoincs){
+              document.getElementById(`px${s.posx}py${s.posy-s.mov}`).src="image/casella.png";
+            }
+            else{
+              scoincn=false;
+            }
+          }
         }
-        else{
-          scoincn=false;
+        else{ 
+          document.getElementById(`px${pxatt}py${pyatt}`).src="image/casella.png";
         }
       }
     break;
