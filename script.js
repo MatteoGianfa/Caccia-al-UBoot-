@@ -708,28 +708,31 @@ function movimenton(event){
       break;
       case 'L':
       case 'l':
-        if((n.can.git+n.posx >= s.posx && n.posx-n.can.git <= s.posx) && (n.posy+n.can.git >= s.posy && n.posy-n.can.git <= s.posy ))
-        {
-          s.vit = s.vit-n.can.dan;
-          if(s.vit <= 0)
+     if (!n.cooldowncan){ //Aggiunto il cooldown del cannone qui (Tutto l'if)
+          n.cooldowncan=true;
+          if((n.can.git+n.posx >= s.posx && n.posx-n.can.git <= s.posx) && (n.posy+n.can.git >= s.posy && n.posy-n.can.git <= s.posy ))
           {
-            updateHealthBar(document.querySelector(".health"), 0 );
+            s.vit = s.vit-n.can.dan;
+            if(s.vit <= 0)
+            {
+              updateHealthBar(document.querySelector(".health"), 0 );
+            }
+            else
+            {
+              updateHealthBar(document.querySelector(".health"), s.vit);
+            }
           }
-          else
-          {
-            updateHealthBar(document.querySelector(".health"), s.vit);
-          }
+          setTimeout(()=>{n.cooldowncan=false;},5000);
         }
+        else{
+          document.getElementById("cann").innerHTML="Cannone in cooldown";
+          setTimeout(()=>{document.getElementById("cann").innerHTML="30";},1000);
+        }
+      }
       break;
       case 'K':
       case 'k': 
-        s.vit=s.vit-n.aSpec(s);
-        if (s.vit<=0){
-          updateHealthBar(document.querySelector(".health"),0);
-        }
-        else{
-          updateHealthBar(document.querySelector(".health"),s.vit);
-        }
+        n.aSpec(s);
       break;
     }
 }
