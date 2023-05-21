@@ -425,19 +425,19 @@ let urlParams=new URLSearchParams(window.location.search);
 let nave=urlParams.get("Nave");
 let n;
 if (nave==1){
-  n=new Nave(1,5,6,new Cannone(2,40),3);
+  n=new CHMS(4,5,6,new Cannone(2,40),3); 
 }
 if (nave==2){
-  n=new Nave(7,1,1,new Cannone(1,1),3);
+  n=new ILHMS(3,5,5,new Cannone(3,40),3);
 }
 if (nave==3){
-  n=new Nave(4,1,1,new Cannone(1,1),3);
+  n=new IPHMS(3,4,4,new Cannone(3,60),2);
 }
 if (nave==4){
-  n=new Nave(5,1,1,new Cannone(1,1),3);
+  n=new CorHMS(3,4,3,new Cannone(5,70),3);
 }
 if (nave==5){
-  n=new Nave(20,1,1,new Cannone(1,1),3);
+  n=new PHMS(3,4,4,new Cannone(0,0),3,3,3);
 }
 
 function inizia(){
@@ -451,6 +451,22 @@ function inizia(){
   }
   t+="</table>";
   document.getElementById("campo").innerHTML=t;
+  if (n instanceof PHMS){ 
+    document.getElementById("abilita").innerHTML+="<div class='desc'>Cannone Inesistente</div>";
+    document.getElementById("abilita").innerHTML+="<div class='desc'>Armamento</div>";
+    document.getElementById("abilita").innerHTML+="<div class='desc'>AEREO ricognitore</div>";
+    document.getElementById("abilita").innerHTML+="<div id='aspec1' class='desc'>30</div>";
+    document.getElementById("abilita").innerHTML+="<div class='desc'>AEREO sonar</div>";
+    document.getElementById("abilita").innerHTML+="<div id='aspec2' class='desc'>30</div>";
+    document.getElementById("abilita").innerHTML+="<div class='desc'>AEREO danno</div>";
+    document.getElementById("abilita").innerHTML+="<div id='aspec3' class='desc'>30</div>";
+  }
+  else{ 
+    document.getElementById("abilita").innerHTML+="<div class='desc'>Cannone</div>";
+    document.getElementById("abilita").innerHTML+="<div id='cann' class='desc'>30</div>";
+    document.getElementById("abilita").innerHTML+="<div class='desc'>Armamento</div>";
+    document.getElementById("abilita").innerHTML+="<div id='aspec' class='desc'>30</div>";
+  }
   controlloGiocatore();
 }
 
