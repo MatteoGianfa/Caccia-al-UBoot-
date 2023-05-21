@@ -122,7 +122,6 @@ class CHMS extends Nave{
 }
 
 class ILHMS extends Nave{ 
-  
   constructor(mov,vis,son,can,util){
     super(mov,vis,son,can,util);
   }
@@ -149,7 +148,30 @@ class ILHMS extends Nave{
       setTimeout(()=>{document.getElementById("aspec").innerHTML="30"},1000);
     }
   }
+}
 
+class CorHMS extends Nave{ 
+  constructor(mov,vis,son,can,util){
+    super(mov,vis,son,can,util);
+  }
+  
+  aSpec(){ 
+    if (!this.cooldownaspec){
+      this.cooldownaspec=true;
+      if (this.util!=0){
+        this.util--;
+        console.log(this.mov);
+        this.mov=5;
+        setTimeout(()=>{this.mov=3},7000);
+        console.log(this.mov);
+      }
+      setTimeout(()=>{this.cooldownaspec=false;},5000);
+    }
+    else{
+      document.getElementById("aspec").innerHTML="Armamento in cooldown";
+      setTimeout(()=>{document.getElementById("aspec").innerHTML="30"},1000);
+    }
+  }
 }
 
 
