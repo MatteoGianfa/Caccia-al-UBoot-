@@ -301,6 +301,35 @@ class PHMS extends Nave{
   }
 }
 
+class IPHMS extends Nave{
+  constructor(mov,vis,son,can,util){
+    super(mov,vis,son,can,util);
+  }
+
+  aSpec(s){
+    if (!this.cooldownaspec){
+      this.cooldownaspec=true;
+      if (this.util!=0){
+        this.util--;
+        if (this.posx+7>=s.posx&&this.posx-7<=s.posx&&this.posy+7>=s.posy&&this.posy-7<=s.posy){
+          s.vit=s.vit-50;
+          if (s.vit<=0){
+            updateHealthBar(document.querySelector(".health"),0);
+          }
+          else{
+            updateHealthBar(document.querySelector(".health"),s.vit);
+          }
+        }
+      }
+      setTimeout(()=>{this.cooldownaspec=false;},5000);
+    }
+    else{
+      document.getElementById("aspec").innerHTML="Armamento in cooldown";
+      setTimeout(()=>{document.getElementById("aspec").innerHTML="30"},1000);
+    }
+  }
+}
+
 
 
 class Siluro{
