@@ -6,14 +6,33 @@ class Nave{
   #posx
   #posy
   #util 
+  #cooldowncan 
+  #cooldownaspec
   constructor(mov,vis,son,can,util){
-    this.#mov=mov;
+    this.mov=mov;
     this.#vis=vis;
     this.#son=son;
     this.#can=can;
     this.#posx=0;
     this.#posy=0;
-    this.#util=util; 
+    this.util=util;
+    this.cooldowncan=false; 
+    this.cooldownaspec=false;
+  }
+  get cooldowncan(){ 
+    return this.#cooldowncan;
+  }
+  set cooldowncan(cooldowncan){ 
+    this.#cooldowncan=cooldowncan;
+  }
+  get cooldownaspec(){ 
+    return this.#cooldownaspec;
+  }
+  set cooldownaspec(cooldownaspec){ 
+    this.#cooldownaspec=cooldownaspec;
+  }
+  set util(util){ 
+    this.#util=util;
   }
   get util(){ 
     return this.#util;
