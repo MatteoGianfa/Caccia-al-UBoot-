@@ -5,8 +5,8 @@ class Nave{
   #can
   #posx
   #posy
-  #util 
-  #cooldowncan 
+  #util
+  #cooldowncan
   #cooldownaspec
   constructor(mov,vis,son,can,util){
     this.mov=mov;
@@ -16,29 +16,29 @@ class Nave{
     this.#posx=0;
     this.#posy=0;
     this.util=util;
-    this.cooldowncan=false; 
+    this.cooldowncan=false;
     this.cooldownaspec=false;
   }
-  get cooldowncan(){ 
+  get cooldowncan(){
     return this.#cooldowncan;
   }
-  set cooldowncan(cooldowncan){ 
+  set cooldowncan(cooldowncan){
     this.#cooldowncan=cooldowncan;
   }
-  get cooldownaspec(){ 
+  get cooldownaspec(){
     return this.#cooldownaspec;
   }
-  set cooldownaspec(cooldownaspec){ 
+  set cooldownaspec(cooldownaspec){
     this.#cooldownaspec=cooldownaspec;
   }
-  set util(util){ 
+  set util(util){
     this.#util=util;
+  }
+  set mov(mov){
+    this.#mov=mov;
   }
   get util(){ 
     return this.#util;
-  }
-  set mov(mov){
-    this.#mov = mov;
   }
   get mov(){
     return this.#mov;
@@ -58,9 +58,8 @@ class Nave{
   get posy(){
     return this.#posy;
   }
-
-   muovisu(){
-    if (this.#posy-this.#mov>=0){ 
+  muovisu(){
+    if (this.#posy-this.#mov>=0){
       this.#posy=this.#posy-this.#mov;
     }
     else{
@@ -93,14 +92,14 @@ class Nave{
   }
 }
 
-class CHMS extends Nave{ 
+class CHMS extends Nave{
 
   constructor(mov,vis,son,can,util){
     super(mov,vis,son,can,util);
   }
 
   aSpec(s){ 
-    if (!this.cooldownaspec){ 
+    if (!this.cooldownaspec){
       this.cooldownaspec=true; 
       if (this.util!=0){
         this.util--;
@@ -122,15 +121,18 @@ class CHMS extends Nave{
       setTimeout(()=>{document.getElementById("aspec").innerHTML="30"},1000);
     }
   }
+
 }
 
-class ILHMS extends Nave{ 
+
+class ILHMS extends Nave{
+  
   constructor(mov,vis,son,can,util){
     super(mov,vis,son,can,util);
   }
 
   aSpec(s){
-    if (!this.cooldownaspec){ 
+    if (!this.cooldownaspec){
       this.cooldownaspec=true; 
       if (this.util!=0){
         this.util--;
@@ -151,13 +153,16 @@ class ILHMS extends Nave{
       setTimeout(()=>{document.getElementById("aspec").innerHTML="30"},1000);
     }
   }
+
 }
 
-class CorHMS extends Nave{ 
+
+class CorHMS extends Nave{
+  
   constructor(mov,vis,son,can,util){
     super(mov,vis,son,can,util);
   }
-  
+
   aSpec(){ 
     if (!this.cooldownaspec){
       this.cooldownaspec=true;
@@ -175,17 +180,20 @@ class CorHMS extends Nave{
       setTimeout(()=>{document.getElementById("aspec").innerHTML="30"},1000);
     }
   }
+
 }
 
-class PHMS extends Nave{ 
-  #cooldownaspec1 
+
+class PHMS extends Nave{
+  
+  #cooldownaspec1
   #cooldownaspec2
   #cooldownaspec3
   #util1
   #util2
   #util3
 
-  constructor(mov,vis,son,can,util1,util2,util3){ 
+  constructor(mov,vis,son,can,util1,util2,util3){
     super(mov,vis,son,can);
     this.cooldownaspec1=false;
     this.cooldownaspec2=false;
@@ -196,7 +204,7 @@ class PHMS extends Nave{
   }
 
   get util1(){
-    return this.#util1; 
+    return this.#util1;
   }
 
   get util2(){
@@ -242,8 +250,8 @@ class PHMS extends Nave{
   set cooldownaspec3(cooldownaspec3){
     this.#cooldownaspec3=cooldownaspec3;
   }
-  
-  aSpec1(s){ 
+
+  aSpec1(s){
     if (!this.cooldownaspec1){
       this.cooldownaspec1=true;
       if (this.util1!=0){
@@ -265,6 +273,7 @@ class PHMS extends Nave{
       setTimeout(()=>{document.getElementById("aspec").innerHTML="30"},1000);
     }
   }
+  
   aSpec2(s){
     if (this.cooldownaspec2){
       this.cooldownaspec2=true;
@@ -284,6 +293,7 @@ class PHMS extends Nave{
       setTimeout(()=>{document.getElementById("aspec").innerHTML="30"},1000);
     }
   }
+
   aSpec3(s){
     if (this.cooldownaspec3){
       if (this.util3!=0){
@@ -302,9 +312,12 @@ class PHMS extends Nave{
       setTimeout(()=>{document.getElementById("aspec").innerHTML="30"},1000);
     }
   }
+
 }
 
+
 class IPHMS extends Nave{
+  
   constructor(mov,vis,son,can,util){
     super(mov,vis,son,can,util);
   }
@@ -332,8 +345,6 @@ class IPHMS extends Nave{
     }
   }
 }
-
-
 
 class Siluro{
   #mov
@@ -382,6 +393,8 @@ class Siluro{
     }
   }
 }
+
+
 class Cannone{
   #git
   #dan
@@ -396,6 +409,8 @@ class Cannone{
     return this.#dan;
   }
 }
+
+
 function gioco(){
   window.location.href = "Gioco.htm";
 }
@@ -428,7 +443,7 @@ let urlParams=new URLSearchParams(window.location.search);
 let nave=urlParams.get("Nave");
 let n;
 if (nave==1){
-  n=new CHMS(4,5,6,new Cannone(2,40),3); 
+  n=new CHMS(4,5,6,new Cannone(2,40),3);
 }
 if (nave==2){
   n=new ILHMS(3,5,5,new Cannone(3,40),3);
@@ -454,7 +469,7 @@ function inizia(){
   }
   t+="</table>";
   document.getElementById("campo").innerHTML=t;
-  if (n instanceof PHMS){ 
+  if (n instanceof PHMS){
     document.getElementById("abilita").innerHTML+="<div class='desc'>Cannone Inesistente</div>";
     document.getElementById("abilita").innerHTML+="<div class='desc'>Armamento</div>";
     document.getElementById("abilita").innerHTML+="<div class='desc'>AEREO ricognitore</div>";
@@ -464,7 +479,7 @@ function inizia(){
     document.getElementById("abilita").innerHTML+="<div class='desc'>AEREO danno</div>";
     document.getElementById("abilita").innerHTML+="<div id='aspec3' class='desc'>30</div>";
   }
-  else{ 
+  else{
     document.getElementById("abilita").innerHTML+="<div class='desc'>Cannone</div>";
     document.getElementById("abilita").innerHTML+="<div id='cann' class='desc'>30</div>";
     document.getElementById("abilita").innerHTML+="<div class='desc'>Armamento</div>";
@@ -482,7 +497,6 @@ let scoincn=false;
 let ncoincs=false;
 function controlloGiocatore(){
   document.getElementById("px0py0").src="image/casellav.png";
-  document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellar.png";
   avviaSonar(); 
   interv=setInterval(function(){movimentos(); avviaSonar()},1000); 
   cambiastato();
@@ -517,19 +531,19 @@ function cas(da,a){
   return Math.floor(Math.random()*(a-da+1))+da;
 }
 function cambiastato(){
-  setTimeout(function(){statos=true; setTimeout(function(){statos=false; cambiastato();},5000)},5000);
+  setTimeout(function(){statos=true; setTimeout(function(){statos=false; document.getElementById(`px${s.posx}py${s.posy}`).src="image/casella.png"; cambiastato();},5000)},5000);
 }
 function movimentos(){
   let movscelta=cas(1,4);
-  let pyatt; 
+  let pyatt;
   let pxatt;
   switch (movscelta){
     case 1:
-      pxatt=s.posx; 
+      pxatt=s.posx;
       pyatt=s.posy;
       s.muovides();
       if (statos){
-        if (s.posx<=n.posx+n.vis&&s.posx>=n.posx-n.vis&&s.posy<n.posy+n.vis&&s.posy>n.posy-n.vis){ 
+        if (s.posx<=n.posx+n.vis&&s.posx>=n.posx-n.vis&&s.posy<n.posy+n.vis&&s.posy>n.posy-n.vis){
           if (s.posx==n.posx&&s.posy==n.posy){
             document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellav.png";
             document.getElementById(`px${s.posx-s.mov}py${s.posy}`).src="image/casella.png";
@@ -546,16 +560,16 @@ function movimentos(){
           }
         }
         else{
-          document.getElementById(`px${pxatt}py${pyatt}`).src="image/casella.png"; 
+          document.getElementById(`px${pxatt}py${pyatt}`).src="image/casella.png";
         }
       }
     break;
     case 2:
-      pxatt=s.posx; 
+      pxatt=s.posx;
       pyatt=s.posy;
       s.muovisin();
       if (statos){
-        if (s.posx<=n.posx+n.vis&&s.posx>=n.posx-n.vis&&s.posy<n.posy+n.vis&&s.posy>n.posy-n.vis){ 
+        if (s.posx<=n.posx+n.vis&&s.posx>=n.posx-n.vis&&s.posy<n.posy+n.vis&&s.posy>n.posy-n.vis){
           if (s.posx==n.posx&&s.posy==n.posy){
             document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellav.png";
             document.getElementById(`px${s.posx+s.mov}py${s.posy}`).src="image/casella.png";
@@ -571,17 +585,17 @@ function movimentos(){
             }
           }
         }
-        else{ 
+        else{
           document.getElementById(`px${pxatt}py${pyatt}`).src="image/casella.png";
         }
       }
     break;
     case 3:
-      pxatt=s.posx; 
+      pxatt=s.posx;
       pyatt=s.posy;
       s.muovisu();
       if (statos){
-        if (s.posx<n.posx+n.vis&&s.posx>n.posx-n.vis&&s.posy<n.posy+n.vis&&s.posy>n.posy-n.vis){ 
+        if (s.posx<n.posx+n.vis&&s.posx>n.posx-n.vis&&s.posy<n.posy+n.vis&&s.posy>n.posy-n.vis){
           if (s.posx==n.posx&&s.posy==n.posy){
             document.getElementById(`px${s.posx}py${s.posy}`).src="image/casellav.png";
             document.getElementById(`px${s.posx}py${s.posy+s.mov}`).src="image/casella.png";
@@ -597,7 +611,7 @@ function movimentos(){
             }
           }
         }
-        else{ 
+        else{
           document.getElementById(`px${pxatt}py${pyatt}`).src="image/casella.png";
         }
       }
@@ -623,7 +637,7 @@ function movimentos(){
             }
           }
         }
-        else{ 
+        else{
           document.getElementById(`px${pxatt}py${pyatt}`).src="image/casella.png";
         }
       }
@@ -711,7 +725,7 @@ function movimenton(event){
       break;
       case 'L':
       case 'l':
-     if (!n.cooldowncan){ 
+        if (!n.cooldowncan){
           n.cooldowncan=true;
           if((n.can.git+n.posx >= s.posx && n.posx-n.can.git <= s.posx) && (n.posy+n.can.git >= s.posy && n.posy-n.can.git <= s.posy ))
           {
