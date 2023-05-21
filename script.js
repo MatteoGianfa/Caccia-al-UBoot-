@@ -435,6 +435,10 @@ if (page=="gameplay.htm"){
   document.addEventListener("DOMContentLoaded",function(){updateHealthBar(document.querySelector(".health"), 100);})
 }
 
+if (page!="index.htm" && page!="gameplay.htm"){
+  window.addEventListener("keydown", function(e){ if(e.key == "Escape") history.back(); }, false);
+}
+
 function updateHealthBar(healthBar, value) {
   value = Math.round(value);
   healthBar.querySelector(".health__fill").style.width = `${value}%`;
