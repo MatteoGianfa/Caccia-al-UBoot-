@@ -1,15 +1,16 @@
 /* TAB index */
 
   .bott{
-    width:15%;
+    width:18%;
     height:25%;
     margin-top:2%;
+    margin-left: 2%;
     border-color:transparent;
     border-radius:40px;
-    box-shadow:0px 0px 15px #0000FF;
-    font-size: 150%;
+    box-shadow:0px 0px 15px #4646fe;
+    font-size: 250%;
     font-family:'Courier New';
-    background-color:blue;
+    background-color:#0606fb;
     cursor:pointer;
     color:#FFFFFF;
   }
