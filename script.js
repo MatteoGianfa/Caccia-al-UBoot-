@@ -55,11 +55,9 @@ class Nave{
   get posy(){
     return this.#posy;
   }
-  
-   
-  
+
    muovisu(){
-    if (this.#posy-this.#mov>=0){ //questa riga, insieme all'interno dell'if di muovisin è stato cambiato, in più è stato aggiunto un else a tutti
+    if (this.#posy-this.#mov>=0){ 
       this.#posy=this.#posy-this.#mov;
     }
     else{
