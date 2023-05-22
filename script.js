@@ -278,12 +278,13 @@ class PHMS extends Nave{
   }
 
   aSpec1(s){
-    if (!this.cooldownaspec1){
-      this.cooldownaspec1=true;
-      if (this.util1!=0){
+    if (this.util1!=0){
+      if (!this.cooldownaspec1){
+        this.cooldownaspec1=true;
+        let intervasp;
         this.util--;
         if (this.posx+6>=s.posx&&this.posx-6<=s.posx&&this.posy+6>=s.posy&&this.posy-6<=s.posy){
-          s.vit=s.vit-40;
+          s.vit=s.vit-30;
           if (s.vit<=0){
             updateHealthBar(document.querySelector(".health"),0);
           }
@@ -291,19 +292,28 @@ class PHMS extends Nave{
             updateHealthBar(document.querySelector(".health"),s.vit);
           }
         }
+        if (this.util==0){
+          document.getElementById("aspec").innerHTML="Armamento Esaurito";
+        }
+        else{
+          setTimeout(()=>{this.cooldownaspec=false;},20000);
+          let tempo=1*20;
+          document.getElementById("aspec").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60;
+          tempo--;
+          intervasp=setInterval(()=>{if (tempo==0){document.getElementById("aspec").innerHTML="PRONTO";clearInterval(intervasp)}else{tempo=updateCountdown("aspec",tempo,intervasp)}},1000);
+        }
       }
-      setTimeout(()=>{this.cooldownaspec1=false;},5000);
-    }
-    else{
-      document.getElementById("aspec").innerHTML="Armamento in cooldown";
-      setTimeout(()=>{document.getElementById("aspec").innerHTML="30"},1000);
+      else{
+        document.getElementById("aspec").innerHTML="Armamento in cooldown";
+      }
     }
   }
   
   aSpec2(s){
-    if (this.cooldownaspec2){
-      this.cooldownaspec2=true;
-      if (this.util2!=0){
+    if (this.util2!=0){
+      if (this.cooldownaspec2){
+        this.cooldownaspec2=true;
+        let intervasp;
         this.util2--;
         if ((s.posx<=this.posx+10&&s.posx>=this.posx-10&&s.posy<=this.posy+3&&s.posy>=this.posy-3)||(s.posy<=this.posy+10&&s.posy>=this.posy-10&&s.posx<=this.posx+3&&s.posx>=this.posx-3)){
           pxtemp=s.posx;
@@ -311,36 +321,53 @@ class PHMS extends Nave{
           document.getElementById(`px${pxtemp}py${pytemp}`).src="image/casellar.png";
           setTimeout(()=>{document.getElementById(`px${pxtemp}py${pytemp}`).src="image/casella.png"},2000);
         }
+        if (this.util==0){
+          document.getElementById("aspec").innerHTML="Armamento Esaurito";
+        }
+        else{
+          setTimeout(()=>{this.cooldownaspec=false;},20000);
+          let tempo=1*20;
+          document.getElementById("aspec").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60;
+          tempo--;
+          intervasp=setInterval(()=>{if (tempo==0){document.getElementById("aspec").innerHTML="PRONTO";clearInterval(intervasp)}else{tempo=updateCountdown("aspec",tempo,intervasp)}},1000);
+        }
       }
-      setTimeout(()=>{this.cooldownaspec2=false;},5000);
-    }
-    else{
-      document.getElementById("aspec").innerHTML="Armamento in cooldown";
-      setTimeout(()=>{document.getElementById("aspec").innerHTML="30"},1000);
+      else{
+        document.getElementById("aspec").innerHTML="Armamento in cooldown";
+      }
     }
   }
 
   aSpec3(s){
-    if (this.cooldownaspec3){
-      if (this.util3!=0){
+    if (this.util3!=0){
+      if (this.cooldownaspec3){
+        this.cooldownaspec3=true;
+        let intervasp;
         this.util3--;
-        if ((s.posx<=this.posx+10&&s.posx>=this.posx-10&&s.posy<=this.posy+3&&s.posy>=this.posy-3)||(s.posy<=this.posy+10&&s.posy>=this.posy-10&&s.posx<=this.posx+3&&s.posx>=this.posx-3)){
+        if ((s.posx<=this.posx+8&&s.posx>=this.posx-8&&s.posy<=this.posy+3&&s.posy>=this.posy-3)||(s.posy<=this.posy+8&&s.posy>=this.posy-8&&s.posx<=this.posx+3&&s.posx>=this.posx-3)){
           pxtemp=s.posx;
           pytemp=s.posy;
           document.getElementById(`px${pxtemp}py${pytemp}`).src="image/casellar.png";
           setTimeout(()=>{document.getElementById(`px${pxtemp}py${pytemp}`).src="image/casella.png"},2000);
         }
+        if (this.util==0){
+          document.getElementById("aspec").innerHTML="Armamento Esaurito";
+        }
+        else{
+          setTimeout(()=>{this.cooldownaspec=false;},20000);
+          let tempo=1*20;
+          document.getElementById("aspec").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60;
+          tempo--;
+          intervasp=setInterval(()=>{if (tempo==0){document.getElementById("aspec").innerHTML="PRONTO";clearInterval(intervasp)}else{tempo=updateCountdown("aspec",tempo,intervasp)}},1000);
+        }
       }
-      setTimeout(()=>{this.cooldownaspec3=false;},5000);
-    }
-    else{
-      document.getElementById("aspec").innerHTML="Armamento in cooldown";
-      setTimeout(()=>{document.getElementById("aspec").innerHTML="30"},1000);
+      else{
+        document.getElementById("aspec").innerHTML="Armamento in cooldown";
+      }
     }
   }
 
 }
-
 
 class IPHMS extends Nave{
   
