@@ -836,24 +836,27 @@ function updateHealthBar(healthBar, value) {
   healthBar.querySelector(".health__text").textContent = `${value} HP`;
 }  
 
-let time=7*60;
-let refreshIntervalId
+
+let refreshIntervalId;
 
 function avviaCountdown(){
-  updateCountdown();
-  setInterval(updateCountdown, 1000);
+  let tempo=7*60;
+  document.getElementById("countdown").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60;
+  tempo--;
+  refreshIntervalId=setInterval(()=>{tempo=updateCountdown("countdown",tempo,refreshIntervalId)}, 1000);
 }
-function updateCountdown() {
-    const minuti = Math.floor(time / 60); 
-    let secondi = time % 60;
+function updateCountdown(id,temp,int) {
+    const minuti = Math.floor(temp / 60); 
+    let secondi = temp % 60;
 
     secondi = secondi < 10 ? '0' + secondi : secondi; 
-    const contdownEl = document.getElementById("countdown"); 
-    contdownEl.innerHTML = `${minuti}:${secondi}`;
+    const contdownEl = document.getElementById(id);
+    contdownEl.innerHTML = ${minuti}:${secondi};
 
-    time--;
+    temp--;
 
-    if (time < 0) { 
-        clearInterval(refreshIntervalId);
+    if (temp < 0) { 
+        clearInterval(int);
     }
+    return temp;
 }
