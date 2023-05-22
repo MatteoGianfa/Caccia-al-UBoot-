@@ -787,6 +787,7 @@ function movimenton(event){
       break;
       case 'L':
       case 'l':
+        let intervcan;
         if (!n.cooldowncan){
           n.cooldowncan=true;
           if((n.can.git+n.posx >= s.posx && n.posx-n.can.git <= s.posx) && (n.posy+n.can.git >= s.posy && n.posy-n.can.git <= s.posy ))
@@ -801,13 +802,16 @@ function movimenton(event){
               updateHealthBar(document.querySelector(".health"), s.vit);
             }
           }
-          setTimeout(()=>{n.cooldowncan=false;},5000);
+          setTimeout(()=>{n.cooldowncan=false;},10000);
+          let tempo=1*10;
+          document.getElementById("cann").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60;
+          tempo--;
+          intervcan=setInterval(()=>{if (tempo==0){document.getElementById("cann").innerHTML="PRONTO";clearInterval(intervcan)}else{tempo=updateCountdown("cann",tempo,intervcan)}},1000);
         }
         else{
           document.getElementById("cann").innerHTML="Cannone in cooldown";
-          setTimeout(()=>{document.getElementById("cann").innerHTML="30";},1000);
         }
-      break;
+        break;
       case 'K':
       case 'k': 
         n.aSpec(s);
