@@ -99,13 +99,14 @@ class CHMS extends Nave{
   }
 
   aSpec(s){ 
-    if (!this.cooldownaspec){
-      this.cooldownaspec=true; 
-      if (this.util!=0){
+    if (this.util!=0){
+      if (!this.cooldownaspec){
+        this.cooldownaspec=true;
+        let intervasp;
         this.util--;
         if (this.posx+1>=s.posx&&this.posx-1<=s.posx&&this.posy+1>=s.posy&&this.posy-1<=s.posy){
           console.log(this.util);
-          s.vit=s.vit-70;
+          s.vit=s.vit-40;
           if (s.vit<=0){
             updateHealthBar(document.querySelector(".health"),0);
           }
@@ -113,12 +114,20 @@ class CHMS extends Nave{
             updateHealthBar(document.querySelector(".health"),s.vit);
           }
         }
+        if (this.util==0){
+          document.getElementById("aspec").innerHTML="Armamento Esaurito";
+        }
+        else{
+          setTimeout(()=>{this.cooldownaspec=false;},20000);
+          let tempo=1*20;
+          document.getElementById("aspec").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60;
+          tempo--;
+          intervasp=setInterval(()=>{if (tempo==0){document.getElementById("aspec").innerHTML="PRONTO";clearInterval(intervasp)}else{tempo=updateCountdown("aspec",tempo,intervasp)}},1000);
+        }
       }
-      setTimeout(()=>{this.cooldownaspec=false;},5000);
-    }
-    else{
-      document.getElementById("aspec").innerHTML="Armamento in cooldown";
-      setTimeout(()=>{document.getElementById("aspec").innerHTML="30"},1000);
+      else{
+        document.getElementById("aspec").innerHTML="Armamento in cooldown";
+      }
     }
   }
 
