@@ -135,7 +135,7 @@ class CHMS extends Nave{
 
 
 class ILHMS extends Nave{
-
+  
   constructor(mov,vis,son,can,util){
     super(mov,vis,son,can,util);
   }
@@ -176,7 +176,7 @@ class ILHMS extends Nave{
 
 
 class CorHMS extends Nave{
-
+  
   constructor(mov,vis,son,can,util){
     super(mov,vis,son,can,util);
   }
@@ -369,8 +369,9 @@ class PHMS extends Nave{
 
 }
 
-class IPHMS extends Nave{
 
+class IPHMS extends Nave{
+  
   constructor(mov,vis,son,can,util){
     super(mov,vis,son,can,util);
   }
@@ -535,24 +536,23 @@ function inizia(){
     document.getElementById("abilita").innerHTML+="<div class='desc'>Cannone Inesistente</div>";
     document.getElementById("abilita").innerHTML+="<div class='desc'>Armamento</div>";
     document.getElementById("abilita").innerHTML+="<div class='desc'>AEREO ricognitore</div>";
-    document.getElementById("abilita").innerHTML+="<div id='aspec1' class='desc'>30</div>";
+    document.getElementById("abilita").innerHTML+="<div id='aspec1' class='desc'>PRONTO</div>";
     document.getElementById("abilita").innerHTML+="<div class='desc'>AEREO sonar</div>";
-    document.getElementById("abilita").innerHTML+="<div id='aspec2' class='desc'>30</div>";
+    document.getElementById("abilita").innerHTML+="<div id='aspec2' class='desc'>PRONTO</div>";
     document.getElementById("abilita").innerHTML+="<div class='desc'>AEREO danno</div>";
-    document.getElementById("abilita").innerHTML+="<div id='aspec3' class='desc'>30</div>";
+    document.getElementById("abilita").innerHTML+="<div id='aspec3' class='desc'>PRONTO</div>";
   }
   else{
     document.getElementById("abilita").innerHTML+="<div class='desc'>Cannone</div>";
-    document.getElementById("abilita").innerHTML+="<div id='cann' class='desc'>30</div>";
+    document.getElementById("abilita").innerHTML+="<div id='cann' class='desc'>PRONTO</div>";
     document.getElementById("abilita").innerHTML+="<div class='desc'>Armamento</div>";
-    document.getElementById("abilita").innerHTML+="<div id='aspec' class='desc'>30</div>";
+    document.getElementById("abilita").innerHTML+="<div id='aspec' class='desc'>PRONTO</div>";
   }
   controlloGiocatore();
 }
 
 let s=new Siluro(3,100);
 let fine=false;
-let interv;
 let intervstato;
 let statos=false;
 let scoincn=false;
@@ -593,7 +593,7 @@ function cas(da,a){
   return Math.floor(Math.random()*(a-da+1))+da;
 }
 function cambiastato(){
-  setTimeout(function(){statos=true; setTimeout(function(){statos=false; document.getElementById(`px${s.posx}py${s.posy}`).src="image/casella.png"; cambiastato();},5000)},5000);
+  setTimeout(function(){statos=true; setTimeout(function(){statos=false; document.getElementById(`px${s.posx}py${s.posy}`).src="image/casella.png"; cambiastato();},40000)},30000);
 }
 function movimentos(){
   let movscelta=cas(1,4);
@@ -811,7 +811,7 @@ function movimenton(event){
         else{
           document.getElementById("cann").innerHTML="Cannone in cooldown";
         }
-        break;
+      break;
       case 'K':
       case 'k': 
         n.aSpec(s);
@@ -823,11 +823,7 @@ var page = path.split("/").pop();
 if (page=="gameplay.htm"){
   document.addEventListener("DOMContentLoaded",inizia);
   document.addEventListener("DOMContentLoaded",avviaCountdown);
-  document.addEventListener("DOMContentLoaded",function(){updateHealthBar(document.querySelector(".health"), 100);})
-}
-
-if (page!="index.htm" && page!="gameplay.htm"){
-  window.addEventListener("keydown", function(e){ if(e.key == "Escape") history.back(); }, false);
+  document.addEventListener("DOMContentLoaded",function(){updateHealthBar(document.querySelector(".health"), s.vit);})
 }
 
 function updateHealthBar(healthBar, value) {
@@ -835,7 +831,6 @@ function updateHealthBar(healthBar, value) {
   healthBar.querySelector(".health__fill").style.width = `${value}%`;
   healthBar.querySelector(".health__text").textContent = `${value} HP`;
 }  
-
 
 let refreshIntervalId;
 
@@ -851,7 +846,7 @@ function updateCountdown(id,temp,int) {
 
     secondi = secondi < 10 ? '0' + secondi : secondi; 
     const contdownEl = document.getElementById(id);
-    contdownEl.innerHTML = ${minuti}:${secondi};
+    contdownEl.innerHTML = `${minuti}:${secondi}`;
 
     temp--;
 
