@@ -176,26 +176,34 @@ class ILHMS extends Nave{
 
 
 class CorHMS extends Nave{
-  
+
   constructor(mov,vis,son,can,util){
     super(mov,vis,son,can,util);
   }
 
   aSpec(){ 
-    if (!this.cooldownaspec){
-      this.cooldownaspec=true;
-      if (this.util!=0){
+    if (this.util!=0){
+      if (!this.cooldownaspec){
+        this.cooldownaspec=true;
+        let intervasp;
         this.util--;
         console.log(this.mov);
         this.mov=5;
         setTimeout(()=>{this.mov=3},7000);
-        console.log(this.mov);
+        if (this.util==0){
+          document.getElementById("aspec").innerHTML="Armamento Esaurito";
+        }
+        else{
+          setTimeout(()=>{this.cooldownaspec=false;},20000);
+          let tempo=1*20;
+          document.getElementById("aspec").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60;
+          tempo--;
+          intervasp=setInterval(()=>{if (tempo==0){document.getElementById("aspec").innerHTML="PRONTO";clearInterval(intervasp)}else{tempo=updateCountdown("aspec",tempo,intervasp)}},1000);
+        }
       }
-      setTimeout(()=>{this.cooldownaspec=false;},5000);
-    }
-    else{
-      document.getElementById("aspec").innerHTML="Armamento in cooldown";
-      setTimeout(()=>{document.getElementById("aspec").innerHTML="30"},1000);
+      else{
+        document.getElementById("aspec").innerHTML="Armamento in cooldown";
+      }
     }
   }
 
