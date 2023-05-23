@@ -531,7 +531,7 @@ if (nave==4){
   n=new CorHMS(3,4,3,new Cannone(5,30),3);
 }
 if (nave==5){
-  n=new PHMS(3,4,4,new Cannone(0,0),3,3,3);
+  n=new PHMS(3,4,4,new Cannone(0,0),999,3,3);
 }
 
 function inizia(){
