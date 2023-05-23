@@ -546,19 +546,19 @@ function inizia(){
   t+="</table>";
   document.getElementById("campo").innerHTML=t;
   if (n instanceof PHMS){
-    document.getElementById("abilita").innerHTML+="<div class='desc'>Cannone Inesistente</div>";
-    document.getElementById("abilita").innerHTML+="<div class='desc'>Armamento</div>";
-    document.getElementById("abilita").innerHTML+="<div class='desc'>AEREO ricognitore</div>";
+    document.getElementById("abilita").innerHTML+="<div class='para'>Cannone Inesistente</div>";
+    document.getElementById("abilita").innerHTML+="<div class='desc'>Armamento Speciale</div>";
+    document.getElementById("abilita").innerHTML+="<div class='para'>Aereo Ricognitore</div>";
     document.getElementById("abilita").innerHTML+="<div id='aspec1' class='desc'>PRONTO</div>";
-    document.getElementById("abilita").innerHTML+="<div class='desc'>AEREO sonar</div>";
+    document.getElementById("abilita").innerHTML+="<div class='para'>Aereo Sonar</div>";
     document.getElementById("abilita").innerHTML+="<div id='aspec2' class='desc'>PRONTO</div>";
-    document.getElementById("abilita").innerHTML+="<div class='desc'>AEREO danno</div>";
+    document.getElementById("abilita").innerHTML+="<div class='para'>Aereo Bombardiere</div>";
     document.getElementById("abilita").innerHTML+="<div id='aspec3' class='desc'>PRONTO</div>";
   }
   else{
-    document.getElementById("abilita").innerHTML+="<div class='desc'>Cannone</div>";
+    document.getElementById("abilita").innerHTML+="<div class='para'>Cannone</div>";
     document.getElementById("abilita").innerHTML+="<div id='cann' class='desc'>PRONTO</div>";
-    document.getElementById("abilita").innerHTML+="<div class='desc'>Armamento</div>";
+    document.getElementById("abilita").innerHTML+="<div class='para'>Armamento Speciale</div>";
     document.getElementById("abilita").innerHTML+="<div id='aspec' class='desc'>PRONTO</div>";
   }
   controlloGiocatore();
