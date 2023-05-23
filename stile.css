@@ -231,8 +231,6 @@
 
 /* TAB Comandi */
 
-/* TAB Comandi */
-
 /* schermata_2 */
 
 .comandi {
@@ -247,16 +245,27 @@
 
 /* schermata_2 */
 
+  .titoloregole{
+    font-family:'Courier New';
+    color:#ffffff;
+    font-size:500%;
+    font-weight:bold;
+    text-align:center;
+    text-transform:uppercase;
+    text-shadow: 1px 2px 5px rgba(2, 2, 223, 0.897);
+    margin-top: 0%;
+  }
+
   .regole{
   font-size:200%;
   overflow:auto;
   width:99%;
   height:80%;
+  margin-top: 0%;
   font-family:"Courier New";
   color: white;
   text-align:justify;
   overflow-y: scroll;
-  border: 1px solid white;
 }
 
 /* Generate */
