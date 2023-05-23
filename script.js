@@ -842,8 +842,9 @@ if (page=="gameplay.htm"){
   document.addEventListener("DOMContentLoaded",avviaCountdown);
   document.addEventListener("DOMContentLoaded",function(){updateHealthBar(document.querySelector(".health"), s.vit);})
 }
+
 if (page!="gameplay.htm"&&page!="index.htm"){
-  document.addEventListener("keydown",(e)=>{if(e.key){history.back()}});
+  document.addEventListener("keyup",(e)=>{if(e.key == "Escape"){history.back()}});
 }
 
 function updateHealthBar(healthBar, value) {
