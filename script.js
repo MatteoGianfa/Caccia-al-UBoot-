@@ -108,7 +108,7 @@ class CHMS extends Nave{
           console.log(this.util);
           s.vit=s.vit-40;
           if (s.vit<=0){
-            updateHealthBar(document.querySelector(".health"),0);
+            fine(true);
           }
           else{
             updateHealthBar(document.querySelector(".health"),s.vit);
@@ -149,7 +149,7 @@ class ILHMS extends Nave{
         if (this.posx+1>=s.posx&&this.posx-1<=s.posx&&this.posy+1>=s.posy&&this.posy-1<=s.posy){
           s.vit=s.vit-30;
           if (s.vit<=0){
-            updateHealthBar(document.querySelector(".health"),0);
+            fine(true);
           }
           else{
             updateHealthBar(document.querySelector(".health"),s.vit);
@@ -286,25 +286,25 @@ class PHMS extends Nave{
         if (this.posx+6>=s.posx&&this.posx-6<=s.posx&&this.posy+6>=s.posy&&this.posy-6<=s.posy){
           s.vit=s.vit-30;
           if (s.vit<=0){
-            updateHealthBar(document.querySelector(".health"),0);
+            fine(false);
           }
           else{
             updateHealthBar(document.querySelector(".health"),s.vit);
           }
         }
         if (this.util==0){
-          document.getElementById("aspec").innerHTML="Armamento Esaurito";
+          document.getElementById("aspec1").innerHTML="Armamento Esaurito";
         }
         else{
           setTimeout(()=>{this.cooldownaspec=false;},20000);
           let tempo=1*20;
-          document.getElementById("aspec").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60;
+          document.getElementById("aspec1").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60;
           tempo--;
-          intervasp=setInterval(()=>{if (tempo==0){document.getElementById("aspec").innerHTML="PRONTO";clearInterval(intervasp)}else{tempo=updateCountdown("aspec",tempo,intervasp)}},1000);
+          intervasp=setInterval(()=>{if (tempo==0){document.getElementById("aspec1").innerHTML="PRONTO";clearInterval(intervasp)}else{tempo=updateCountdown("aspec1",tempo,intervasp)}},1000);
         }
       }
       else{
-        document.getElementById("aspec").innerHTML="Armamento in cooldown";
+        document.getElementById("aspec1").innerHTML="Armamento in cooldown";
       }
     }
   }
@@ -319,21 +319,21 @@ class PHMS extends Nave{
           pxtemp=s.posx;
           pytemp=s.posy;
           document.getElementById(`px${pxtemp}py${pytemp}`).src="image/casellar.png";
-          setTimeout(()=>{document.getElementById(`px${pxtemp}py${pytemp}`).src="image/casella.png"},2000);
+          setTimeout(()=>{if (pxtemp!=this.posx||pytemp!=this.posy){document.getElementById(`px${pxtemp}py${pytemp}`).src="image/casella.png"}},2000);
         }
         if (this.util==0){
-          document.getElementById("aspec").innerHTML="Armamento Esaurito";
+          document.getElementById("aspec2").innerHTML="Armamento Esaurito";
         }
         else{
           setTimeout(()=>{this.cooldownaspec=false;},20000);
           let tempo=1*20;
-          document.getElementById("aspec").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60;
+          document.getElementById("aspec2").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60;
           tempo--;
-          intervasp=setInterval(()=>{if (tempo==0){document.getElementById("aspec").innerHTML="PRONTO";clearInterval(intervasp)}else{tempo=updateCountdown("aspec",tempo,intervasp)}},1000);
+          intervasp=setInterval(()=>{if (tempo==0){document.getElementById("aspec2").innerHTML="PRONTO";clearInterval(intervasp)}else{tempo=updateCountdown("aspec2",tempo,intervasp)}},1000);
         }
       }
       else{
-        document.getElementById("aspec").innerHTML="Armamento in cooldown";
+        document.getElementById("aspec2").innerHTML="Armamento in cooldown";
       }
     }
   }
@@ -347,22 +347,35 @@ class PHMS extends Nave{
         if ((s.posx<=this.posx+8&&s.posx>=this.posx-8&&s.posy<=this.posy+3&&s.posy>=this.posy-3)||(s.posy<=this.posy+8&&s.posy>=this.posy-8&&s.posx<=this.posx+3&&s.posx>=this.posx-3)){
           pxtemp=s.posx;
           pytemp=s.posy;
-          document.getElementById(`px${pxtemp}py${pytemp}`).src="image/casellar.png";
-          setTimeout(()=>{document.getElementById(`px${pxtemp}py${pytemp}`).src="image/casella.png"},2000);
+          let num1;
+          let num2;
+          if (n.posx>s.posx){
+            num1 = Math.pow(n.posx - pxtemp,2);
+          }
+          else{
+            num1 = Math.pow(pxtemp - n.posx,2);
+          }
+          if (n.posy>s.posy){
+            num2 = Math.pow(n.posy - pytemp,2);
+          }
+          else{
+            num2 = Math.pow(pytemp - n.posy,2);
+          }
+          document.getElementById("aspec3").innerHTML="Caselle distanza: "+Math.floor(Math.sqrt(num1+num2));
         }
         if (this.util==0){
-          document.getElementById("aspec").innerHTML="Armamento Esaurito";
+          document.getElementById("aspec3").innerHTML="Armamento Esaurito";
         }
         else{
           setTimeout(()=>{this.cooldownaspec=false;},20000);
           let tempo=1*20;
-          document.getElementById("aspec").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60;
+          document.getElementById("aspec3").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60;
           tempo--;
-          intervasp=setInterval(()=>{if (tempo==0){document.getElementById("aspec").innerHTML="PRONTO";clearInterval(intervasp)}else{tempo=updateCountdown("aspec",tempo,intervasp)}},1000);
+          intervasp=setInterval(()=>{if (tempo==0){document.getElementById("aspec3").innerHTML="PRONTO";clearInterval(intervasp)}else{tempo=updateCountdown("aspec3",tempo,intervasp)}},1000);
         }
       }
       else{
-        document.getElementById("aspec").innerHTML="Armamento in cooldown";
+        document.getElementById("aspec3").innerHTML="Armamento in cooldown";
       }
     }
   }
@@ -385,7 +398,7 @@ class IPHMS extends Nave{
         if (this.posx+7>=s.posx&&this.posx-7<=s.posx&&this.posy+7>=s.posy&&this.posy-7<=s.posy){
           s.vit=s.vit-30;
           if (s.vit<=0){
-            updateHealthBar(document.querySelector(".health"),0);
+            fine(true);
           }
           else{
             updateHealthBar(document.querySelector(".health"),s.vit);
@@ -552,7 +565,6 @@ function inizia(){
 }
 
 let s=new Siluro(3,100);
-let fine=false;
 let intervstato;
 let statos=false;
 let scoincn=false;
@@ -706,8 +718,12 @@ function movimentos(){
     break;
   }
 }
+let possmov=true;
 function movimenton(event){
-    let posatt;
+    if (possmov){
+      possmov=false;
+      setTimeout(()=>{possmov=true},250);
+      let posatt;
     switch (event.key){
       case 'D':
       case 'd':
@@ -795,7 +811,7 @@ function movimenton(event){
             s.vit = s.vit-n.can.dan;
             if(s.vit <= 0)
             {
-              updateHealthBar(document.querySelector(".health"), 0 );
+              fine(true);
             }
             else
             {
@@ -817,6 +833,7 @@ function movimenton(event){
         n.aSpec(s);
       break;
     }
+    }
 }
 var path = window.location.pathname;
 var page = path.split("/").pop();
@@ -824,6 +841,9 @@ if (page=="gameplay.htm"){
   document.addEventListener("DOMContentLoaded",inizia);
   document.addEventListener("DOMContentLoaded",avviaCountdown);
   document.addEventListener("DOMContentLoaded",function(){updateHealthBar(document.querySelector(".health"), s.vit);})
+}
+if (page!="gameplay.htm"&&page!="index.htm"){
+  document.addEventListener("keydown",(e)=>{if(e.key){history.back()}});
 }
 
 function updateHealthBar(healthBar, value) {
@@ -836,7 +856,7 @@ let refreshIntervalId;
 
 function avviaCountdown(){
   let tempo=7*60;
-  document.getElementById("countdown").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60;
+  document.getElementById("countdown").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60+"0";
   tempo--;
   refreshIntervalId=setInterval(()=>{tempo=updateCountdown("countdown",tempo,refreshIntervalId)}, 1000);
 }
@@ -852,6 +872,18 @@ function updateCountdown(id,temp,int) {
 
     if (temp < 0) { 
         clearInterval(int);
+        fine();
     }
     return temp;
+}
+
+function fine(esito){
+  if (esito){
+    clearInterval(refreshIntervalId);
+    clearInterval(interv);
+    document.getElementById("cont").innerHTML="HAI VINTO";
+  }
+  else{
+    document.getElementById("cont").innerHTML="HAI PERSO";
+  }
 }
