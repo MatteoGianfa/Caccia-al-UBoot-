@@ -1,3 +1,4 @@
+
 class Nave{
   #mov
   #vis
