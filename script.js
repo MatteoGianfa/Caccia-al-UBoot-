@@ -147,7 +147,7 @@ class ILHMS extends Nave{
         let intervasp;
         this.util--;
         if (this.posx+1>=s.posx&&this.posx-1<=s.posx&&this.posy+1>=s.posy&&this.posy-1<=s.posy){
-          s.vit=s.vit-30;
+          s.vit=s.vit-35;
           if (s.vit<=0){
             fine(true);
           }
