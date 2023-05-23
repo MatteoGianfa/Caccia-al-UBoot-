@@ -525,10 +525,10 @@ if (nave==2){
   n=new ILHMS(3,5,5,new Cannone(3,20),3);
 }
 if (nave==3){
-  n=new IPHMS(3,4,4,new Cannone(3,30),2);
+  n=new IPHMS(3,4,4,new Cannone(3,25),2);
 }
 if (nave==4){
-  n=new CorHMS(3,4,3,new Cannone(5,35),3);
+  n=new CorHMS(3,4,3,new Cannone(5,30),3);
 }
 if (nave==5){
   n=new PHMS(3,4,4,new Cannone(0,0),3,3,3);
