@@ -629,11 +629,11 @@ function inizia(){
   if (n instanceof PHMS){
     document.getElementById("abilita").innerHTML+="<div class='para'>Cannone Inesistente</div>";
     document.getElementById("abilita").innerHTML+="<div class='desc'>Armamento Speciale</div>";
-    document.getElementById("abilita").innerHTML+="<div class='para'>Aereo Cannoniere</div>";
+    document.getElementById("abilita").innerHTML+="<div class='para'>Aereo Cannoniere Tasto:P</div>";
     document.getElementById("abilita").innerHTML+="<div id='aspec1' class='desc'>PRONTO</div>";
-    document.getElementById("abilita").innerHTML+="<div class='para'>Aereo Ricognitore</div>";
+    document.getElementById("abilita").innerHTML+="<div class='para'>Aereo Ricognitore Tasto:O</div>";
     document.getElementById("abilita").innerHTML+="<div id='aspec2' class='desc'>PRONTO</div>";
-    document.getElementById("abilita").innerHTML+="<div class='para'>Aereo Sonar</div>";
+    document.getElementById("abilita").innerHTML+="<div class='para'>Aereo Sonar Tasto: I</div>";
     document.getElementById("abilita").innerHTML+="<div id='aspec3cool' class='desc'>PRONTO</div><br><div class='desc' id='aspec3'></div>";
   }
   else{
