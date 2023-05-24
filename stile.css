@@ -147,6 +147,13 @@
 
 /*schermata 2 (gioco)*/
 
+.esit{
+  font-weight:bold;
+  text-align:center;
+  font-size:500%;
+  color:white;
+}
+
 #countdown {
   text-align:center;
   font-family:'Courier New';
@@ -275,6 +282,10 @@
 .campogioco{
 border:1px solid black;
 table-layout: fixed;
+width:2%;
+height:2%;
+font-size:92%;
+color:rgb(38, 211, 211);
 }
 
 .comand{
@@ -293,6 +304,6 @@ height:100%;
 min-height:20%;
 max-height:100%;
 width:48%;
-height: 90%;
+height: 91%;
 margin-left: 20%;
 }
