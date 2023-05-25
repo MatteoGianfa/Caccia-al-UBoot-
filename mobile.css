@@ -3,12 +3,68 @@
         
         font-family:'Courier New';
         color:#fff;
-        font-size:250%;
+        font-size:200%;
         font-weight:normal;
         text-align:center;
         text-transform:uppercase;
         text-shadow: 1px 2px 5px rgba(65, 65, 240, 0.897);
         margin-top: 1.5%;
+      }
+      
+
+      .schermata {
+        width: 100%;
+        height: 100%;
+        background: url(image/fondale.png) no-repeat center top;
+        position: fixed; 
+        z-index: -1;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+
+
+      .bott{
+        width: 50%;
+        margin-top:2%;
+        border-color:transparent;
+        border-radius:40px;
+        box-shadow:0px 0px 15px #4646fe;
+        
+        font-family:'Courier New';
+        background-color:#0606fb;
+        cursor:pointer;
+        color:#FFFFFF;
+      }
+
+      .comand{
+        font-size: 40%;
+      
+        width: 100%;
+        height: 25%;
+        margin-top: 75%;
+        text-align: center;
+        }
+
+        .comandi {
+          width: 100%;
+          height: 60%;
+          margin-top: 40%;
+          
+          left: 0;
+          
+        }
+
+      .titolo{
+        font-family:'Courier New';
+        color:#ffffff;
+        font-size:200%;
+        font-weight:bold;
+        text-align:center;
+        text-transform:uppercase;
+        text-shadow: 1px 2px 5px rgba(2, 2, 223, 0.897);
+        margin-top: 3%;
       }
       
       #container{
@@ -20,8 +76,9 @@
       .nnavselezione{
         
         font-family:'Courier New';
-        font-size:70%;
+        font-size:100%;
         color:#fff;
+        overflow:auto;
         text-align:center;
         font-weight: bold;
         height:7%
@@ -31,7 +88,6 @@
         width:18.9%;
         height: 43%;
         background: linear-gradient(#0b4476, #074365);
-        float:left;
         border-top: 1px solid #000000;
         border-bottom: 1px solid #000000;
         border-left:1px solid #000000;
@@ -68,9 +124,10 @@
       }
       
       .button{
+        
         width:100%;
         height:30%;
-        margin-left:25%;
+        margin: 0;
         -moz-transition: all 0.4s ease-in-out;
         -o-transition: all 0.4s ease-in-out;
         -ms-transition: all 0.4s ease-in-out;
@@ -78,7 +135,8 @@
       }
    
       .bott1{
-        width:80%;
+  
+        width:100%;
         height:80%;
         border-color:transparent;
         border-radius:40px;
@@ -107,6 +165,7 @@
       
       
       #table1{
+        margin: 0;
         width:100%;
         height:80%;
         border:1px solid black;
@@ -131,7 +190,7 @@
         }
       
       .parametri {
-          width:25%;
+          width:27%;
           margin-right:3%;
           float: right;
           border:1px solid black;
@@ -173,5 +232,49 @@
         color:#FFFFFF;
       }
 
+      .titoloregole{
+        font-family:'Courier New';
+        color:#ffffff;
+        font-size:300%;
+        font-weight:bold;
+        text-align:center;
+        text-transform:uppercase;
+        text-shadow: 1px 2px 5px rgba(2, 2, 223, 0.897);
+        margin-top: 0%;
+      }
+    
+      .regole{
+      font-size:100%;
+      overflow:auto;
+      width:90%;
+      height:80%;
+      margin-top: 0%;
+      font-family:"Courier New";
+      color: white;
+      text-align:justify;
+      overflow-y: scroll;
+    }
+
+    .casella{
+      display: block;
+      width:100%;
+      height:100%;
+      }
+      
+      #campo{
+      min-height:20%;
+      max-height:100%;
+      width:48%;
+      height: 91%;
+      margin-left: 20%;
+      }
+      .campogioco{
+        border:1px solid black;
+        table-layout: fixed;
+        width:2%;
+        height:2%;
+        font-size:80%;
+        color:rgb(38, 211, 211);
+        }
       
     }
