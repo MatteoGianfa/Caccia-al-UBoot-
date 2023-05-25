@@ -360,7 +360,7 @@ class PHMS extends Nave{
         if (this.posx+6>=s.posx&&this.posx-6<=s.posx&&this.posy+6>=s.posy&&this.posy-6<=s.posy){
           s.vit=s.vit-30;
           if (s.vit<=0){
-            fine(false);
+            fine(true);
           }
           else{
             updateHealthBar(document.querySelector(".health"),s.vit);
