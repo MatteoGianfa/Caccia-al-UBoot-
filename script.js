@@ -1230,7 +1230,7 @@ if (page=="fine.htm"){
 function rigioca(){
   let urlParams2=new URLSearchParams(window.location.search); 
   let esit=urlParams2.get("esit");
-  if (esit){
+  if (esit=="true"){
     document.getElementById("aaa").innerHTML+="<div class='desc'>HAI VINTO</div><br><div class='schermata_f'>Congratulazioni!<br>Premi questo tasto per tornare al menu' principale</div><input type='button' class='bott' value='Rigioca' onclick='restart()'>";
   }
   else{
@@ -1268,7 +1268,7 @@ function updateCountdown(id,temp,int) {
 
     if (temp < 0) { 
         clearInterval(int);
-        fine();
+        fine(false);
     }
     return temp;
 }
