@@ -523,7 +523,7 @@ class Siluro{
     }
   }
   muovigiu(){
-    if (this.#posy+this.#mov<39){
+    if (this.#posy+this.#mov<=39){
       this.#posy=this.#posy+this.#mov;
     }
   }
@@ -533,7 +533,7 @@ class Siluro{
     }
   }
   muovides(){
-    if (this.#posx+this.#mov<39){
+    if (this.#posx+this.#mov<=39){
       this.#posx=this.#posx+this.#mov;
     }
   }
