@@ -686,7 +686,7 @@ function cas(da,a){
   return Math.floor(Math.random()*(a-da+1))+da;
 }
 function cambiastato(){
-  setTimeout(function(){statos=true; setTimeout(function(){statos=false; document.getElementById(`px${s.posx}py${s.posy}`).src="image/casella.png"; cambiastato();},30000)},40000);
+  setTimeout(function(){statos=true; setTimeout(function(){statos=false; document.getElementById(`px${s.posx}py${s.posy}`).src="image/casella.png"; cambiastato();},30000)},50);
 }
 function movimentos(){
   let movscelta=cas(1,4);
@@ -726,12 +726,9 @@ function movimentos(){
           }
         }
         else{
-          if (!s.trov){	
-            if (s.posx!=pxatt){	
-              document.getElementById(`px${pxatt}py${pyatt}`).src="image/casella.png";	
-            }	
-          }	
-        }	
+          document.getElementById(`px${s.posx}py${s.posy}`).src="image/casella.png";
+          document.getElementById(`px${pxatt}py${pyatt}`).src="image/casella.png";
+        }
       }
       if (n instanceof ILHMS){	
         if (n.b1!=null){
@@ -808,12 +805,9 @@ function movimentos(){
           }
         }
         else{
-          if (!s.trov){	
-            if (pxatt!=s.posx){	
-              document.getElementById(`px${pxatt}py${pyatt}`).src="image/casella.png";	
-            }	
-          }	
-        }	
+          document.getElementById(`px${s.posx}py${s.posy}`).src="image/casella.png";
+          document.getElementById(`px${pxatt}py${pyatt}`).src="image/casella.png";
+        }
       }	
       if (n instanceof ILHMS){	
         if (n.b1!=null){	
@@ -890,12 +884,9 @@ function movimentos(){
           }
         }
         else{
-          if (!s.trov){	
-            if (pyatt!=s.posy){	
-              document.getElementById(`px${pxatt}py${pyatt}`).src="image/casella.png";	
-            }	
-          }	
-        }	
+          document.getElementById(`px${s.posx}py${s.posy}`).src="image/casella.png";
+          document.getElementById(`px${pxatt}py${pyatt}`).src="image/casella.png";
+        }
       }	
       if (n instanceof ILHMS){	
         if (n.b1!=null){	
@@ -972,12 +963,9 @@ function movimentos(){
           }
         }
         else{
-          if (!s.trov){	
-            if (s.posy!=pyatt){	
-              document.getElementById(`px${pxatt}py${pyatt}`).src="image/casella.png";	
-            }	
-          }	
-        }	
+          document.getElementById(`px${s.posx}py${s.posy}`).src="image/casella.png";
+          document.getElementById(`px${pxatt}py${pyatt}`).src="image/casella.png";
+        }
       }	
       if (n instanceof ILHMS){	
         if (n.b1!=null){	
@@ -1230,11 +1218,11 @@ if (page=="fine.htm"){
 function rigioca(){
   let urlParams2=new URLSearchParams(window.location.search); 
   let esit=urlParams2.get("esit");
- if (esit=="true"){
-    document.getElementById("aaa").innerHTML+="<div class='titolo'>HAI VINTO</div><br><div class='schermata_f'>Congratulazioni!</div><input type='button' class='bott2' value='Rigioca' onclick='restart()'>";
+  if (esit=="true"){
+    document.getElementById("aaa").innerHTML+="<div class='desc'>HAI VINTO</div><br><div class='schermata_f'>Congratulazioni!<br>Premi questo tasto per tornare al menu' principale</div><input type='button' class='bott' value='Rigioca' onclick='restart()'>";
   }
   else{
-    document.getElementById("aaa").innerHTML+="<div class='titolo'>HAI PERSO</div><br><div class='schermata_f'>Peccato!</div><input type='button' class='bott2' value='Rigioca' onclick='restart()'>";
+    document.getElementById("aaa").innerHTML+="HAI PERSO<br><div class='schermata_f'>Peccato!<br>Premi questo tasto per tornare al menu' principale</div><input type='button' class='bott' value='Rigioca' onclick='restart()'>";
   }
 }
 
