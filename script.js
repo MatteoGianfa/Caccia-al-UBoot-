@@ -1218,11 +1218,11 @@ if (page=="fine.htm"){
 function rigioca(){
   let urlParams2=new URLSearchParams(window.location.search); 
   let esit=urlParams2.get("esit");
- if (esit=="true"){
-    document.getElementById("aaa").innerHTML+="<div class='titolo'>HAI VINTO</div><br><div class='schermata_f'>Congratulazioni!</div><input type='button' class='bott2' value='Rigioca' onclick='restart()'>";
+if (esit=="true"){
+    document.getElementById("aaa").innerHTML+="<div class='titolo'>HAI VINTO</div><br><div class='schermata_f'>Congratulazioni!</div> <div class='coppa'><img src='image/coppa.png'></div> <input type='button' class='bott2' value='Rigioca' onclick='restart()'>";
   }
   else{
-    document.getElementById("aaa").innerHTML+="<div class='titolo'>HAI PERSO</div><br><div class='schermata_f'>Peccato!</div><input type='button' class='bott2' value='Rigioca' onclick='restart()'>";
+    document.getElementById("aaa").innerHTML+="<div class='titolo'>HAI PERSO</div><br><div class='schermata_f'>Peccato!</div> <input type='button' class='bott2' value='Rigioca' onclick='restart()'>";
   }
 }
 
