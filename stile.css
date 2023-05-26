@@ -14,6 +14,7 @@
   cursor:pointer;
   color:#FFFFFF;
 }
+
 .bott:hover{
   width:20%;
 }
@@ -163,10 +164,6 @@
   margin: 0;
 }
 
-#campo{
-  border:1px solid black;
-}
-
 #table1{
   width:100%;
   height:100%;
@@ -275,6 +272,33 @@
   color: white;
   text-align:justify;
   overflow-y: scroll;
+}
+
+/* Fine*/
+
+.bott2{
+  width:18%;
+  height:25%;
+  margin-top:30%;
+  margin-left: 40%;
+  border-color:transparent;
+  border-radius:40px;
+  box-shadow:0px 0px 15px #4646fe;
+  font-size: 250%;
+  font-family:'Courier New';
+  background-color:#0606fb;
+  cursor:pointer;
+  color:#FFFFFF;
+}
+
+.schermata_f{
+  width:18%;
+  height:25%;
+  margin-top:0%;
+  margin-left: 37%;
+  font-size: 250%;
+  font-family:'Courier New';
+  color:#FFFFFF;
 }
 
 /* Generate */
