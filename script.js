@@ -1268,3 +1268,101 @@ function fine(esito){
     window.location.href=`fine.htm?esit=${esito}`;
   }
 }
+
+function test1(){
+  let nave= new ILHMS(41,10,10,3,3);
+  let nave1= new CHMS(41,29,30,4,6);
+  let nave2= new CorHMS(41,20,3,30);
+  let nave3= new PHMS(41,20,2,2,2,2,22);
+  let nave4= new IPHMS(41,20,30,40,5);
+  for(let i=0;i<10;i++){
+    nave.muovides();
+    nave1.muovides();
+    nave2.muovides();
+    nave3.muovides();
+    nave4.muovides();
+  }
+  if(nave1>=39&&nave1<=0&&nave>=39&&nave<=0&&nave2>=39&&nave2<=0&&nave3>=39&&nave3<=0&&nave4>=39&&nave4<0){
+    console.log(nave.posx,nave.posy);
+    console.log(nave1.posx,nave1.posy);
+    console.log(nave2.posx,nave2.posy);
+    console.log(nave3.posx,nave3.posy);
+    console.log(nave4.posx,nave4.posy);
+    console.log("no")
+  }else{
+    console.log(nave.posx,nave.posy);
+    console.log(nave1.posx,nave1.posy);
+    console.log(nave2.posx,nave2.posy);
+    console.log(nave3.posx,nave3.posy);
+    console.log(nave4.posx,nave4.posy);
+  }
+
+  for(let i=0;i<10;i++){
+    nave.muovigiu();
+    nave1.muovigiu();
+    nave2.muovigiu();
+    nave3.muovigiu();
+    nave4.muovigiu();
+  }
+  if(nave1>=39&&nave1<=0&&nave>=39&&nave<=0&&nave2>=39&&nave2<=0&&nave3>=39&&nave3<=0&&nave4>=39&&nave4<0){
+    console.log(nave.posx,nave.posy);
+    console.log(nave1.posx,nave1.posy);
+    console.log(nave2.posx,nave2.posy);
+    console.log(nave3.posx,nave3.posy);
+    console.log(nave4.posx,nave4.posy);
+    console.log("no")
+  }else{
+    console.log(nave.posx,nave.posy);
+    console.log(nave1.posx,nave1.posy);
+    console.log(nave2.posx,nave2.posy);
+    console.log(nave3.posx,nave3.posy);
+    console.log(nave4.posx,nave4.posy);
+  }
+  
+  for(let i=0;i<10;i++){
+    nave.muovisin();
+    nave1.muovisin();
+    nave2.muovisin();
+    nave3.muovisin();
+    nave4.muovisin();
+  }
+  if(nave1>=39&&nave1<=0&&nave>=39&&nave<=0&&nave2>=39&&nave2<=0&&nave3>=39&&nave3<=0&&nave4>=39&&nave4<0){
+    console.log(nave.posx,nave.posy);
+    console.log(nave1.posx,nave1.posy);
+    console.log(nave2.posx,nave2.posy);
+    console.log(nave3.posx,nave3.posy);
+    console.log(nave4.posx,nave4.posy);
+    console.log("no")
+  }else{
+    console.log(nave.posx,nave.posy);
+    console.log(nave1.posx,nave1.posy);
+    console.log(nave2.posx,nave2.posy);
+    console.log(nave3.posx,nave3.posy);
+    console.log(nave4.posx,nave4.posy);
+  }
+
+  for(let i=0;i<10;i++){
+    nave.muovisu();
+    nave1.muovisu();
+    nave2.muovisu();
+    nave3.muovisu();
+    nave4.muovisu();
+    
+  }
+  
+  if(nave1>=39&&nave1<=0&&nave>=39&&nave<=0&&nave2>=39&&nave2<=0&&nave3>=39&&nave3<=0&&nave4>=39&&nave4<0){
+    console.log(nave.posx,nave.posy);
+    console.log(nave1.posx,nave1.posy);
+    console.log(nave2.posx,nave2.posy);
+    console.log(nave3.posx,nave3.posy);
+    console.log(nave4.posx,nave4.posy);
+    console.log("no")
+  }else{
+    console.log(nave.posx,nave.posy);
+    console.log(nave1.posx,nave1.posy);
+    console.log(nave2.posx,nave2.posy);
+    console.log(nave3.posx,nave3.posy);
+    console.log(nave4.posx,nave4.posy);
+  }
+   
+}
