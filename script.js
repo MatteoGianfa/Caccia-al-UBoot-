@@ -391,11 +391,16 @@ class PHMS extends Nave{
           this.trov=true;	
           setTimeout(()=>{if (pxtemp!=this.posx||pytemp!=this.posy){document.getElementById(`px${pxtemp}py${pytemp}`).src="image/casella.png"; this.trov=false}},5000);
         }
-        setTimeout(()=>{this.cooldownaspec2=false;},20000);	
-        let tempo=1*20;	
-        document.getElementById("aspec2").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60;	
-        tempo--;	
-        intervasp=setInterval(()=>{if (tempo==0){document.getElementById("aspec2").innerHTML="PRONTO";clearInterval(intervasp)}else{tempo=updateCountdown("aspec2",tempo,intervasp)}},1000);
+        setTimeout(()=>{this.cooldownaspec2=false;},20000);
+        if (this.util2==0){
+          document.getElementById("aspec2").innerHTML="Armamento Esaurito";
+        }
+        else{
+          let tempo=1*20;	
+          document.getElementById("aspec2").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60;	
+          tempo--;	
+          intervasp=setInterval(()=>{if (tempo==0){document.getElementById("aspec2").innerHTML="PRONTO";clearInterval(intervasp)}else{tempo=updateCountdown("aspec2",tempo,intervasp)}},1000);
+        }
       }
       else{
         document.getElementById("aspec2").innerHTML="Armamento in cooldown";
@@ -432,7 +437,7 @@ class PHMS extends Nave{
           document.getElementById("aspec3").innerHTML="Uboat non trovato";	
         }	
         setTimeout(()=>{document.getElementById("aspec3").innerHTML=""},5000);
-        if (this.util==0){
+        if (this.util3==0){
           document.getElementById("aspec3").innerHTML="Armamento Esaurito";
         }
         else{
@@ -686,7 +691,7 @@ function cas(da,a){
   return Math.floor(Math.random()*(a-da+1))+da;
 }
 function cambiastato(){
-  setTimeout(function(){statos=true; setTimeout(function(){statos=false; document.getElementById(`px${s.posx}py${s.posy}`).src="image/casella.png"; cambiastato();},30000)},50);
+  setTimeout(function(){statos=true; setTimeout(function(){statos=false; document.getElementById(`px${s.posx}py${s.posy}`).src="image/casella.png"; cambiastato();},30000)},40000);
 }
 function movimentos(){
   let movscelta=cas(1,4);
