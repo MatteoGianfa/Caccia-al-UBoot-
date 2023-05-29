@@ -1371,3 +1371,6 @@ function test1(){
   }
    
 }
+function indietro(){
+  window.location.href="index.htm";
+}
