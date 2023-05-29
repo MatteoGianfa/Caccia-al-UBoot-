@@ -1,10 +1,15 @@
-<html>
+<!DOCTYPE html>
+<html lang="it">
   <head>
     <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="stile.css">
+    <link rel="stylesheet" href="mobile.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="image/favicon.jpg">
   </head>
-  <body>
-    <div>
-      <h1>Accedi</h1>
+  <body class="schermataLogin">
+    <div id="login">
+      <h1 class="titoloLogin">Accedi</h1>
       <?php
         if(isset($_REQUEST['error'])){
           $errore=$_REQUEST['error'];
@@ -26,27 +31,31 @@
             default:
               echo"<h3> errore sconosciuto</h3>";
           }
-
-
-
-
         }
-      
-      
       ?>
+    <div id="datiForm">
       <form action="controlloLogin.php" method="POST">
+        <label for="user">nome utente</label>
         <input
           type="text"
           name="user"
           placeholder="Inserisci il nickname" required
         /><br />
+        <label for="user">password</label>
         <input
           type="text"
           name="password"
           placeholder="Inserisci il password" required
         /><br />
-        <input type="submit" value="ACCEDI" />
+        <div class="button">
+        <input class="bott1"  type="submit" value="ACCEDI" />
+        </div>
       </form>
+      </div>
+      <div>
+        <p>non sei ancora registrato?</p>
+        <a class="transizione" href="registrazione.php">registrati qui</a>
+      </div>
     </div>
   </body>
 </html>
