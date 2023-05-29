@@ -337,3 +337,26 @@ width:48%;
 height: 91%;
 margin-left: 20%;
 }
+
+.indietro{
+  width:8%;
+  height:20%;
+  margin-top:0;
+  margin-left:0;
+  font-size: 150%;
+  color: #ffffff;
+  background-color: #0606fb;
+
+  
+}
+.indietro1{
+  width:8%;
+  height:5%;
+  margin-top:0;
+  margin-left:0;
+  font-size: 150%;
+  color: #ffffff;
+  background-color: #0606fb;
+
+  
+}
