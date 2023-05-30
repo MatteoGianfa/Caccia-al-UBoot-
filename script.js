@@ -1643,11 +1643,12 @@ if (screen.width > 768) {
   }
   /**
    * Questa funzione aggiorna qualsiasi countdown in tutto il programma, anche i cooldown delle armi, diminuendo una variabile che indica il tempo rimanente.
+   * @param {number} id Id del chiamante della funzione
    * @param {number} temp Variabile che indica se il countdown principale è terminato
    * @param {number} int Variabile che interrompe l'intervallo del chiamante
    * @returns 
    */
-  function updateCountdown(temp, int) {
+  function updateCountdown(id,temp, int) {
     const minuti = Math.floor(temp / 60);
     let secondi = temp % 60;
 
