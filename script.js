@@ -1,3 +1,12 @@
+/**
+ * @author Mirco bardhi-Stefano Minniti-Marco Zandona'
+ * @version 2.0
+ */
+
+/**
+ * Classe che rappresenta la nave
+ * @class
+ */
 if (screen.width>768){
   class Nave{
     #mov
@@ -9,6 +18,15 @@ if (screen.width>768){
     #util
     #cooldowncan
     #cooldownaspec
+   /**
+   * Crea una nave con i seguenti parametri:
+   * @constructor 
+   * @param mov movimento massimo della nave
+   * @param vis visibilita massima della nave
+   * @param son oggetto sonar
+   * @param can oggetto cannone 
+   * @param util utilizzi speciali della nave
+   */
     constructor(mov,vis,son,can,util){
       this.mov=mov;
       this.#vis=vis;
@@ -20,78 +38,144 @@ if (screen.width>768){
       this.cooldowncan=false;
       this.cooldownaspec=false;
     }
+    // Getters and Setters
+
+    /**
+     * Restituisce il tempo di ricarica del cannone
+     * @return tempo di ricarica
+    */
     get cooldowncan(){
       return this.#cooldowncan;
     }
+    /**
+    * Imposta il tempo di ricarica del cannone
+    * @param cooldowncan tempo di ricarica
+    */
     set cooldowncan(cooldowncan){
       this.#cooldowncan=cooldowncan;
     }
+    /**
+     * Restituisce il tempo di ricarica dell' arma speciale
+     * @return tempo di ricarica
+    */
     get cooldownaspec(){
       return this.#cooldownaspec;
     }
+    /**
+     * Imposta il tempo di ricarica dell' arma speciale
+     * @param cooldownaspec tempo di ricarica
+    */
     set cooldownaspec(cooldownaspec){
       this.#cooldownaspec=cooldownaspec;
     }
+    /**
+    * Imposta il numero di utilizzi dell' arma speciale
+    * @param util numero di utilizzi
+    */
     set util(util){
       this.#util=util;
     }
+    /**
+    * Imposta il numero di caselle di movimento massimo della nave 
+    * @param mov caselle
+    */
     set mov(mov){
       this.#mov=mov;
     }
+    /**
+    * Imposta il numero di utilizzi dell' arma speciale
+    * @return numero di utilizzi
+    */
     get util(){ 
       return this.#util;
     }
+    /**
+     * Restituisce il numero di caselle di movimento massimo della nave 
+     * @return caselle
+    */
     get mov(){
       return this.#mov;
     }
+    /**
+    * Restituisce la visibilità massima della nave 
+    * @return visibilità
+    */
     get vis(){
       return this.#vis;
     }
+    /**
+     * Restituisce l'oggetto sonar
+     * @return sonar
+    */
     get son(){
       return this.#son;
     }
+    /**
+     * Restituisce l'oggetto cannone
+     * @return cannone
+    */
     get can(){
       return this.#can;
     }
-    get posx(){
-      return this.#posx;
+    /**
+   * Restituisce la posizione della nave sull' asse x 
+   * @return x
+  */
+  get posx(){
+    return this.#posx;
+  }
+  /**
+   * Restituisce la posizione della nave sull' asse y
+   * @return y
+  */
+  get posy(){
+    return this.#posy;
+  }
+  /**
+   * Muove la nave verso l'alto cambiando la variabile posy
+  */
+  muovisu(){
+    if (this.#posy-this.#mov>=0){
+      this.#posy=this.#posy-this.#mov;
     }
-    get posy(){
-      return this.#posy;
-    }
-    muovisu(){
-      if (this.#posy-this.#mov>=0){
-        this.#posy=this.#posy-this.#mov;
-      }
-      else{
-        this.#posy=0;
-      }
-    }
-    muovigiu(){
-      if (this.#posy+this.#mov<39){
-        this.#posy=this.#posy+this.#mov;
-      }
-      else{
-        this.#posy=39;
-      }
-    }
-    muovisin(){
-      if (this.#posx-this.#mov>=0){
-        this.#posx=this.#posx-this.#mov;
-      }
-      else{
-        this.#posx=0;
-      }
-    }
-    muovides(){
-      if (this.#posx+this.#mov<39){
-        this.#posx=this.#posx+this.#mov;
-      }
-      else{
-        this.#posx=39;
-      }
+    else{
+      this.#posy=0;
     }
   }
+  /**
+   * Muove la nave verso il basso cambiando la variabile posy
+  */
+  muovigiu(){
+    if (this.#posy+this.#mov<39){
+      this.#posy=this.#posy+this.#mov;
+    }
+    else{
+      this.#posy=39;
+    }
+  }
+  /**
+   * Muove la nave verso sinistra cambiando la variabile posx
+  */
+  muovisin(){
+    if (this.#posx-this.#mov>=0){
+      this.#posx=this.#posx-this.#mov;
+    }
+    else{
+      this.#posx=0;
+    }
+  }
+  /**
+   * Muove la nave verso destra cambiando la variabile posx
+  */
+  muovides(){
+    if (this.#posx+this.#mov<39){
+      this.#posx=this.#posx+this.#mov;
+    }
+    else{
+      this.#posx=39;
+    }
+  }
+}
   
   class CHMS extends Nave{
   
