@@ -200,6 +200,8 @@ if (screen.width > 768) {
     aSpec(s) {
       if (this.util != 0) {
         if (!this.cooldownaspec) {
+          let audio=new Audio("sounds/armspar.mp3");
+          audio.play();
           this.cooldownaspec = true;
           let intervasp;
           this.util--;
@@ -368,6 +370,8 @@ if (screen.width > 768) {
     aSpec(s) {
       if (this.util != 0) {
         if (!this.cooldownaspec) {
+          let audio=new Audio("sounds/bomba.mp3");
+          audio.play();
           this.cooldownaspec = true;
           let intervasp;
           this.util--;
@@ -431,6 +435,8 @@ if (screen.width > 768) {
     aSpec() {
       if (this.util != 0) {
         if (!this.cooldownaspec) {
+          let audio=new Audio("sounds/spboost.mp3");
+          audio.play();
           this.cooldownaspec = true;
           let intervasp;
           this.util--;
@@ -475,6 +481,8 @@ if (screen.width > 768) {
      aSpec(s) {
        if (this.util != 0) {
          if (!this.cooldownaspec) {
+           let audio=new Audio("sounds/armspar.mp3");
+           audio.play();
            this.cooldownaspec = true;
            let intervasp;
            this.util--;
@@ -646,6 +654,8 @@ if (screen.width > 768) {
     aSpec1(s) {
       if (this.util1 != 0) {
         if (!this.cooldownaspec1) {
+          let audio=new Audio("sounds/armaer.mp3");
+          audio.play();
           this.cooldownaspec1 = true;
           let intervasp;
           this.util--;
@@ -1538,6 +1548,8 @@ if (screen.width > 768) {
           if (!(n instanceof PHMS)) {
             let intervcan;
             if (!n.cooldowncan) {
+              let audio=new Audio("sounds/sparo.mp3");
+              audio.play();
               n.cooldowncan = true;
               if ((n.can.git + n.posx >= s.posx && n.posx - n.can.git <= s.posx) && (n.posy + n.can.git >= s.posy && n.posy - n.can.git <= s.posy)) {
                 s.vit = s.vit - n.can.dan;
