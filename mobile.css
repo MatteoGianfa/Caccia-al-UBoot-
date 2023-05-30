@@ -24,6 +24,13 @@
         background-size: cover;
       }
 
+      .schermata_2 {
+        width: 100%;
+        height: 100%;
+        background: url(image/fondale_2.png);
+        position: fixed; 
+      }
+
 
       .bott{
         width: 50%;
@@ -102,7 +109,7 @@
         text-align:center;
         text-transform:uppercase;
         text-shadow: 1px 2px 5px rgba(2, 2, 223, 0.897);
-        margin-top: 3%;
+        margin-top: 2%;
       }
       
       #container{
@@ -186,10 +193,25 @@
         color:#FFFFFF;
       }
 
+      .esit{
+        font-weight:bold;
+        text-align:center;
+        font-size:500%;
+        color:white;
+      }
 
 
 
-
+      .para{
+        border: solid 1px white;
+        margin-top: 7%;
+        margin-left: 17%;
+        text-align: center;
+        font-family:'Courier New';
+        font-size:100%;
+        width:70%;
+        color:#FFFFFF;
+      }
 
       #countdown {
         text-align:center;
@@ -305,4 +327,49 @@
         color:rgb(38, 211, 211);
         }
       
+    }
+
+    .bott2{
+      text-align: center;
+      width:60%;
+      height:25%;
+      border: 1px solid black;
+      
+      border-color:transparent;
+      border-radius:40px;
+      box-shadow:0px 0px 15px #4646fe;
+      font-size: 250%;
+      font-family:'Courier New';
+      background-color:#0606fb;
+      cursor:pointer;
+      color:#FFFFFF;
+    }
+
+    .schermata_f{
+      width:100%;
+      height:100%;
+      margin-top:0%;
+      
+      font-size: 200%;
+      font-family:'Courier New';
+      color:#FFFFFF;
+    }
+
+    .botmob{
+      width:20%;
+      height:60px;
+      font-size:60%;
+    }
+  
+    .tasti{
+      text-align:center;
+      width:100%;
+    }
+  
+    .tastiarm{
+      margin-top:5%;
+    }
+  
+    .spazaudio{
+      margin-top:90%;
     }
