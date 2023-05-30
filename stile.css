@@ -244,7 +244,8 @@
   height: 93%;
   top: 6%;
   left: 4%;
-  position: fixed; 
+  position: fixed;
+  z-index: -1;
 }
 
 /* TAB Regole */
