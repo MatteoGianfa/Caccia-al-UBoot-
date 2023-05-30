@@ -177,12 +177,24 @@ if (screen.width>768){
   }
 }
   
+  /**
+ * Rapresenta un tipo specifio di nave (CHMS)
+ * @class 
+ * @extends Nave
+ */
   class CHMS extends Nave{
-  
+     /**
+   * Crea una nave CHMS
+   * @constructor richiama il costruttore di Nave
+   */
     constructor(mov,vis,son,can,util){
       super(mov,vis,son,can,util);
     }
-  
+    
+    /**
+   * Arma speciale della nave CHMS controlla se il U-boat è nel range dell armamento se gli utilizzi sono maggiori di 0 danneggia l'U-boat
+   * @param s 
+   */
     aSpec(s){ 
       if (this.util!=0){
         if (!this.cooldownaspec){
@@ -218,32 +230,71 @@ if (screen.width>768){
   
   }
   
+  /**
+ * Oggetto che rappresenta la bomba della nave ILHMS
+ * @class 
+ */
   class Bomba{	
     #posx	
-    #posy	
+    #posy
+    /**
+   * Crea una bomba con parametri:
+   * @constructor
+   * @param posx posizione della bomba nell'asse x
+   * @param posy posizione della bomba nell'asse y
+   */
     constructor(posx,posy){	
       this.posx=posx;	
       this.posy=posy;	
-    }	
+    }
+    /**
+   * Restituisce la coordinata x della bomba
+   * @returns x
+  */
     get posx(){	
       return this.#posx;	
-    }	
+    }
+    /**
+   * Imposta la coordinata x della bomba
+   * @param posx x
+  */
     set posx(posx){	
       this.#posx=posx;	
-    }	
+    }
+    /**
+     * Restituisce la coordinata y della bomba
+     * @returns y
+    */
     get posy(){	
       return this.#posy;	
-    }	
+    }
+    /**
+    * Imposta la coordinata y della bomba
+    * @param posy y
+    */
     set posy(posy){	
       this.#posy=posy;	
     }	
   }
   
+ /**
+ * Rapresenta un tipo specifio di nave (ILHMS)
+ * @class 
+ * @extends Nave
+ */
   class ILHMS extends Nave{
     #b1	
     #b2	
     #b3
     #utilmin
+   /**
+   * Crea una nave CHMS con i seguenti parametri:
+   * @constructor richiama il costruttore di Nave
+   * @param b1 prima bomba
+   * @param b2 seconda bomba
+   * @param b3 terza bomba
+   * @param utilmin indica se una bomba è stata piazzata
+   */
     constructor(mov,vis,son,can,util){
       super(mov,vis,son,can,util);
       this.#b1=null;	
@@ -251,34 +302,67 @@ if (screen.width>768){
       this.#b3=null;
       this.utilmin=false;
     }	
-  
+   /**
+    * Restituisce lo stato delle bombe
+     * @return stato bombe
+    */
     get utilmin(){
       return this.#utilmin;
     }
-  
+    /**
+    * Imposta lo stato delle bombe
+     * @param stato bombe
+    */
     set utilmin(utilmin){
       this.#utilmin=utilmin;
     }
-  
+    /**
+    * Restituisce la prima bomba
+     * @return prima bomba
+    */
     get b1(){	
       return this.#b1;	
-    }	
+    }
+    /**
+    * Restituisce la seconda bomba
+     * @return seconda bomba
+    */
     get b2(){	
       return this.#b2;	
     }	
+    /**
+    * Restituisce la terza bomba
+     * @return terza bomba
+    */
     get b3(){	
       return this.#b3;	
-    }	
+    }
+    /**
+    * Imposta la prima bomba
+     * @param prima bomba
+    */
     set b1(b1){	
       this.#b1=b1;	
-    }	
+    }
+    /**
+    * Imposta la seconda bomba
+     * @param seconda bomba
+    */
     set b2(b2){	
       this.#b2=b2;	
     }	
+    /**
+    * Imposta la terza bomba
+     * @param terza bomba
+    */
     set b3(b3){	
       this.#b3=b3;
     }
-  
+    
+   /**
+   * Arma speciale della nave ILHMS controlla se il U-boat è nel range dell armamento se gli utilizzi sono maggiori di 0
+   * @param s oggetto siluro
+   */
     aSpec(s){
       if (this.util!=0){
         if (!this.cooldownaspec){
@@ -325,13 +409,23 @@ if (screen.width>768){
   
   }
   
-  
+  /**
+ * Rapresenta un tipo specifio di nave (CorHMS)
+ * @class 
+ * @extends Nave
+ */
   class CorHMS extends Nave{
-    
+   /**
+   * Crea una nave CorHMS
+   * @constructor richiama il costruttore di Nave
+   */
     constructor(mov,vis,son,can,util){
       super(mov,vis,son,can,util);
     }
-  
+    
+   /**
+   * Arma speciale della nave CorHMS controlla se il U-boat è nel range dell armamento se gli utilizzi sono maggiori di 0
+   */
     aSpec(){ 
       if (this.util!=0){
         if (!this.cooldownaspec){
@@ -360,7 +454,11 @@ if (screen.width>768){
   
   }
   
-  
+  /**
+ * Rapresenta un tipo specifio di nave (PHMS)
+ * @class 
+ * @extends Nave
+ */
   class PHMS extends Nave{
     
     #cooldownaspec1
@@ -370,7 +468,18 @@ if (screen.width>768){
     #util2
     #util3
     #trov
-  
+    
+  /**
+   * Crea una nave PHMS con i seguenti parametri:
+   * @constructor richiama il costruttore di Nave
+   * @param cooldownaspec1 stato della prima arma speciale
+   * @param cooldownaspec2 stato della seconda arma speciale
+   * @param cooldownaspec3 stato della terza arma speciale
+   * @param util1 numero di utilizzi della prima arma speciale
+   * @param util2 numero di utilizzi della seconda arma speciale
+   * @param util3 numero di utilizzi della terza arma speciale
+   * @param trov controlla se il siluro è stato rilevato utilizzando la seconda e terza arma
+   */
     constructor(mov,vis,son,can,util1,util2,util3){
       super(mov,vis,son,can);
       this.cooldownaspec1=false;
@@ -380,62 +489,110 @@ if (screen.width>768){
       this.util2=util2;
       this.util3=util3;
       this.trov=false;	
-    }	
+    }
+      /**
+    * Restituisce il valore di trov per controllare la presenza del siluro nelle vicinanze  
+     * @return trov 
+    */
     get trov(){	
       return this.#trov;	
-    }	
+    }
+     /**
+    * Imposta il valore di trov
+     * @param trov
+    */
     set trov(trov){	
       this.#trov=trov;
     }
-  
+     /**
+    * Restituisce il numero di utilizzi della prima arma
+     * @return utilizzi
+    */
     get util1(){
       return this.#util1;
     }
-  
+       /**
+    * Restituisce il numero di utilizzi della seconda arma
+     * @return utilizzi
+    */
     get util2(){
       return this.#util2;
     }
-  
+       /**
+    * Restituisce il numero di utilizzi della terza arma
+     * @return utilizzi
+    */
     get util3(){
       return this.#util3;
     }
-  
+     /**
+    * Imposta il numero di utilizzi della prima arma
+     * @param utilizzi
+    */
     set util1(util1){
       this.#util1=util1;
     }
-  
+     /**
+    * Imposta il numero di utilizzi della seconda arma
+     * @param utilizzi
+    */
     set util2(util2){
       this.#util2=util2;
     }
-  
+     /**
+    * Imposta il numero di utilizzi della terza arma
+     * @param utilizzi
+    */
     set util3(util3){
       this.#util3=util3;
     }
-  
+      /**
+    * Restituisce lo stato della prima arma
+     * @return stato arma
+    */
     get cooldownaspec1(){
       return this.#cooldownaspec1;
     }
-  
+      /**
+    * Restituisce lo stato della seconda arma
+     * @return stato arma
+    */
     get cooldownaspec2(){
       return this.#cooldownaspec2;
     }
-  
+      /**
+    * Restituisce lo stato della terza arma
+     * @return stato arma
+    */
     get cooldownaspec3(){
       return this.#cooldownaspec3;
     }
-  
+     /**
+    * Imposta lo stato della prima arma
+     * @param stato arma
+    */
     set cooldownaspec1(cooldownaspec1){
       this.#cooldownaspec1=cooldownaspec1;
     }
-  
+     /**
+    * Imposta lo stato della seconda arma
+     * @param stato arma
+    */
     set cooldownaspec2(cooldownaspec2){
       this.#cooldownaspec2=cooldownaspec2;
     }
-  
+     /**
+    * Imposta lo stato della terza arma
+     * @param stato arma
+    */
     set cooldownaspec3(cooldownaspec3){
       this.#cooldownaspec3=cooldownaspec3;
     }
-  
+    
+    /**
+   * Arma speciale della nave ILHMS controlla se il U-boat è nel range dell armamento se gli utilizzi sono maggiori di 0
+   * @param s oggetto siluro
+   */
     aSpec1(s){
       if (this.util1!=0){
         if (!this.cooldownaspec1){
@@ -463,6 +620,10 @@ if (screen.width>768){
       }
     }
     
+    /**
+   * Arma speciale della nave ILHMS controlla se il U-boat è nel range dell armamento se gli utilizzi sono maggiori di 0
+   * @param s oggetto siluro
+   */
     aSpec2(s){
       if (this.util2!=0){
         if (!this.cooldownaspec2){
@@ -492,7 +653,10 @@ if (screen.width>768){
         }
       }
     }
-  
+    /**
+   * Arma speciale della nave ILHMS controlla se il U-boat è nel range dell armamento se gli utilizzi sono maggiori di 0
+   * @param s oggetto siluro
+   */
     aSpec3(s){
       if (this.util3!=0){
         if (!this.cooldownaspec3){
@@ -541,9 +705,16 @@ if (screen.width>768){
   
   }
   
-  
+    /**
+ * Rapresenta un tipo specifio di nave (IPHMS)
+ * @class 
+ * @extends Nave
+ */
   class IPHMS extends Nave{
-    
+    /**
+   * Crea una nave IPHMS
+   * @constructor richiama il costruttore di Nave
+   */
     constructor(mov,vis,son,can,util){
       super(mov,vis,son,can,util);
     }
