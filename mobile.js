@@ -591,7 +591,13 @@ if (screen.width<=768){
       }
       
       let urlParams=new URLSearchParams(window.location.search); 
+      /**
+       * @type {number} Questa variabile rappresenta la scelta dell'utente sulle navi selezionabili
+       */
       let nave=urlParams.get("Nave");
+      /**
+       * @type {Nave} Questa variabile di tipo Nave rappresenta l'utente e verrà assegnata ad uno dei sottotipi di Nave
+       */
       let n;
       if (nave==1){
         n=new CHMS(3,3,5,new Cannone(2,20),3);
@@ -600,7 +606,7 @@ if (screen.width<=768){
         n=new ILHMS(2,3,3,new Cannone(3,20),3);
       }
       if (nave==3){
-        n=new IPHMS(2,3,2,new Cannone(3,25),2);
+        n=new IPHMS(2,3,2,new Cannone(4,25),2);
       }
       if (nave==4){
         n=new CorHMS(2,3,4,new Cannone(4,30),3);
@@ -608,7 +614,9 @@ if (screen.width<=768){
       if (nave==5){
         n=new PHMS(2,3,3,new Cannone(0,0),999,3,3);
       }
-      
+      /**
+       * Questa funzione crea la tabella di gioco su una base 20*20, inizializza i parametri (armi,timer,sonar) e da il via al gioco
+       */
       function inizia(){
         let t="<table id='table1'>";
         for(let i = 0; i < 20; i++) {
@@ -639,12 +647,25 @@ if (screen.width<=768){
         }
         controlloGiocatore();
       }
-      
+      /**
+       * @type {Siluro} Questa oggeto di tipo Siluro rappresenta l'Uboat e le sue funzioni di movimento
+       */
       let s=new Siluro(3,100);
-      let intervstato;
+      /**
+       * @type {boolean} Questa variabile conrolla lo stato della visibilità dell'Uboat
+       */
       let statos=false;
+      /**
+       * @type {boolean} Questa variabile controlla se la posizione dell'Uboat coincide con quella della nave
+       */
       let scoincn=false;
+      /**
+       * @type {boolean} Questa funzione controlla se la posizione della nave coincide con quella dell'Uboat
+       */
       let ncoincs=false;
+      /**
+       * Questa funzione imposta l'inizio del gioco. Imposta la posizione della nave a 0 0 (A1), avvia il sonar e fa partire l'Uboat.
+       */
       function controlloGiocatore(){
         document.getElementById("px0py0").src="image/casellav.png";
         avviaSonar(); 
@@ -652,7 +673,9 @@ if (screen.width<=768){
         cambiastato();
         window.addEventListener("keydown",function(event){movimenton(event); avviaSonar()}); 
       }
-      
+      /**
+       * Questa funzione serve ad avviare il sonar che controlla se l'Uboat si trova nelle vicinanze, nel caso affermativo, comunica la distanza dal nemico all'utente
+       */
       function avviaSonar(){   
         let num1;
         let num2;
@@ -676,13 +699,24 @@ if (screen.width<=768){
           document.getElementById("sonar").innerHTML="Non in range";
         }
       }
-      
+      /**
+       * Questa funzione genera un numero casuale da un minimo ad un massimo presi come parametro.
+       * @param {number} da Numero che rappresenta il minimo numero da generare
+       * @param {number} a Numero che rappresenta il massimo numero da generare
+       * @returns 
+       */
       function cas(da,a){
         return Math.floor(Math.random()*(a-da+1))+da;
       }
+      /**
+       * Questa funzione ricorsiva imposta lo stato dell'Uboat da visibile a non visibile e viceversa.
+       */
       function cambiastato(){
         setTimeout(function(){statos=true; setTimeout(function(){statos=false; document.getElementById(`px${s.posx}py${s.posy}`).src="image/casella.png"; cambiastato();},20000)},30000);
       }
+      /**
+       * Questa funzione di occupa del movimento dell'Uboat; Genera un numero casuale tra 1 e 4 e a seconda del risultato sposta l'Uboat in una direzione; Inoltre controlla che l'Uboat non sia sovrapposto con la nave. La funzione controlla anche se l'uboat si trova nel raggio di una delle bomba piazzate dalla seconda nave.
+       */
       function movimentos(){
         let movscelta=cas(1,4);
         let pyatt;
@@ -1007,6 +1041,10 @@ if (screen.width<=768){
         }
       }
       let possmov=true;
+      /**
+       * Questa funzione si occupa di tutte le funzionalità della nave; In base al numero ricevuto, la nave si muoverà nelle 4 direzioni, sparerà o utilizzerà l'armamento speciale; Inoltre controlla che le posizioni della nave e dell'Uboat non siano sovrapposte e nel caso lo siano, sostituisce l'immagine con quella della nave.
+       * @param {number} lett Variabile che rappresenta il comando che deve eseguire la nave
+       */
       function movimenton(lett){
           if (possmov){
             possmov=false;
@@ -1200,22 +1238,30 @@ if (screen.width<=768){
       if (page=="fine.htm"){
         document.addEventListener("DOMContentLoaded",rigioca);
       }
-      
+      /**
+       * Questa funziona mostra all'utente, attraverso del codice HTML, una schermata di vittoria o di sconfitta, a seconda dell'esito della partita
+       */
       function rigioca(){
         let urlParams2=new URLSearchParams(window.location.search); 
         let esit=urlParams2.get("esit");
       if (esit=="true"){
-          document.getElementById("aaa").innerHTML+="<div class='titolo'>HAI VINTO</div><br><div class='schermata_f'>Congratulazioni!</div> <div class='coppa'><img src='image/coppa.png'></div> <input type='button' class='bott2' value='Rigioca' onclick='restart()'>";
+          document.getElementById("fine").innerHTML+="<div class='titolo'>HAI VINTO</div><br><div class='schermata_f'>Congratulazioni!</div> <div class='coppa'><img src='image/coppa.png'></div> <input type='button' class='bott2' value='Rigioca' onclick='restart()'>";
         }
         else{
-          document.getElementById("aaa").innerHTML+="<div class='titolo'>HAI PERSO</div><br><div class='schermata_f'>Peccato!</div> <input type='button' class='bott2' value='Rigioca' onclick='restart()'>";
+          document.getElementById("fine").innerHTML+="<div class='titolo'>HAI PERSO</div><br><div class='schermata_f'>Peccato!</div><div class='coppa'><img width='90%' height='400px' src='image/sconfitta.jpg'></div><input type='button' class='bott2' value='Rigioca' onclick='restart()'>";
         }
       }
-      
+      /**
+       * Questa funziona serve a reindirizzare l'utente alla pagina principale dopo aver terminato il gioco
+       */
       function restart(){
         window.location.href="index.htm";
       }
-      
+      /**
+       * Questa funzione viene eseguita ogni volta che l'Uboat viene colpito e aggiorna la vita dell'elemento healthbar, sostituendo quella precedente con la variabile value
+       * @param {Element} healthBar Variabile che indica l'elemento della barra della vita
+       * @param {number} value Variabile che rappresenta i nuovi punti vita
+       */
       function updateHealthBar(healthBar, value) {
         value = Math.round(value);
         healthBar.querySelector(".health__fill").style.width = `${value}%`;
@@ -1223,14 +1269,22 @@ if (screen.width<=768){
       }  
       
       let refreshIntervalId;
-      
+      /**
+       * Questa funzione avvia il countdown del gioco al caricamento della pagina gameplay.htm e invoca una funzione che aggiorna il timer
+       */
       function avviaCountdown(){
         let tempo=5*60;
         document.getElementById("countdown").innerHTML=Math.floor(tempo / 60)+":"+tempo % 60+"0";
         tempo--;
         refreshIntervalId=setInterval(()=>{tempo=updateCountdown("countdown",tempo,refreshIntervalId)}, 1000);
       }
-      function updateCountdown(id,temp,int) {
+      /**
+       * Questa funzione aggiorna qualsiasi countdown in tutto il programma, anche i cooldown delle armi, diminuendo una variabile che indica il tempo rimanente.
+       * @param {number} temp Variabile che indica se il countdown principale è terminato
+       * @param {number} int Variabile che interrompe l'intervallo del chiamante
+       * @returns 
+       */
+      function updateCountdown(temp,int) {
           const minuti = Math.floor(temp / 60); 
           let secondi = temp % 60;
       
@@ -1246,6 +1300,10 @@ if (screen.width<=768){
           }
           return temp;
       }
+      /**
+       * Funzione che controlla se il giocatore ha terminato il tempo ho ha ridotto gli HP dell'uboat a 0. Questa funzione invia l'utente ad una pagina dedicata all'esito della partita.
+       * @param {boolean} esito variabile che indica l'esito della partita
+       */
       function fine(esito){
         if (esito){
           window.location.href=`fine.htm?esit=${esito}`;
@@ -1350,8 +1408,10 @@ if (screen.width<=768){
           console.log(nave3.posx,nave3.posy);
           console.log(nave4.posx,nave4.posy);
         }
-         
       }
+      /**
+       * Questa funzione serve a ricaricare la pagina index
+       */
       function indietro(){
         window.location.href="index.htm";
       }
