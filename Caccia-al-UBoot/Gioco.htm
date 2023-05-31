@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+    <head>
+        <link rel="stylesheet" href="stile.css">
+        <link rel="stylesheet" href="mobile.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="image/favicon.jpg">
+        <script src="script.js"></script>
+        <script src="mobile.js"></script>
+        <title>Seleziona nave</title>
+    </head>
+    <body class="schermata_2">
+      <input type="button" value="indietro" class="indietro1" onclick="indietro()">
+      <h1 class="titoloselezione"> Seleziona la tua nave </h1>
+      <div id="container">
+
+        <div class="naveselezione">
+          <p class="nnavselezione"> Cacciatorpediniere HMS Maori </p>
+          <div class="imgselezione"> 
+            <p class="spazim"><img src="image/Cacciatorpediniere HMS Maori.jpg"  alt="cacciatorpediniere HMS Maori" width="100%" height="100%" style="max-height:100%; max-width:100%"></p> 
+          </div>
+          <div class="infos">
+            <p class="descn"> INFORMAZIONI <br><br>Il cacciatorpediniere HMS Maori è specializzato nella caccia dei sottomarini. Nave veloce e dotato di equipaggiamento anti-sommergibili come il sonar molto sensibile ad ogni oggetto sott'acqua e al suo armamento speciale, le cariche di profondità, un barile di acciaio contenente una carica esplosiva che viene sganciata in mare dalla nave e che raggiunta una certa profondità esplode, unico problema è che non possono essere sganciate a lunghe distanze.
+              <br><br>STATISTICHE
+              <br><br>  Velocità(4) Visibilità(5) RaggioSonar(6)
+              <br><br>Cannoni: Gittata(2) Danni(20)
+              <br><br>ArmaSpeciale{Carica di Profondità}<br> Gittata(1) Danni(40) Utilizzi(3)
+            </p>
+            <div class="button">
+              <input class="bott1" type="button" onclick="nave1()" value="SELEZIONA">
+            </div>
+          </div>
+        </div>
+
+        <div class="naveselezione">
+          <p class="nnavselezione"> Incrociatore HMS Manchester</p>
+          <div class="imgselezione"> 
+            <p class="spazim"><img src="image/Incrociatore leggero HMS Manchester.jpg"  alt="incrociatore HMS Manchester" width="100%" height="100%" style="max-height:100%; max-width:100%"></p> 
+          </div>
+          <div class="infos">
+            <p class="descn"> INFORMAZIONI <br><br>L’incrociatore HMS Manchester è una buona nave da scorta, ottima anche per la caccia al sommergibile, ha una velocità minore del cacciatorpediniere ma cannoni più precisi. L’armamento speciale dell’incrociatore sono le mine navali, dispositivi speciali che la nave può sganciare per minare una casella della mappa. Se il sommergibile entrerà nella casella minata farà detonare gli esplosivi.
+              <br><br>STATISTICHE
+              <br><br>  Velocità(3) Visibilità(5) RaggioSonar(5)
+              <br><br>Cannoni: Gittata(3) Danni(20)
+              <br><br>ArmaSpeciale{Mine Navali}<br> Gittata(0) Danni(35) Utilizzi(3)
+            </p>
+            <div class="button">
+              <input class="bott1" type="button" onclick="nave2()" value="SELEZIONA">
+            </div>
+          </div>
+        </div>
+
+        <div class="naveselezione">
+          <p class="nnavselezione">Incrociatore pesante HMS York</p>
+          <div class="imgselezione"> 
+            <p class="spazim"><img src="image/Incrociatore Pesante HMS York.jpg" alt="incrociatore pesante HMS York" width="100%" height="100%" style="max-height:100%; max-width:100%"></p>
+          </div>
+          <div class="infos">
+            <p class="descn"> INFORMAZIONI <br><br>L’incrociatore pesante HMS York è una buona fusione tra potenza di fuoco e mobilità, non è specializzato nella caccia ai sommergibili ma farà sempre un buon lavoro. Il suo armamento speciale è il Bombardiere imbarcato. Con l’utilizzo di una catapulta idraulica, può lanciare un bombardiere leggero che sgancia un carica in grado di stanare un possibile sommergibile.
+              <br><br>STATISTICHE
+              <br><br>  Velocità(3) Visibilità(4) RaggioSonar(4)
+              <br><br>Cannoni: Gittata(3) Danni(25)
+              <br><br>ArmaSpeciale{Bombradiere Imbracato}<br> Gittata(7) Danni(30) Utilizzi(2)
+            </p>
+            <div class="button">
+              <input class="bott1" type="button" onclick="nave3()" value="SELEZIONA">
+            </div>           
+          </div>         
+        </div>
+
+        <div class="naveselezione">   
+          <p class="nnavselezione"> Corazzata HMS King George V </p>
+          <div class="imgselezione"> 
+            <p class="spazim"><img src="image/Corazzata HMS King George V.jpg" alt="corazzata HMS King George V" width="100%" height="100%" style="max-height:100%; max-width:100%"></p>
+          </div>
+          <div class="infos">
+            <p class="descn"> INFORMAZIONI <br><br>La corazzata HMS King George V è un guerriero da battaglia sul mare, ma non è una nave adatta per distruggere un sommergibile. Questo mostro d'acciaio monta dei cannoni da 356 mm in grado di devastare ciò che colpisce. Il suo armamento speciale è il sovraccarico motori grazie al quale, la nave aumenta la distanza che può percorrere per un breve lasso di tempo.
+              <br><br>STATISTICHE
+              <br><br>  Velocità(3) Visibilità(4) RaggioSonar(3)
+              <br><br>Cannoni: Gittata(5) Danni(30)
+              <br><br>ArmaSpeciale{Sovraccarico Motori}<br> Durata(7 sec) AumentoVelocità(+2) Utilizzi(3)
+            </p>
+            <div class="button">
+              <input class="bott1" type="button" onclick="nave4()" value="SELEZIONA">
+            </div>
+          </div>
+        </div>
+
+        <div class="naveselezione">
+          <p class="nnavselezione"> Portaerei HMS Ark Royal </p>
+          <div class="imgselezione"> 
+            <p class="spazim"><img src="image/Portaerei HMS Ark Royal.jpg" alt="Portaerei HMS Ark Royal" width="100%" height="100%" style="max-height:100%; max-width:100%"></p>
+          </div>
+          <div class="infos">
+            <p class="descn"> INFORMAZIONI <br><br>La HMS Ark Royal è l’ammiraglia della Royal Navy, questa maestosa nave ha come armamento principale il ponte di volo da cui i suoi aerei possono partire e distruggere i bersagli. Ha tre tipologie di aerei: il bombardiere con cui può danneggiare, il ricognitore con cui può rilevare il sommergibile se in superficie e l’aereo sonar che è in grado di rivelare la distanza dal sommergibile anche in caso sia sommerso.
+              <br><br>STATISTICHE
+              <br><br>  Velocità(3) Visibilità(4) RaggioSonar(4)
+              <br><br>Cannoni: Non presenti
+              <br><br>ArmaSpeciale{Pista di Volo}<br> AereoBombardiere<br>Danni(30) Gittata(6) <br><br> AereoRicognitore<br>Visibilità(3) Durata(3sec) Gittata(10) <br><br>AereoSonar<br>RaggioSonar(3) Gittata(8)
+            </p>
+            <div class="button">
+              <input class="bott1" type="button" onclick="nave5()" value="SELEZIONA">
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+</html>
