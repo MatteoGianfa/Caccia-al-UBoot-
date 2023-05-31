@@ -1627,7 +1627,7 @@ if (screen.width > 768) {
       document.getElementById("fine").innerHTML += "<div class='titolo'>HAI VINTO</div><br><div class='schermata_f'>Congratulazioni!</div> <div class='coppa'><img src='image/coppa.png'></div> <input type='button' class='bott2' value='Rigioca' onclick='restart()'>";
     }
     else {
-      document.getElementById("fine").innerHTML += "<div class='titolo'>HAI PERSO</div><br><div class='schermata_f'>Peccato!</div><div class='coppa'><img src='image/fineimm.png'></div><input type='button' class='bott2' value='Rigioca' onclick='restart()'>";
+      document.getElementById("fine").innerHTML += "<div class='titolof'>HAI PERSO</div><br><div class='schermata_f'>Peccato!</div><div class='coppa'><img src='image/fineimm.png'></div><input type='button' class='bott2' value='Rigioca' onclick='restart()'>";
     }
   }
   /**
