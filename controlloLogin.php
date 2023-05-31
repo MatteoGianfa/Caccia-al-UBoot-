@@ -24,9 +24,9 @@
 
                                 session_start();
                                 $_SESSION["user"]=$nickname;
-                                $_SESSION["password"]=$password;
+                             
                                 $conn->close();
-                                header('Location:menu.htm');
+                                header('Location:menu.php');
                                 
 
                         }else if($rispostaCredenziali->num_rows==0){

@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Mag 29, 2023 alle 10:50
--- Versione del server: 10.4.14-MariaDB
--- Versione PHP: 7.4.11
+-- Creato il: Giu 01, 2023 alle 00:03
+-- Versione del server: 10.4.25-MariaDB
+-- Versione PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,6 +35,13 @@ CREATE TABLE `risultato` (
   `tipoNave` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dump dei dati per la tabella `risultato`
+--
+
+INSERT INTO `risultato` (`ID`, `ID_utente`, `data`, `tempo`, `tipoNave`) VALUES
+(0, 1914, '2023-05-31', 100, 'Corazzata');
+
 -- --------------------------------------------------------
 
 --
@@ -47,6 +54,13 @@ CREATE TABLE `utente` (
   `email` varchar(200) NOT NULL,
   `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dump dei dati per la tabella `utente`
+--
+
+INSERT INTO `utente` (`ID`, `nickname`, `email`, `password`) VALUES
+(1914, 'admin', 'matteo.gianfaldoni@davincifascetti.it', '27c749230e8f93b76fa0a4b9dc3cc450');
 
 --
 -- Indici per le tabelle scaricate

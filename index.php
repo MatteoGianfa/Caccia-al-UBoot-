@@ -34,18 +34,20 @@
         }
       ?>
     <div id="datiForm">
-      <form action="controlloLogin.php" method="POST">
+      <form autocomplete="off" action="controlloLogin.php" method="POST">
         <label for="user">nome utente</label>
-        <input
+        <input 
+          autocomplete="off"
           type="text"
           name="user"
           placeholder="Inserisci il nickname" required
         /><br />
         <label for="user">password</label>
         <input
+          autocomplete="off"
           type="text"
           name="password"
-          placeholder="Inserisci il password" required
+          placeholder="Inserisci la password" required
         /><br />
         <div class="button">
         <input class="bott1"  type="submit" value="ACCEDI" />

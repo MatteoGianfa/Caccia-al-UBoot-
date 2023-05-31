@@ -5,8 +5,8 @@
     <link rel="stylesheet" href="mobile.css">
     <link rel="icon" href="image/favicon.jpg">
   </head>
-  <body>
-    <div>
+  <body class="schermataLogin">
+    <div id="login">
       <h1>Registrazione</h1>
       <?php
             if(isset($_GET["error"])){
@@ -37,6 +37,7 @@
 
 
       ?>
+      <div id="datiForm">
       <form action="controlloRegistrazione.php" method="POST">
       <label for="user">nome utente:</label>
         <input
@@ -56,9 +57,10 @@
           name="password"
           placeholder="......" required
         /><br />
-        <div class="button">
-        <input class="bott1" type="submit" value="Registrati" />
+        <div class="bottoneREgistrazione">
+        <input class="bott1" type="submit" value="REGISTRATI" />
        </div>
+    </div>
     </div>
   </body>
 </html>
