@@ -146,8 +146,6 @@
   
   /*  TAB Gameplay */
   
-  /*schermata 2 (gioco)*/
-  
   .esit{
     font-weight:bold;
     text-align:center;
@@ -232,12 +230,8 @@
     width:70%;
     color:#FFFFFF;
   }
-  
-  /* campo */
-  
+    
   /* TAB Comandi */
-  
-  /* schermata_2 */
   
   .comandi {
     width: 93%;
@@ -248,8 +242,6 @@
   }
   
   /* TAB Regole */
-  
-  /* schermata_2 */
   
     .titoloregole{
       font-family:'Courier New';
@@ -339,6 +331,7 @@
   margin-left: 20%;
   }
   
+/*bottoni indietro*/
   .indietro{
     width:8%;
     height:20%;
@@ -346,6 +339,7 @@
     margin-left:0;
     font-size: 150%;
     color: #ffffff;
+    cursor:pointer;
     background-color: #0606fb;
   
     
@@ -357,5 +351,6 @@
     margin-left:0;
     font-size: 150%;
     color: #ffffff;
+    cursor:pointer;
     background-color: #0606fb;
   }
