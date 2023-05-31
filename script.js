@@ -19,17 +19,17 @@ if (screen.width > 768) {
     #cooldowncan
     #cooldownaspec
     /**
-    * Crea una nave con i seguenti parametri:
+    * Crea un oggetto di tipo nave
     * @constructor 
-    * @param mov movimento massimo della nave
-    * @param vis visibilita massima della nave
-    * @param son oggetto sonar
-    * @param can oggetto cannone 
-    * @param util utilizzi speciali della nave
-    * @var posx posizione nell'asse x della nave
-    * @var posy posizione nell'asse y della nave
-    * @var cooldowncan stato del cannone
-    * @var cooldownaspec stato dell arma speciale
+    * @param {number} mov movimento massimo della nave
+    * @param {number} vis visibilita massima della nave
+    * @param {number} son raggio del sonar
+    * @param {Cannone} can oggetto cannone 
+    * @param {number} util utilizzi speciali della nave
+    * @var {number} posx posizione nell'asse x della nave
+    * @var {number} posy posizione nell'asse y della nave
+    * @var {boolean} cooldowncan stato del cannone
+    * @var {boolean} cooldownaspec stato dell arma speciale
     */
     constructor(mov, vis, son, can, util) {
       this.mov = mov;
@@ -44,97 +44,97 @@ if (screen.width > 768) {
     }
     /**
      * Restituisce il tempo di ricarica del cannone
-     * @return tempo di ricarica
+     * @return {boolean} tempo di ricarica
     */
     get cooldowncan() {
       return this.#cooldowncan;
     }
     /**
     * Imposta il tempo di ricarica del cannone
-    * @param cooldowncan tempo di ricarica
+    * @param {boolean} cooldowncan tempo di ricarica
     */
     set cooldowncan(cooldowncan) {
       this.#cooldowncan = cooldowncan;
     }
     /**
      * Restituisce il tempo di ricarica dell' arma speciale
-     * @return tempo di ricarica
+     * @return {boolean} tempo di ricarica
     */
     get cooldownaspec() {
       return this.#cooldownaspec;
     }
     /**
      * Imposta il tempo di ricarica dell' arma speciale
-     * @param cooldownaspec tempo di ricarica
+     * @param {boolean} cooldownaspec tempo di ricarica
     */
     set cooldownaspec(cooldownaspec) {
       this.#cooldownaspec = cooldownaspec;
     }
     /**
     * Imposta il numero di utilizzi dell' arma speciale
-    * @param util numero di utilizzi
+    * @param {number} util numero di utilizzi
     */
     set util(util) {
       this.#util = util;
     }
     /**
     * Imposta il numero di caselle di movimento massimo della nave 
-    * @param mov caselle
+    * @param {number} mov caselle
     */
     set mov(mov) {
       this.#mov = mov;
     }
     /**
     * Imposta il numero di utilizzi dell' arma speciale
-    * @return numero di utilizzi
+    * @return {number} numero di utilizzi
     */
     get util() {
       return this.#util;
     }
     /**
      * Restituisce il numero di caselle di movimento massimo della nave 
-     * @return caselle
+     * @return {boolean} caselle di movimento
     */
     get mov() {
       return this.#mov;
     }
     /**
     * Restituisce la visibilità massima della nave 
-    * @return visibilità
+    * @return {number} visibilità
     */
     get vis() {
       return this.#vis;
     }
     /**
      * Restituisce l'oggetto sonar
-     * @return sonar
+     * @return {number} sonar
     */
     get son() {
       return this.#son;
     }
     /**
-     * Restituisce l'oggetto cannone
-     * @return cannone
+    * Restituisce l'oggetto cannone
+    * @return {Cannone} cannone
     */
     get can() {
       return this.#can;
     }
     /**
    * Restituisce la posizione della nave sull' asse x 
-   * @return x
+   * @return {number} restituisce la posizione sulle righe
   */
     get posx() {
       return this.#posx;
     }
     /**
      * Restituisce la posizione della nave sull' asse y
-     * @return y
+     * @return {number} restituisce la posizione sulle colonne
     */
     get posy() {
       return this.#posy;
     }
     /**
-     * Muove la nave verso l'alto cambiando la variabile posy
+     * Muove la nave verso l'alto cambiando la variabile posy, se la nave esce dai bordi, imposta la posizione al massimo
     */
     muovisu() {
       if (this.#posy - this.#mov >= 0) {
@@ -145,7 +145,7 @@ if (screen.width > 768) {
       }
     }
     /**
-     * Muove la nave verso il basso cambiando la variabile posy
+     * Muove la nave verso il basso cambiando la variabile posy, se la nave esce dai bordi, imposta la posizione al massimo
     */
     muovigiu() {
       if (this.#posy + this.#mov < 39) {
@@ -156,7 +156,7 @@ if (screen.width > 768) {
       }
     }
     /**
-     * Muove la nave verso sinistra cambiando la variabile posx
+     * Muove la nave verso sinistra cambiando la variabile posx, se la nave esce dai bordi, imposta la posizione al massimo
     */
     muovisin() {
       if (this.#posx - this.#mov >= 0) {
@@ -167,7 +167,7 @@ if (screen.width > 768) {
       }
     }
     /**
-     * Muove la nave verso destra cambiando la variabile posx
+     * Muove la nave verso destra cambiando la variabile posx, se la nave esce dai bordi, imposta la posizione al massimo
     */
     muovides() {
       if (this.#posx + this.#mov < 39) {
@@ -180,7 +180,7 @@ if (screen.width > 768) {
   }
 
   /**
- * Rapresenta un tipo specifio di nave (CHMS)
+ * Rapresenta un tipo specifico di nave (CHMS)
  * @class 
  * @extends Nave
  */
@@ -194,8 +194,8 @@ if (screen.width > 768) {
     }
 
     /**
-   * Arma speciale della nave CHMS controlla se l' U-boat è nel range dell armamento se gli utilizzi sono maggiori di 0 danneggia l'U-boat
-   * @param s 
+   * Arma speciale della nave CHMS, controlla se l' U-boat è nel range dell armamento; se gli utilizzi sono maggiori di 0 danneggia l'U-boat
+   * @param {Siluro} s Oggetto di tipo Siluro rappresentante l'Uboat
    */
     aSpec(s) {
       if (this.util != 0) {
@@ -244,37 +244,37 @@ if (screen.width > 768) {
     /**
    * Crea una bomba con parametri:
    * @constructor
-   * @param posx posizione della bomba nell'asse x
-   * @param posy posizione della bomba nell'asse y
+   * @param {number} posx posizione della bomba nell'asse x
+   * @param {number} posy posizione della bomba nell'asse y
    */
     constructor(posx, posy) {
       this.posx = posx;
       this.posy = posy;
     }
     /**
-   * Restituisce la coordinata x della bomba
-   * @returns x
-  */
+    * Restituisce la coordinata x della bomba
+    * @returns {number} restituisce la posizione sulle righe
+    */
     get posx() {
       return this.#posx;
     }
     /**
-   * Imposta la coordinata x della bomba
-   * @param posx x
-  */
+    * Imposta la coordinata x della bomba
+    * @param {number} posx posizione sulle righe
+    */
     set posx(posx) {
       this.#posx = posx;
     }
     /**
-     * Restituisce la coordinata y della bomba
-     * @returns y
+    * Restituisce la coordinata y della bomba
+    * @returns {number} restituisce la posizione sulle colonne
     */
     get posy() {
       return this.#posy;
     }
     /**
     * Imposta la coordinata y della bomba
-    * @param posy y
+    * @param {number} posy posizione sulle colonne
     */
     set posy(posy) {
       this.#posy = posy;
@@ -294,10 +294,10 @@ if (screen.width > 768) {
     /**
     * Crea una nave ILHMS con i seguenti parametri:
     * @constructor richiama il costruttore di Nave
-    * @param b1 prima bomba
-    * @param b2 seconda bomba
-    * @param b3 terza bomba
-    * @var utilmin indica se una bomba è stata piazzata
+    * @param {Bomba} b1 prima bomba
+    * @param {Bomba} b2 seconda bomba
+    * @param {Bomba} b3 terza bomba
+    * @var {boolean} utilmin indica se una bomba è stata piazzata
     */
     constructor(mov, vis, son, can, util) {
       super(mov, vis, son, can, util);
@@ -308,64 +308,64 @@ if (screen.width > 768) {
     }
     /**
      * Restituisce lo stato delle bombe
-      * @return stato bombe
+      * @return {boolean} stato bombe
      */
     get utilmin() {
       return this.#utilmin;
     }
     /**
     * Imposta lo stato delle bombe
-     * @param stato bombe
+     * @param {boolean} utilimin stato bombe
     */
     set utilmin(utilmin) {
       this.#utilmin = utilmin;
     }
     /**
     * Restituisce la prima bomba
-     * @return prima bomba
+     * @return {Bomba} prima bomba
     */
     get b1() {
       return this.#b1;
     }
     /**
     * Restituisce la seconda bomba
-     * @return seconda bomba
+     * @return {Bomba} seconda bomba
     */
     get b2() {
       return this.#b2;
     }
     /**
     * Restituisce la terza bomba
-     * @return terza bomba
+     * @return {Bomba} terza bomba
     */
     get b3() {
       return this.#b3;
     }
     /**
     * Imposta la prima bomba
-     * @param prima bomba
+     * @param {Bomba} b1 prima bomba
     */
     set b1(b1) {
       this.#b1 = b1;
     }
     /**
     * Imposta la seconda bomba
-     * @param seconda bomba
+    * @param {Bomba} b2 seconda bomba
     */
     set b2(b2) {
       this.#b2 = b2;
     }
     /**
     * Imposta la terza bomba
-     * @param terza bomba
+    * @param {Bomba} b3 terza bomba
     */
     set b3(b3) {
       this.#b3 = b3;
     }
 
     /**
-    * Arma speciale della nave ILHMS controlla se il U-boat è nel range dell armamento se gli utilizzi sono maggiori di 0 danneggia l' U-boat. Se non viene rilevato piazza una mina nella stessa posizione della nave
-    * @param s oggetto Siluro
+    * Arma speciale della nave ILHMS, controlla se l'U-boat è nel range dell'armamento se gli utilizzi sono maggiori di 0 danneggia l' U-boat. Se non viene rilevato piazza una mina nella stessa posizione della nave
+    * @param {Siluro} s oggetto Siluro
     */
     aSpec(s) {
       if (this.util != 0) {
@@ -476,7 +476,7 @@ if (screen.width > 768) {
      }
     /**
     * Arma speciale della nave IPHMS controlla se l' U-boat è nel range dell armamento se gli utilizzi sono maggiori di 0 lo danneggia
-    * @param s oggetto Siluro
+    * @param {Siluro} s oggetto Siluro
     */
      aSpec(s) {
        if (this.util != 0) {
@@ -530,13 +530,13 @@ if (screen.width > 768) {
     /**
      * Crea una nave PHMS con i seguenti parametri:
      * @constructor richiama il costruttore di Nave
-     * @param cooldownaspec1 stato della prima arma speciale
-     * @param cooldownaspec2 stato della seconda arma speciale
-     * @param cooldownaspec3 stato della terza arma speciale
-     * @param util1 numero di utilizzi della prima arma speciale
-     * @param util2 numero di utilizzi della seconda arma speciale
-     * @param util3 numero di utilizzi della terza arma speciale
-     * @param trov controlla se il siluro è stato rilevato utilizzando la seconda e terza arma
+     * @param {boolean} cooldownaspec1 stato della prima arma speciale
+     * @param {boolean} cooldownaspec2 stato della seconda arma speciale
+     * @param {number} cooldownaspec3 stato della terza arma speciale
+     * @param {number} util1 numero di utilizzi della prima arma speciale
+     * @param {number} util2 numero di utilizzi della seconda arma speciale
+     * @param {number} util3 numero di utilizzi della terza arma speciale
+     * @param {boolean} trov controlla se il siluro è stato rilevato utilizzando la seconda e terza arma
      */
     constructor(mov, vis, son, can, util1, util2, util3) {
       super(mov, vis, son, can);
@@ -550,106 +550,106 @@ if (screen.width > 768) {
     }
     /**
   * Restituisce il valore di trov per controllare la presenza del siluro nelle vicinanze  
-   * @return trov 
+   * @return {boolean} presenza dell'Uboat 
   */
     get trov() {
       return this.#trov;
     }
     /**
    * Imposta il valore di trov
-    * @param trov
+    * @param {boolean} trov presenza del siluro
    */
     set trov(trov) {
       this.#trov = trov;
     }
     /**
    * Restituisce il numero di utilizzi della prima arma
-    * @return utilizzi
+    * @return {number} utilizzi primo armamento
    */
     get util1() {
       return this.#util1;
     }
     /**
  * Restituisce il numero di utilizzi della seconda arma
-  * @return utilizzi
+  * @return {number} utilizzi secondo armamento
  */
     get util2() {
       return this.#util2;
     }
     /**
  * Restituisce il numero di utilizzi della terza arma
-  * @return utilizzi
+  * @return {number} utilizzi terzo armamento
  */
     get util3() {
       return this.#util3;
     }
     /**
    * Imposta il numero di utilizzi della prima arma
-    * @param utilizzi
+    * @param {number} util1 utilizzi primo armamento
    */
     set util1(util1) {
       this.#util1 = util1;
     }
     /**
    * Imposta il numero di utilizzi della seconda arma
-    * @param utilizzi
+    * @param {number} util2 utilizzi secondo armamento
    */
     set util2(util2) {
       this.#util2 = util2;
     }
     /**
    * Imposta il numero di utilizzi della terza arma
-    * @param utilizzi
+    * @param {number} util3 utilizzi secondo armamento
    */
     set util3(util3) {
       this.#util3 = util3;
     }
     /**
   * Restituisce lo stato della prima arma
-   * @return stato arma
+   * @return {boolean} stato prima arma speciale
   */
     get cooldownaspec1() {
       return this.#cooldownaspec1;
     }
     /**
   * Restituisce lo stato della seconda arma
-   * @return stato arma
+   * @return {boolean} stato seconda arma speciala
   */
     get cooldownaspec2() {
       return this.#cooldownaspec2;
     }
     /**
   * Restituisce lo stato della terza arma
-   * @return stato arma
+   * @return {boolean} stato terza arma speciale
   */
     get cooldownaspec3() {
       return this.#cooldownaspec3;
     }
     /**
    * Imposta lo stato della prima arma
-    * @param stato arma
+    * @param {boolean} cooldownaspec1 stato prima arma speciale 1
    */
     set cooldownaspec1(cooldownaspec1) {
       this.#cooldownaspec1 = cooldownaspec1;
     }
     /**
    * Imposta lo stato della seconda arma
-    * @param stato arma
+    * @param {boolean} cooldownaspec2 stato seconda arma speciale
    */
     set cooldownaspec2(cooldownaspec2) {
       this.#cooldownaspec2 = cooldownaspec2;
     }
     /**
    * Imposta lo stato della terza arma
-    * @param stato arma
+    * @param {boolean} cooldownaspec3 stato terza arma speciale
    */
     set cooldownaspec3(cooldownaspec3) {
       this.#cooldownaspec3 = cooldownaspec3;
     }
 
     /**
-   * Arma speciale della nave PHMS controlla se l' U-boat è nel range dell armamento e se è presente lo danneggia
-   * @param s oggetto siluro
+   * Arma speciale della nave PHMS controlla se l' U-boat è nel range dell'armamento e se è presente lo danneggia
+   * @param {Siluro} s oggetto siluro
    */
     aSpec1(s) {
       if (this.util1 != 0) {
@@ -681,12 +681,14 @@ if (screen.width > 768) {
     }
 
     /**
-   * Arma speciale della nave PHMS che scannerizza in un area con lunghezza 10 e larghezza 3 intorno alla nave; se l' U-boat è visibile rilascia una sua immagine nella sua posizione per 5 secondi
-   * @param s oggetto siluro
-   */
+    * Arma speciale della nave PHMS che scannerizza in un area con lunghezza 10 e larghezza 3 intorno alla nave; se l' U-boat è visibile rilascia una sua immagine nella sua posizione per 5 secondi
+    * @param {Siluro} s oggetto siluro
+    */
     aSpec2(s) {
       if (this.util2 != 0) {
         if (!this.cooldownaspec2) {
+          let audio=new Audio("sounds/aer2.mp3");
+          audio.play();
           this.cooldownaspec2 = true;
           let intervasp;
           this.util2--;
@@ -714,12 +716,14 @@ if (screen.width > 768) {
       }
     }
     /**
-   * Arma speciale della nave PHMS che scannerizza in un area con lunghezza 8 e larghezza 3 intorno alla nave, se l' U-boat viene trovato comunica la distanza da essa
-   * @param s oggetto siluro
-   */
+    * Arma speciale della nave PHMS che scannerizza in un area con lunghezza 8 e larghezza 3 intorno alla nave, se l' U-boat viene trovato comunica la distanza da essa
+    * @param {Siluro} s oggetto siluro
+    */
     aSpec3(s) {
       if (this.util3 != 0) {
         if (!this.cooldownaspec3) {
+          let audio=new Audio("sounds/sonar.mp3");
+          audio.play();
           this.cooldownaspec3 = true;
           let intervasp;
           this.util3--;
@@ -773,13 +777,13 @@ if (screen.width > 768) {
     #posx
     #posy
     /**
-     * Crea un siluro con i seguenti parametri:
-     * @constructor 
-     * @param mov movimento massimo della nave
-     * @param vit vita del siluro
-     * @var posx posizione del siluro nell'asse x
-     * @var posy posizione del siluro nell'asse y
-     */
+    * Crea un siluro con i seguenti parametri:
+    * @constructor 
+    * @param {number} mov movimento massimo della nave
+    * @param {number} vit vita del siluro
+    * @var {number} posx posizione del siluro nell'asse x
+    * @var {number} posy posizione del siluro nell'asse y
+    */
     constructor(mov, vit) {
       this.#mov = mov;
       this.vit = vit;
@@ -788,35 +792,35 @@ if (screen.width > 768) {
     }
     /**
     * Restituisce lo stato della terza arma
-    * @return stato arma
+    * @return {number} numero di caselle di movimento
     */
     get mov() {
       return this.#mov;
     }
     /**
     * Restituisce la vita del siluro
-    * @return vita 
+    * @return {number} vita dell'Uboat
     */
     get vit() {
       return this.#vit;
     }
     /**
     * Imposta la vita del siluro
-    * @param vita 
+    * @param {number} vit vita dell'Uboat 
     */
     set vit(vit) {
       this.#vit = vit;
     }
     /**
     * Restituisce la posizione del siluro nell'asse x 
-    * @return x
+    * @return {number} posizione dell'Uboat sulle righe
     */
     get posx() {
       return this.#posx;
     }
     /**
     * Restituisce la posizione del siluro nell'asse y
-    * @return y
+    * @return {number} posizione dell'Uboat sulle colonne
     */
     get posy() {
       return this.#posy;
@@ -865,8 +869,8 @@ if (screen.width > 768) {
      /**
      * Crea un cannone con i seguenti parametri:
      * @constructor 
-     * @param git gittata del cannone
-     * @param dan danni inflitti dal cannone 
+     * @param {number} git gittata del cannone
+     * @param {number} dan danni inflitti dal cannone 
      */
     constructor(git, dan) {
       this.#git = git;
@@ -874,14 +878,14 @@ if (screen.width > 768) {
     }
     /**
     * Restituisce la gittata del cannone
-    * @return gittata
+    * @return {number} gittata
     */
     get git() {
       return this.#git;
     }
     /**
     * Restituisce i danni del cannone
-    * @return danni
+    * @return {number} danni
     */
     get dan() {
       return this.#dan;
@@ -937,9 +941,9 @@ if (screen.width > 768) {
     gameplay(5);
   }
   /**
-   * Indirizza alla pagina gameplay
-   * @param n variabile che indica la nave selezionata
-   */
+  * Indirizza alla pagina gameplay
+  * @param {number} n variabile che indica la nave selezionata
+  */
   function gameplay(n) {
     window.location.href = `gameplay.htm?Nave=${n}`;
   }
@@ -1603,7 +1607,7 @@ if (screen.width > 768) {
   if (page == "gameplay.htm") {
     document.addEventListener("DOMContentLoaded", inizia);
     document.addEventListener("DOMContentLoaded", avviaCountdown);
-    document.addEventListener("DOMContentLoaded", function () { updateHealthBar(document.querySelector(".health"), s.vit); })
+    document.addEventListener("DOMContentLoaded", function () { updateHealthBar(document.querySelector(".health"), s.vit); });
   }
 
   if (page != "gameplay.htm" && page != "index.htm" && page != "fine.htm") {
@@ -1623,7 +1627,7 @@ if (screen.width > 768) {
       document.getElementById("fine").innerHTML += "<div class='titolo'>HAI VINTO</div><br><div class='schermata_f'>Congratulazioni!</div> <div class='coppa'><img src='image/coppa.png'></div> <input type='button' class='bott2' value='Rigioca' onclick='restart()'>";
     }
     else {
-      document.getElementById("fine").innerHTML += "<div class='titolo'>HAI PERSO</div><br><div class='schermata_f'>Peccato!</div><div class='coppa'><img src='image/sconfitta.jpg'></div><input type='button' class='bott2' value='Rigioca' onclick='restart()'>";
+      document.getElementById("fine").innerHTML += "<div class='titolo'>HAI PERSO</div><br><div class='schermata_f'>Peccato!</div><div class='coppa'><img src='image/fineimm.png'></div><input type='button' class='bott2' value='Rigioca' onclick='restart()'>";
     }
   }
   /**
