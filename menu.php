@@ -16,6 +16,7 @@
       <div class="comand">
         <h3 class="titoloBenvenuto ">benvenuto <?php echo 
         $_SESSION["user"];?></h3>
+        <input type="button" class="bottoneLogin" value="Logout "onclick="logout()"><br>
         <input
           type="button"
           class="bott"

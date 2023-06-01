@@ -2108,6 +2108,9 @@ if (screen.width > 768) {
    * Questa funzione serve a ricaricare la pagina index
    */
   function indietro() {
-    window.location.href = "menu.htm";
+    window.location.href = "menu.php";
+  }
+  function logout() {
+    window.location.href = "logOut.php";
   }
 }

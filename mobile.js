@@ -2083,4 +2083,7 @@ if (screen.width <= 768) {
   function indietro() {
     window.location.href = "index.htm";
   }
+  function logout() {
+    window.location.href = "logOut.php";
+  }
 }

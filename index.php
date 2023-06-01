@@ -38,6 +38,7 @@
         <label for="user">nome utente</label>
         <input 
           autocomplete="off"
+          class="casellelogin"
           type="text"
           name="user"
           placeholder="Inserisci il nickname" required
@@ -45,6 +46,7 @@
         <label for="user">password</label>
         <input
           autocomplete="off"
+          class="casellelogin"
           type="text"
           name="password"
           placeholder="Inserisci la password" required

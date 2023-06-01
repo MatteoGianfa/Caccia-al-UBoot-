@@ -38,22 +38,28 @@
 
       ?>
       <div id="datiForm">
-      <form action="controlloRegistrazione.php" method="POST">
+      <form autocomplete="off" action="controlloRegistrazione.php" method="POST">
       <label for="user">nome utente:</label>
         <input
           type="text"
+          autocomplete="off"
+          class="casellelogin"
           name="user"
           placeholder="....." required
         /><br />
         <label for="email">email:</label>
         <input
-          type="text"
+          type="email"
+          autocomplete="off"
+          class="casellelogin"
           name="email"
           placeholder="......" required
         /><br />
         <label for="password">password:</label>
         <input
-          type="text"
+          type="password"
+          autocomplete="off"
+          class="casellelogin"
           name="password"
           placeholder="......" required
         /><br />

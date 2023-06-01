@@ -471,3 +471,18 @@ td {
   text-shadow: 1px 2px 5px rgba(2, 2, 223, 0.897);
   margin-top: 2%;
 }
+
+.bottoneLogin {
+  width: 10%;
+  height: 6%;
+  margin-top: 2%;
+  margin-left: 2%;
+  border-color: transparent;
+  border-radius: 40px;
+  box-shadow: 0px 0px 15px #4646fe;
+  font-size: 120%;
+  font-family: "Courier New";
+  background-color: #0606fb;
+  cursor: pointer;
+  color: #ffffff;
+}
